@@ -11,4 +11,6 @@
 int main(int argc, char** argv)
 {
 	WindowInit(argc, argv, 800, 600, "ICT289-Project");
+
+	glutMainLoop();
 }

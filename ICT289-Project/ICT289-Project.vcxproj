@@ -155,12 +155,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="camera.c" />
     <ClCompile Include="ICT289-Project.c" />
     <ClCompile Include="input.c" />
+    <ClCompile Include="scene.c" />
+    <ClCompile Include="vector.c" />
     <ClCompile Include="window.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="colours.h" />
     <ClInclude Include="input.h" />
+    <ClInclude Include="scene.h" />
+    <ClInclude Include="vector.h" />
     <ClInclude Include="window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

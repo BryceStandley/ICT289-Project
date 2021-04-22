@@ -1,12 +1,13 @@
 #pragma once
+#ifndef WINDOW_H
+#define WINDOW_H
 #include<GL\freeglut.h>
 #include "input.h"
+#include "scene.h"
+#include "camera.h"
+#include "colours.h"
 
-#define BLACK 0.0, 0.0, 0.0, 1.0
-#define WHITE 1.0, 1.0, 1.0, 1.0
-#define RED 1.0, 0.0, 0.0, 1.0
-#define GREEN 0.0, 1.0, 0.0, 1.0
-#define BLUE 0.0, 0.0, 1.0, 1.0
+
 
 /**
 * \brief Aditional init function for unrelated items to glut
@@ -47,5 +48,14 @@ void SetLighting();
 */
 void WindowInit(int argc, char** argv, int windowWidth, int windowHeight, char* title);
 
+/*
+* \brief Resize function for glut
+*/
+void WindowReSize(int w, int h);
+
+void ComputePosition(float d);
+
+void ComputeDirection(float d);
 
 
+#endif // !WINDOW_H
