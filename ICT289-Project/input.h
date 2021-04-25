@@ -4,10 +4,13 @@
 
 #include <GL/freeglut.h>
 #include "camera.h"
+#include <stdbool.h>
+#include <corecrt_math_defines.h>
 
 extern Camera camera;
-extern float deltaAngle;
-extern float deltaMove;
+extern int viewportWidth;
+extern int viewportHieght;
+
 
 /**
 * \brief Main Input function
@@ -20,12 +23,12 @@ extern float deltaMove;
 */
 void PressNormalInput(unsigned char key, int xVal, int yVal);
 
-void PressCameraInput(unsigned char key, int xVal, int yVal);
-
-void ReleaseCameraInput(unsigned char key, int xVal, int yVal);
+void PressNormalInputUp(unsigned char key, int xVal, int yVal);
 
 void MouseButtonInput(int button, int state, int x, int y);
 
 void MouseMovementInput(int x, int y);
+
+void InputTimer(int value);
 
 #endif // !INPUT_H

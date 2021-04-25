@@ -6,8 +6,7 @@
 #include "scene.h"
 #include "camera.h"
 #include "colours.h"
-
-
+#include "model.h"
 
 /**
 * \brief Aditional init function for unrelated items to glut
@@ -15,7 +14,7 @@
 * \author Bryce Standley
 * \date   April 2021
 */
-void init();
+void init(int w, int h);
 
 /**
 * \brief Main Render function
@@ -23,7 +22,7 @@ void init();
 * \author Bryce Standley
 * \date   April 2021
 */
-void Render();
+void Render(void);
 
 /**
 * 
@@ -53,9 +52,11 @@ void WindowInit(int argc, char** argv, int windowWidth, int windowHeight, char* 
 */
 void WindowReSize(int w, int h);
 
-void ComputePosition(float d);
 
-void ComputeDirection(float d);
+/*
+* \brief Init function to load all models into the program
+*/
+void LoadModels();
 
 
 #endif // !WINDOW_H

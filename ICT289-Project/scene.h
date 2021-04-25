@@ -3,6 +3,7 @@
 #define SCENE_H
 #include <GL/freeglut.h>
 #include "vector.h"
+#include "model.h"
 /**
  * scene.h
  * \author Bryce Standley
@@ -21,6 +22,8 @@ void DrawGroundPlane(float scaleX, float scaleZ);
 * \brief Draws a cube fixed on the ground plane
 */
 void DrawCubeOnGround(float scale);
+
+void DrawOffModels(Object3D* objects);
 
 #endif // !SCENE_H
 

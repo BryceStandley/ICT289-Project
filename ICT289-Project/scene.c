@@ -17,3 +17,12 @@ void DrawCubeOnGround(float scale)
 
 	glutSolidCube(1);
 }
+
+
+void DrawOffModels(Object3D* objects)
+{
+	for (int i = 0; i < 2; i++)
+	{
+		DrawOffFile(&objects[i]);
+	}
+}

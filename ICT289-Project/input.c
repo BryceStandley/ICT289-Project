@@ -1,94 +1,86 @@
 #include "input.h"
 
 Camera camera;
-
-float deltaAngle = 0.0f;
-float deltaMove = 0.0f;
-int xOrigin = -1;
+int viewportWidth;
+int viewportHieght;
+const float cameraTranslationSpeed = 0.005;
+const float cameraRotationSpeed = M_PI / 180 * 0.2;
+bool keys[256];
 
 void PressNormalInput(unsigned char key, int xVal, int yVal)
 {
 
 	switch (key)
 	{
-	case 'Q':
-	case 'q':
+	case 27:
 		exit(0);
 		break;
 	default:
 		break;
 	}
 
-	glutPostRedisplay();
+	keys[key] = true;
 }
 
-void PressCameraInput(unsigned char key, int xVal, int yVal)
+
+void PressNormalInputUp(unsigned char key, int xVal, int yVal)
 {
-	float fraction = 0.1f;
-	float angle = 0.0f;
-
-	switch (key)
-	{
-	case 'W'://Move forward
-	case 'w':
-		deltaMove = 0.5f;
-		break;
-
-	case 'S'://Move backwards
-	case 's':
-		deltaMove = -0.5f;
-		break;
-
-	case 'Q':
-	case 'q':
-		exit(0);
-		break;
-	default:
-		break;
-	}
-
-	glutPostRedisplay();
-}
-
-void ReleaseCameraInput(unsigned char key, int xVal, int yVal)
-{
-	switch (key)
-	{
-	case 'W'://Move forward and back
-	case 'w':
-	case 'S':
-	case 's':
-		deltaMove = 0.0f;
-		break;
-	default:
-		break;
-	}
+	keys[key] = false;
 }
 
 void MouseButtonInput(int button, int state, int x, int y)
 {
 	if (button == GLUT_LEFT_BUTTON)
 	{
-		if (state == GLUT_UP)
-		{
-			camera.Rotation.y += deltaAngle;
-			xOrigin = -1;
-		}
-		else
-		{
-			xOrigin = x;
-		}
+		printf("Left Mouse button pressed\n");
 	}
 }
 
 void MouseMovementInput(int x, int y)
 {
-	if (xOrigin >= 0)
+	static bool warpedPointer = false;
+
+	if (warpedPointer)
 	{
-		deltaAngle = (x - xOrigin) * 0.001f;
-		camera.Forward.x = sin(camera.Rotation.y + deltaAngle);
-		camera.Forward.z = -cos(camera.Rotation.y + deltaAngle);
+		warpedPointer = false;
+		return;
 	}
 
+	int dx = x - viewportWidth / 2;
+	int dy = y - viewportHieght / 2;
+	if (dx)
+	{
+		RotateCameraX(&camera, cameraRotationSpeed * dx);
+	}
+	if (dy)
+	{
+		RotateCameraY(&camera, -cameraRotationSpeed * dy);
+	}
+
+	glutWarpPointer(viewportWidth / 2, viewportHieght / 2);
+	warpedPointer = true;
+
+}
+
+void InputTimer(int value)
+{
+	if (keys['w'] || keys['W'])
+	{
+		MoveCamera(&camera, cameraTranslationSpeed);
+	}
+	if (keys['s'] || keys['S'])
+	{
+		MoveCamera(&camera, -cameraTranslationSpeed);
+	}
+	if (keys['a'] || keys['A'])
+	{
+		StrafeCamera(&camera, cameraTranslationSpeed);
+	}
+	if (keys['d'] || keys['D'])
+	{
+		StrafeCamera(&camera, -cameraTranslationSpeed);
+	}
+
+	glutTimerFunc(1, InputTimer, 0);
 }
 

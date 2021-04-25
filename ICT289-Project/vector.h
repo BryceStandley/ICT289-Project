@@ -30,6 +30,28 @@ typedef struct Vector3 { float x, y, z; } Vector3;
  */
 typedef struct Vector4 { float x, y, z, w; } Vector4;
 
+/** 
+* \brief Transform struct that can hold 3 vector3 data structures
+*  A transform can be initialized by using compound literals
+* ie, Transform.Position = (Vector3){.x = 0.0f, .y = 0.0f, .z = 0.0f};
+*/
+typedef struct Transform 
+{
+	Vector3 Position;
+	Vector3 Rotation;
+	Vector3 Scale;
+} Transform;
+
+/** 
+* \brief Eazy define for creating a vector3 with all components at zero
+*/
+#define Vector3Zero (Vector3){.x = 0.0f, .y = 0.0f, .z = 0.0f}
+
+/**
+* \brief Eazy define for creating a vector3 with all components at one
+*/
+#define Vector3One (Vector3){.x = 1.0f, .y = 1.0f, .z = 1.0f}
+
 /**
  * \brief Find the magnatude of a Vector2
  */
