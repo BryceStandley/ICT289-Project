@@ -23,6 +23,10 @@ void DrawGroundPlane(float scaleX, float scaleZ);
 */
 void DrawCubeOnGround(float scale);
 
+/*
+* \brief Used to draw multiple OFF models to the scene
+* \todo Fix memory alloc and param passing for rendering
+*/
 void DrawOffModels(Object3D* objects);
 
 #endif // !SCENE_H
