@@ -1,0 +1,47 @@
+\hypertarget{model_8h}{}\doxysection{ICT289-\/\+Project/src/model.h File Reference}
+\label{model_8h}\index{ICT289-\/Project/src/model.h@{ICT289-\/Project/src/model.h}}
+
+
+Used to load and manage models into the program.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}colours.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$GL/freeglut.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_object3_d}{Object3D}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{model_8h_a8d7d5f3bc4782fed51a9d4dd8e25c116}\label{model_8h_a8d7d5f3bc4782fed51a9d4dd8e25c116}} 
+typedef struct \mbox{\hyperlink{struct_object3_d}{Object3D}} {\bfseries Object3D}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{model_8h_ad9483dd5ea4ef8c61a06008b02a05a72}\label{model_8h_ad9483dd5ea4ef8c61a06008b02a05a72}} 
+void {\bfseries Init\+Empty\+Object} (\mbox{\hyperlink{struct_object3_d}{Object3D}} $\ast$object)
+\item 
+\mbox{\Hypertarget{model_8h_a597ded1bda8399a0ce576f8909c85e55}\label{model_8h_a597ded1bda8399a0ce576f8909c85e55}} 
+int {\bfseries Load\+Off\+File} (char $\ast$file\+Path, \mbox{\hyperlink{struct_object3_d}{Object3D}} $\ast$object)
+\item 
+\mbox{\Hypertarget{model_8h_a7f33b016079a82e342b4a257785a0257}\label{model_8h_a7f33b016079a82e342b4a257785a0257}} 
+void {\bfseries Draw\+Off\+File} (\mbox{\hyperlink{struct_object3_d}{Object3D}} $\ast$object)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Used to load and manage models into the program. 
+
+\begin{DoxyAuthor}{Author}
+Bryce Standley
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+April 2021 
+\end{DoxyDate}

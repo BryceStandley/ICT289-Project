@@ -15,48 +15,48 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ICT289-Project.c">
+    <ClCompile Include="src\camera.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="window.c">
+    <ClCompile Include="src\ICT289-Project.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="input.c">
+    <ClCompile Include="src\input.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="vector.c">
+    <ClCompile Include="src\model.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="camera.c">
+    <ClCompile Include="src\scene.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="scene.c">
+    <ClCompile Include="src\vector.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="model.c">
+    <ClCompile Include="src\window.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="window.h">
+    <ClInclude Include="src\camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="input.h">
+    <ClInclude Include="src\colours.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vector.h">
+    <ClInclude Include="src\input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="camera.h">
+    <ClInclude Include="src\model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="scene.h">
+    <ClInclude Include="src\scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="colours.h">
+    <ClInclude Include="src\vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="model.h">
+    <ClInclude Include="src\window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,0 +1,149 @@
+\hypertarget{vector_8h}{}\doxysection{ICT289-\/\+Project/src/vector.h File Reference}
+\label{vector_8h}\index{ICT289-\/Project/src/vector.h@{ICT289-\/Project/src/vector.h}}
+
+
+Vector Math fucntions file.  
+
+
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_vector2}{Vector2}}
+\begin{DoxyCompactList}\small\item\em Vector data structure with 2 components create a vector2 by using a compund literal ie \mbox{\hyperlink{struct_vector2}{Vector2}} v = (\mbox{\hyperlink{struct_vector2}{Vector2}})\{.x = 0.\+0f, .y = 0.\+0f\};. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_vector3}{Vector3}}
+\begin{DoxyCompactList}\small\item\em Vector data structure with 3 components create a vector3 by using a compund literal ie \mbox{\hyperlink{struct_vector3}{Vector3}} v = (\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f\};. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_vector4}{Vector4}}
+\begin{DoxyCompactList}\small\item\em Vector data structure with 4 components create a vector4 by using a compund literal ie \mbox{\hyperlink{struct_vector4}{Vector4}} v = (\mbox{\hyperlink{struct_vector4}{Vector4}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f, .w = 0.\+0f\};. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_transform}{Transform}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_transform}{Transform}} struct that can hold 3 vector3 data structures A transform can be initialized by using compound literals ie, Transform.\+Position = (\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f\};. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{vector_8h_a0e56521e7ab51dee5a9705e070406265}\label{vector_8h_a0e56521e7ab51dee5a9705e070406265}} 
+\#define {\bfseries VECTOR\+\_\+H}
+\item 
+\mbox{\Hypertarget{vector_8h_aa83067cdbc21bbc208c237da95f494fd}\label{vector_8h_aa83067cdbc21bbc208c237da95f494fd}} 
+\#define \mbox{\hyperlink{vector_8h_aa83067cdbc21bbc208c237da95f494fd}{Vector3\+Zero}}~(\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f\}
+\begin{DoxyCompactList}\small\item\em Eazy define for creating a vector3 with all components at zero. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_aee4a7c347d9b0e2dab0fc809d9100fac}\label{vector_8h_aee4a7c347d9b0e2dab0fc809d9100fac}} 
+\#define \mbox{\hyperlink{vector_8h_aee4a7c347d9b0e2dab0fc809d9100fac}{Vector3\+One}}~(\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 1.\+0f, .y = 1.\+0f, .z = 1.\+0f\}
+\begin{DoxyCompactList}\small\item\em Eazy define for creating a vector3 with all components at one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{vector_8h_a682e0907769244e5f75f92e91460878f}\label{vector_8h_a682e0907769244e5f75f92e91460878f}} 
+typedef struct \mbox{\hyperlink{struct_vector2}{Vector2}} \mbox{\hyperlink{vector_8h_a682e0907769244e5f75f92e91460878f}{Vector2}}
+\begin{DoxyCompactList}\small\item\em Vector data structure with 2 components create a vector2 by using a compund literal ie \mbox{\hyperlink{struct_vector2}{Vector2}} v = (\mbox{\hyperlink{struct_vector2}{Vector2}})\{.x = 0.\+0f, .y = 0.\+0f\};. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a3b29ec21f9ba832999ff4fdff39dd804}\label{vector_8h_a3b29ec21f9ba832999ff4fdff39dd804}} 
+typedef struct \mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{vector_8h_a3b29ec21f9ba832999ff4fdff39dd804}{Vector3}}
+\begin{DoxyCompactList}\small\item\em Vector data structure with 3 components create a vector3 by using a compund literal ie \mbox{\hyperlink{struct_vector3}{Vector3}} v = (\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f\};. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_aff3ba508436bec4750e91364badfbc99}\label{vector_8h_aff3ba508436bec4750e91364badfbc99}} 
+typedef struct \mbox{\hyperlink{struct_vector4}{Vector4}} \mbox{\hyperlink{vector_8h_aff3ba508436bec4750e91364badfbc99}{Vector4}}
+\begin{DoxyCompactList}\small\item\em Vector data structure with 4 components create a vector4 by using a compund literal ie \mbox{\hyperlink{struct_vector4}{Vector4}} v = (\mbox{\hyperlink{struct_vector4}{Vector4}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f, .w = 0.\+0f\};. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a512254f7ee8948f0323992006331503c}\label{vector_8h_a512254f7ee8948f0323992006331503c}} 
+typedef struct \mbox{\hyperlink{struct_transform}{Transform}} \mbox{\hyperlink{vector_8h_a512254f7ee8948f0323992006331503c}{Transform}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_transform}{Transform}} struct that can hold 3 vector3 data structures A transform can be initialized by using compound literals ie, Transform.\+Position = (\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f\};. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{vector_8h_ad37c4c1e95f98c1f4fb7dd519de45282}\label{vector_8h_ad37c4c1e95f98c1f4fb7dd519de45282}} 
+float \mbox{\hyperlink{vector_8h_ad37c4c1e95f98c1f4fb7dd519de45282}{Magnatude2}} (\mbox{\hyperlink{struct_vector2}{Vector2}} a)
+\begin{DoxyCompactList}\small\item\em Find the magnatude of a \mbox{\hyperlink{struct_vector2}{Vector2}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a74e97ba7e0685d142af418969743a4bf}\label{vector_8h_a74e97ba7e0685d142af418969743a4bf}} 
+float \mbox{\hyperlink{vector_8h_a74e97ba7e0685d142af418969743a4bf}{Magnatude3}} (\mbox{\hyperlink{struct_vector3}{Vector3}} a)
+\begin{DoxyCompactList}\small\item\em Find the magnatude of a \mbox{\hyperlink{struct_vector3}{Vector3}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_ad2f9062d2300d535324469bae8c663b4}\label{vector_8h_ad2f9062d2300d535324469bae8c663b4}} 
+float \mbox{\hyperlink{vector_8h_ad2f9062d2300d535324469bae8c663b4}{Magnatude4}} (\mbox{\hyperlink{struct_vector4}{Vector4}} a)
+\begin{DoxyCompactList}\small\item\em Find the magnatude of a \mbox{\hyperlink{struct_vector4}{Vector4}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_af2cfd198ee49fbb80dc63eec6b69bf5f}\label{vector_8h_af2cfd198ee49fbb80dc63eec6b69bf5f}} 
+float \mbox{\hyperlink{vector_8h_af2cfd198ee49fbb80dc63eec6b69bf5f}{Distance2}} (\mbox{\hyperlink{struct_vector2}{Vector2}} a, \mbox{\hyperlink{struct_vector2}{Vector2}} b)
+\begin{DoxyCompactList}\small\item\em Finds the distance between two \mbox{\hyperlink{struct_vector2}{Vector2}}\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a0e1571a80c2d1924926a958ef4f581b2}\label{vector_8h_a0e1571a80c2d1924926a958ef4f581b2}} 
+float \mbox{\hyperlink{vector_8h_a0e1571a80c2d1924926a958ef4f581b2}{Distance4}} (\mbox{\hyperlink{struct_vector4}{Vector4}} a, \mbox{\hyperlink{struct_vector4}{Vector4}} b)
+\begin{DoxyCompactList}\small\item\em Finds the distance between two \mbox{\hyperlink{struct_vector4}{Vector4}}\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_aa7c9098080c787f05809a65f13093610}\label{vector_8h_aa7c9098080c787f05809a65f13093610}} 
+\mbox{\hyperlink{struct_vector2}{Vector2}} \mbox{\hyperlink{vector_8h_aa7c9098080c787f05809a65f13093610}{Direction\+Vector2}} (\mbox{\hyperlink{struct_vector2}{Vector2}} a, \mbox{\hyperlink{struct_vector2}{Vector2}} b)
+\begin{DoxyCompactList}\small\item\em Finds a directional vector between two \mbox{\hyperlink{struct_vector2}{Vector2}}\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a42adb0f260e0999aa7ccdc7ec8524c92}\label{vector_8h_a42adb0f260e0999aa7ccdc7ec8524c92}} 
+\mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{vector_8h_a42adb0f260e0999aa7ccdc7ec8524c92}{Direction\+Vector3}} (\mbox{\hyperlink{struct_vector3}{Vector3}} a, \mbox{\hyperlink{struct_vector3}{Vector3}} b)
+\begin{DoxyCompactList}\small\item\em Finds a directional vector between two \mbox{\hyperlink{struct_vector3}{Vector3}}\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_af5b3e29635158173c745f45c4cfefb87}\label{vector_8h_af5b3e29635158173c745f45c4cfefb87}} 
+\mbox{\hyperlink{struct_vector4}{Vector4}} \mbox{\hyperlink{vector_8h_af5b3e29635158173c745f45c4cfefb87}{Direction\+Vector4}} (\mbox{\hyperlink{struct_vector4}{Vector4}} a, \mbox{\hyperlink{struct_vector4}{Vector4}} b)
+\begin{DoxyCompactList}\small\item\em Finds a directional vector between two \mbox{\hyperlink{struct_vector4}{Vector4}}\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a9293e62a1755b791c50d4b7d4d382e3b}\label{vector_8h_a9293e62a1755b791c50d4b7d4d382e3b}} 
+\mbox{\hyperlink{struct_vector2}{Vector2}} \mbox{\hyperlink{vector_8h_a9293e62a1755b791c50d4b7d4d382e3b}{Add2}} (\mbox{\hyperlink{struct_vector2}{Vector2}} a, \mbox{\hyperlink{struct_vector2}{Vector2}} b)
+\begin{DoxyCompactList}\small\item\em Adds two \mbox{\hyperlink{struct_vector2}{Vector2}}\textquotesingle{}s together. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_ad82a913d6512f823b7e7800830125ac1}\label{vector_8h_ad82a913d6512f823b7e7800830125ac1}} 
+\mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{vector_8h_ad82a913d6512f823b7e7800830125ac1}{Add3}} (\mbox{\hyperlink{struct_vector3}{Vector3}} a, \mbox{\hyperlink{struct_vector3}{Vector3}} b)
+\begin{DoxyCompactList}\small\item\em Adds two \mbox{\hyperlink{struct_vector3}{Vector3}}\textquotesingle{}s together. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a4c17ce39afe172e9da9d4df638cd9a2b}\label{vector_8h_a4c17ce39afe172e9da9d4df638cd9a2b}} 
+\mbox{\hyperlink{struct_vector4}{Vector4}} \mbox{\hyperlink{vector_8h_a4c17ce39afe172e9da9d4df638cd9a2b}{Add4}} (\mbox{\hyperlink{struct_vector4}{Vector4}} a, \mbox{\hyperlink{struct_vector4}{Vector4}} b)
+\begin{DoxyCompactList}\small\item\em Adds two \mbox{\hyperlink{struct_vector4}{Vector4}}\textquotesingle{}s together. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a79e73dae967ca2ab4515d52edada7d71}\label{vector_8h_a79e73dae967ca2ab4515d52edada7d71}} 
+\mbox{\hyperlink{struct_vector2}{Vector2}} \mbox{\hyperlink{vector_8h_a79e73dae967ca2ab4515d52edada7d71}{Scale2}} (\mbox{\hyperlink{struct_vector2}{Vector2}} a, float scale)
+\begin{DoxyCompactList}\small\item\em Scales a \mbox{\hyperlink{struct_vector2}{Vector2}} by a scale value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_ae420560bae7d5717003ba186193e5383}\label{vector_8h_ae420560bae7d5717003ba186193e5383}} 
+\mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{vector_8h_ae420560bae7d5717003ba186193e5383}{Scale3}} (\mbox{\hyperlink{struct_vector3}{Vector3}} a, float scale)
+\begin{DoxyCompactList}\small\item\em Scales a \mbox{\hyperlink{struct_vector3}{Vector3}} by a scale value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_aacb8f0e2bb10968c9ad5c48072b1456f}\label{vector_8h_aacb8f0e2bb10968c9ad5c48072b1456f}} 
+\mbox{\hyperlink{struct_vector4}{Vector4}} \mbox{\hyperlink{vector_8h_aacb8f0e2bb10968c9ad5c48072b1456f}{Scale4}} (\mbox{\hyperlink{struct_vector4}{Vector4}} a, float scale)
+\begin{DoxyCompactList}\small\item\em Scales a \mbox{\hyperlink{struct_vector4}{Vector4}} by a scale value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a7ff6b0205ff6527fde0ada4ab12f3d17}\label{vector_8h_a7ff6b0205ff6527fde0ada4ab12f3d17}} 
+float \mbox{\hyperlink{vector_8h_a7ff6b0205ff6527fde0ada4ab12f3d17}{Dot\+Product2}} (\mbox{\hyperlink{struct_vector2}{Vector2}} a, \mbox{\hyperlink{struct_vector2}{Vector2}} b)
+\begin{DoxyCompactList}\small\item\em Finds the dot product between two \mbox{\hyperlink{struct_vector2}{Vector2}}\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a5beb024ec98eba78313543dbfcf5dbdc}\label{vector_8h_a5beb024ec98eba78313543dbfcf5dbdc}} 
+float \mbox{\hyperlink{vector_8h_a5beb024ec98eba78313543dbfcf5dbdc}{Dot\+Product3}} (\mbox{\hyperlink{struct_vector3}{Vector3}} a, \mbox{\hyperlink{struct_vector3}{Vector3}} b)
+\begin{DoxyCompactList}\small\item\em Finds the dot product between two \mbox{\hyperlink{struct_vector3}{Vector3}}\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_ac355e264ad1182721187dad71802b0e9}\label{vector_8h_ac355e264ad1182721187dad71802b0e9}} 
+\mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{vector_8h_ac355e264ad1182721187dad71802b0e9}{Cross\+Product3}} (\mbox{\hyperlink{struct_vector3}{Vector3}} a, \mbox{\hyperlink{struct_vector3}{Vector3}} b)
+\begin{DoxyCompactList}\small\item\em Finds the cross product between two \mbox{\hyperlink{struct_vector3}{Vector3}}\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a0bf0708735e66f1e450827840aa751cf}\label{vector_8h_a0bf0708735e66f1e450827840aa751cf}} 
+float {\bfseries Angle2} (\mbox{\hyperlink{struct_vector2}{Vector2}} a, \mbox{\hyperlink{struct_vector2}{Vector2}} b)
+\item 
+float \mbox{\hyperlink{vector_8h_ac16a1b0415290a36433c31309c6a13f6}{Angle3}} (\mbox{\hyperlink{struct_vector3}{Vector3}} a, \mbox{\hyperlink{struct_vector3}{Vector3}} b)
+\begin{DoxyCompactList}\small\item\em Finds the angle between two Direction \mbox{\hyperlink{struct_vector3}{Vector3}}\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_ac60fcc424b5db4f8de86dcf75c5bd7b7}\label{vector_8h_ac60fcc424b5db4f8de86dcf75c5bd7b7}} 
+float \mbox{\hyperlink{vector_8h_ac60fcc424b5db4f8de86dcf75c5bd7b7}{Area3}} (\mbox{\hyperlink{struct_vector3}{Vector3}} a, \mbox{\hyperlink{struct_vector3}{Vector3}} b, \mbox{\hyperlink{struct_vector3}{Vector3}} c)
+\begin{DoxyCompactList}\small\item\em Finds the area of a triangle of three \mbox{\hyperlink{struct_vector3}{Vector3}}\textquotesingle{}s. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a9be15cfaef503d3d1ef2515b5e3032d9}\label{vector_8h_a9be15cfaef503d3d1ef2515b5e3032d9}} 
+float \mbox{\hyperlink{vector_8h_a9be15cfaef503d3d1ef2515b5e3032d9}{Triangle\+Area}} (float base, float height)
+\begin{DoxyCompactList}\small\item\em Finds the area of a triangle using the base and height. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a4295b2d3346990c12733c66b32853dc9}\label{vector_8h_a4295b2d3346990c12733c66b32853dc9}} 
+\mbox{\hyperlink{struct_vector2}{Vector2}} \mbox{\hyperlink{vector_8h_a4295b2d3346990c12733c66b32853dc9}{Normalize2}} (\mbox{\hyperlink{struct_vector2}{Vector2}} a)
+\begin{DoxyCompactList}\small\item\em Normalizes a \mbox{\hyperlink{struct_vector2}{Vector2}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a131866ba02fb0c178150001e81113247}\label{vector_8h_a131866ba02fb0c178150001e81113247}} 
+\mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{vector_8h_a131866ba02fb0c178150001e81113247}{Normalize3}} (\mbox{\hyperlink{struct_vector3}{Vector3}} a)
+\begin{DoxyCompactList}\small\item\em Normalizes a \mbox{\hyperlink{struct_vector3}{Vector3}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a5d43c9f19490f02a8a8b953a30385b96}\label{vector_8h_a5d43c9f19490f02a8a8b953a30385b96}} 
+\mbox{\hyperlink{struct_vector4}{Vector4}} \mbox{\hyperlink{vector_8h_a5d43c9f19490f02a8a8b953a30385b96}{Normalize4}} (\mbox{\hyperlink{struct_vector4}{Vector4}} a)
+\begin{DoxyCompactList}\small\item\em Normalizes a \mbox{\hyperlink{struct_vector4}{Vector4}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Vector Math fucntions file. 
+
+\begin{DoxyAuthor}{Author}
+Bryce Standley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+April 2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vector_8h_ac16a1b0415290a36433c31309c6a13f6}\label{vector_8h_ac16a1b0415290a36433c31309c6a13f6}} 
+\index{vector.h@{vector.h}!Angle3@{Angle3}}
+\index{Angle3@{Angle3}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{Angle3()}{Angle3()}}
+{\footnotesize\ttfamily float Angle3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vector3}{Vector3}}}]{a,  }\item[{\mbox{\hyperlink{struct_vector3}{Vector3}}}]{b }\end{DoxyParamCaption})}
+
+
+
+Finds the angle between two Direction \mbox{\hyperlink{struct_vector3}{Vector3}}\textquotesingle{}s. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Two} & directional vectors of type \mbox{\hyperlink{struct_vector3}{Vector3}} \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,53 @@
+\hypertarget{camera_8h}{}\doxysection{ICT289-\/\+Project/src/camera.h File Reference}
+\label{camera_8h}\index{ICT289-\/Project/src/camera.h@{ICT289-\/Project/src/camera.h}}
+
+
+Adds the data structure and functions to control a Open\+GL camera.  
+
+
+{\ttfamily \#include $<$GL/freeglut.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}vector.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$corecrt\+\_\+math\+\_\+defines.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_camera}{Camera}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{camera_8h_a78750a39b09d6562fd9b910c7743cfca}\label{camera_8h_a78750a39b09d6562fd9b910c7743cfca}} 
+typedef struct \mbox{\hyperlink{struct_camera}{Camera}} {\bfseries Camera}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{camera_8h_a0cfc8a7fe9eb50a32356228e525b9707}\label{camera_8h_a0cfc8a7fe9eb50a32356228e525b9707}} 
+void {\bfseries Update\+Camera\+Look\+At} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c)
+\item 
+\mbox{\Hypertarget{camera_8h_af39bf9665842690d15cf7fe839637fca}\label{camera_8h_af39bf9665842690d15cf7fe839637fca}} 
+void {\bfseries Update\+Camera} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c)
+\item 
+\mbox{\Hypertarget{camera_8h_ac0ecd597d3765cdeb43efd88c7fb9be5}\label{camera_8h_ac0ecd597d3765cdeb43efd88c7fb9be5}} 
+void {\bfseries Move\+Camera} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c, float incr)
+\item 
+\mbox{\Hypertarget{camera_8h_a64808ee919613b3c75b02b7791712096}\label{camera_8h_a64808ee919613b3c75b02b7791712096}} 
+void {\bfseries Strafe\+Camera} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c, float incr)
+\item 
+\mbox{\Hypertarget{camera_8h_a6c5755301abebe21f062f7207ae9b290}\label{camera_8h_a6c5755301abebe21f062f7207ae9b290}} 
+void {\bfseries Rotate\+CameraX} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c, float incr)
+\item 
+\mbox{\Hypertarget{camera_8h_a5b115f8a37f78833a9275701f4bf862a}\label{camera_8h_a5b115f8a37f78833a9275701f4bf862a}} 
+void {\bfseries Rotate\+CameraY} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c, float incr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Adds the data structure and functions to control a Open\+GL camera. 
+
+\begin{DoxyAuthor}{Author}
+Bryce Standley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+April 2021 
+\end{DoxyDate}
