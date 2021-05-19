@@ -1,6 +1,8 @@
 #pragma once
 #include "vector.h"
 
+
+#define RIGIDBODY_H
 /**
  * \file rigidbody.h
  * \author Bryce Standley
@@ -8,6 +10,7 @@
  * \date  May 2021
  */
 
+typedef enum {DYNAMIC,KINEMATIC,STATIC} BODYTYPE;
 
 /*
 * \brief Data structure of a rigidbody
@@ -20,6 +23,9 @@ typedef struct Rigidbody
 	float speed;
 	Vector3 Acceleration;
 	Vector3 Force;
+
+	Vector3 Position;
+	BODYTYPE type;
 }Rigidbody;
 
 

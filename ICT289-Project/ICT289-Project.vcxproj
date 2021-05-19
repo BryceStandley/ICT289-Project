@@ -29,6 +29,8 @@
     <ClCompile Include="src\window.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="collider.h" />
+    <ClInclude Include="gameobject.h" />
     <ClInclude Include="src\camera.h" />
     <ClInclude Include="src\colours.h" />
     <ClInclude Include="src\input.h" />

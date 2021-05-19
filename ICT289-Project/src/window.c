@@ -5,6 +5,8 @@ Object3D boneModel;
 Object3D* models;
 
 
+//Gameobject *sceneObjects;
+
 void WindowInit(int argc, char** argv, int windowWidth, int windowHeight, char* title)
 {
 	
@@ -65,6 +67,34 @@ void SetLighting()
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 	glEnable(GL_DEPTH_TEST);
+}
+
+//I forsee a problem with this
+// are the callbacks run simutaneously?
+// because the data model may run Updated(), apply gravity
+// While the player halfway through the application of gravity, applies the
+// arrow projectile, and renders the arrows first falling, then having applied the 
+// velocity being shot, which may make it look choppy
+
+void DrawBow() 
+{
+	//Animates the drawing of the bow, uses timer to pull string back, until a maximum value
+	//Maximum value yields maximum velocity
+}
+
+void Shoot() 
+{
+	// Will make the arrow object collidable, visible
+	//rotate it to the camera angle such that the point faces away
+	//Applies velocity to data model of given arrow object
+	//
+}
+
+void Update() 
+{
+	//All data models (gameobjects) are updated here..
+	//The appropriate physical data is manipulated here
+	//-such that Render(); will redraw these updated objects
 }
 
 void Render()
