@@ -36,6 +36,9 @@
     <ClCompile Include="src\window.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\rigidbody.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\camera.h">
@@ -57,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rigidbody.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

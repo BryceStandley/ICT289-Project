@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['window_2eh_41',['window.h',['../window_8h.html',1,'']]],
-  ['windowinit_42',['WindowInit',['../window_8h.html#a79030dd806dab6514d62fcd009f1774f',1,'window.c']]]
+  ['transform_57',['Transform',['../struct_transform.html',1,'Transform'],['../vector_8h.html#a512254f7ee8948f0323992006331503c',1,'Transform():&#160;vector.h']]],
+  ['trianglearea_58',['TriangleArea',['../vector_8h.html#a9be15cfaef503d3d1ef2515b5e3032d9',1,'vector.c']]]
 ];

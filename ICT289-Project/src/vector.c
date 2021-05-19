@@ -75,6 +75,34 @@ Vector4 Add4(Vector4 a, Vector4 b)
 	return v;
 }
 
+Vector2 Subtract2(Vector2 a, Vector2 b)
+{
+	Vector2 v;
+	v.x = b.x - a.x;
+	v.y = b.y - a.y;
+	return v;
+}
+
+Vector3 Subtract3(Vector3 a, Vector3 b)
+{
+	Vector3 v;
+	v.x = b.x - a.x;
+	v.y = b.y - a.y;
+	v.z = b.z - a.z;
+	return v;
+}
+
+Vector4 Subtract4(Vector4 a, Vector4 b) 
+{
+	Vector4 v;
+	v.x = b.x - a.x;
+	v.y = b.y - a.y;
+	v.z = b.z - a.z;
+	v.w = b.w - a.w;
+	return v;
+}
+
+
 Vector2 Scale2(Vector2 a, float scale)
 {
 	a.x *= scale;
@@ -97,6 +125,84 @@ Vector4 Scale4(Vector4 a, float scale)
 	a.z *= scale;
 	a.w *= scale;
 	return a;
+}
+
+Vector2 Divide2(Vector2 a, float divide)
+{
+	a.x /= divide;
+	a.y /= divide;
+	return a;
+}
+
+Vector3 Divide3(Vector3 a, float divide)
+{
+	a.x /= divide;
+	a.y /= divide;
+	a.z /= divide;
+	return a;
+}
+
+Vector4 Divide4(Vector4 a, float divide)
+{
+	a.x /= divide;
+	a.y /= divide;
+	a.z /= divide;
+	a.w /= divide;
+	return a;
+}
+
+
+Vector2 Pow2(Vector2 a, float powerOf)
+{
+	a.x = pow(a.x, powerOf);
+	a.y = pow(a.y, powerOf);
+	return a;
+}
+
+
+Vector3 Pow3(Vector3 a, float powerOf)
+{
+	a.x = pow(a.x, powerOf);
+	a.y = pow(a.y, powerOf);
+	a.z = pow(a.z, powerOf);
+	return a;
+}
+
+
+Vector4 Pow4(Vector4 a, float powerOf)
+{
+	a.x = pow(a.x, powerOf);
+	a.y = pow(a.y, powerOf);
+	a.z = pow(a.z, powerOf);
+	a.w = pow(a.w, powerOf);
+	return a;
+}
+
+Vector2 Multiply2(Vector2 a, Vector2 b)
+{
+	Vector2 result;
+	result.x = a.x * b.x;
+	result.y = a.y * b.y;
+	return result;
+}
+
+Vector3 Multiply3(Vector3 a, Vector3 b)
+{
+	Vector3 result;
+	result.x = a.x * b.x;
+	result.y = a.y * b.y;
+	result.z = a.z * b.z;
+	return result;
+}
+
+Vector4 Multiply4(Vector4 a, Vector4 b)
+{
+	Vector4 result;
+	result.x = a.x * b.x;
+	result.y = a.y * b.y;
+	result.z = a.z * b.z;
+	result.w = a.w * b.w;
+	return result;
 }
 
 float DotProduct2(Vector2 a, Vector2 b) { return (a.x * b.x) + (a.y * b.y); }
@@ -167,4 +273,28 @@ Vector4 Normalize4(Vector4 a)
 	v.z = a.z * Magnatude4(a);
 	v.w = a.w * Magnatude4(a);
 	return v;
+}
+
+Vector2 Invert2(Vector2 a)
+{
+	a.x *= -1;
+	a.y *= -1;
+	return a;
+}
+
+Vector3 Invert3(Vector3 a)
+{
+	a.x *= -1;
+	a.y *= -1;
+	a.z *= -1;
+	return a;
+}
+
+Vector4 Invert4(Vector4 a)
+{
+	a.x *= -1;
+	a.y *= -1;
+	a.z *= -1;
+	a.w *= -1;
+	return a;
 }

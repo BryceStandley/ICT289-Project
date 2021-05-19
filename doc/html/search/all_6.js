@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['object3d_26',['Object3D',['../struct_object3_d.html',1,'']]]
+  ['normalize2_39',['Normalize2',['../vector_8h.html#a4295b2d3346990c12733c66b32853dc9',1,'vector.c']]],
+  ['normalize3_40',['Normalize3',['../vector_8h.html#a131866ba02fb0c178150001e81113247',1,'vector.c']]],
+  ['normalize4_41',['Normalize4',['../vector_8h.html#a5d43c9f19490f02a8a8b953a30385b96',1,'vector.c']]]
 ];

@@ -1,0 +1,141 @@
+\hypertarget{rigidbody_8h}{}\doxysection{ICT289-\/\+Project/src/rigidbody.h File Reference}
+\label{rigidbody_8h}\index{ICT289-\/Project/src/rigidbody.h@{ICT289-\/Project/src/rigidbody.h}}
+
+
+Physics functions to be used to animate objects.  
+
+
+{\ttfamily \#include \char`\"{}vector.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_rigidbody}{Rigidbody}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{rigidbody_8h_a427ce6aa99e787700fdd6c78b2633d84}\label{rigidbody_8h_a427ce6aa99e787700fdd6c78b2633d84}} 
+typedef struct \mbox{\hyperlink{struct_rigidbody}{Rigidbody}} {\bfseries Rigidbody}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{rigidbody_8h_aec94cc96cc69814097f420caaa1231d5}{Init\+Rigidbody}} (\mbox{\hyperlink{struct_rigidbody}{Rigidbody}} $\ast$rb)
+\begin{DoxyCompactList}\small\item\em Init a rigidbody with default values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{rigidbody_8h_ab0c43059b74977be129a06fb78083b89}{Velocity\+At\+Time}} (\mbox{\hyperlink{struct_vector3}{Vector3}} Init\+Velocity, \mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{rigidbody_8h_a9cb7eb0fe8d156736a928c1c50e6be80}{Acceleration}}, float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Calculate the velocity at a given time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{rigidbody_8h_a9cb7eb0fe8d156736a928c1c50e6be80}{Acceleration}} (\mbox{\hyperlink{struct_vector3}{Vector3}} force, float mass)
+\begin{DoxyCompactList}\small\item\em Calculate the acceleration at a given time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{rigidbody_8h_a4b4ad059679ac79295d71b4a88ad6c82}{Average\+Velocity}} (\mbox{\hyperlink{struct_vector3}{Vector3}} init\+Velocity, \mbox{\hyperlink{struct_vector3}{Vector3}} final\+Velocity)
+\begin{DoxyCompactList}\small\item\em Average of two velocities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{rigidbody_8h_a8a91647f4971af971ff7d4121691eaae}{Displace}} (\mbox{\hyperlink{struct_vector3}{Vector3}} position, \mbox{\hyperlink{struct_vector3}{Vector3}} velocity, \mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{rigidbody_8h_a9cb7eb0fe8d156736a928c1c50e6be80}{Acceleration}}, float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Calculate the new displacement of a object at a given time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{rigidbody_8h_a54632aba31eeb94f2c490a6bc6248789}{Force}} (float mass, \mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{rigidbody_8h_a9cb7eb0fe8d156736a928c1c50e6be80}{Acceleration}})
+\begin{DoxyCompactList}\small\item\em Calculate a force of a object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{rigidbody_8h_a315e3b50fa148f491bc71f45ea9c2d09}{Force\+Due\+To\+Gravity}} (float mass, float gravity)
+\begin{DoxyCompactList}\small\item\em Calculate the force due to gravity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Physics functions to be used to animate objects. 
+
+\begin{DoxyAuthor}{Author}
+Bryce Standley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{rigidbody_8h_a9cb7eb0fe8d156736a928c1c50e6be80}\label{rigidbody_8h_a9cb7eb0fe8d156736a928c1c50e6be80}} 
+\index{rigidbody.h@{rigidbody.h}!Acceleration@{Acceleration}}
+\index{Acceleration@{Acceleration}!rigidbody.h@{rigidbody.h}}
+\doxysubsubsection{\texorpdfstring{Acceleration()}{Acceleration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vector3}{Vector3}} Acceleration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vector3}{Vector3}}}]{force,  }\item[{float}]{mass }\end{DoxyParamCaption})}
+
+
+
+Calculate the acceleration at a given time. 
+
+\begin{DoxyDate}{Date}
+May 2021 
+\end{DoxyDate}
+\mbox{\Hypertarget{rigidbody_8h_a4b4ad059679ac79295d71b4a88ad6c82}\label{rigidbody_8h_a4b4ad059679ac79295d71b4a88ad6c82}} 
+\index{rigidbody.h@{rigidbody.h}!AverageVelocity@{AverageVelocity}}
+\index{AverageVelocity@{AverageVelocity}!rigidbody.h@{rigidbody.h}}
+\doxysubsubsection{\texorpdfstring{AverageVelocity()}{AverageVelocity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vector3}{Vector3}} Average\+Velocity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vector3}{Vector3}}}]{init\+Velocity,  }\item[{\mbox{\hyperlink{struct_vector3}{Vector3}}}]{final\+Velocity }\end{DoxyParamCaption})}
+
+
+
+Average of two velocities. 
+
+\begin{DoxyDate}{Date}
+May 2021 
+\end{DoxyDate}
+\mbox{\Hypertarget{rigidbody_8h_a8a91647f4971af971ff7d4121691eaae}\label{rigidbody_8h_a8a91647f4971af971ff7d4121691eaae}} 
+\index{rigidbody.h@{rigidbody.h}!Displace@{Displace}}
+\index{Displace@{Displace}!rigidbody.h@{rigidbody.h}}
+\doxysubsubsection{\texorpdfstring{Displace()}{Displace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vector3}{Vector3}} Displace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vector3}{Vector3}}}]{position,  }\item[{\mbox{\hyperlink{struct_vector3}{Vector3}}}]{velocity,  }\item[{\mbox{\hyperlink{struct_vector3}{Vector3}}}]{Acceleration,  }\item[{float}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Calculate the new displacement of a object at a given time. 
+
+\begin{DoxyDate}{Date}
+May 2021 
+\end{DoxyDate}
+\mbox{\Hypertarget{rigidbody_8h_a54632aba31eeb94f2c490a6bc6248789}\label{rigidbody_8h_a54632aba31eeb94f2c490a6bc6248789}} 
+\index{rigidbody.h@{rigidbody.h}!Force@{Force}}
+\index{Force@{Force}!rigidbody.h@{rigidbody.h}}
+\doxysubsubsection{\texorpdfstring{Force()}{Force()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vector3}{Vector3}} Force (\begin{DoxyParamCaption}\item[{float}]{mass,  }\item[{\mbox{\hyperlink{struct_vector3}{Vector3}}}]{Acceleration }\end{DoxyParamCaption})}
+
+
+
+Calculate a force of a object. 
+
+\begin{DoxyDate}{Date}
+May 2021 
+\end{DoxyDate}
+\mbox{\Hypertarget{rigidbody_8h_a315e3b50fa148f491bc71f45ea9c2d09}\label{rigidbody_8h_a315e3b50fa148f491bc71f45ea9c2d09}} 
+\index{rigidbody.h@{rigidbody.h}!ForceDueToGravity@{ForceDueToGravity}}
+\index{ForceDueToGravity@{ForceDueToGravity}!rigidbody.h@{rigidbody.h}}
+\doxysubsubsection{\texorpdfstring{ForceDueToGravity()}{ForceDueToGravity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vector3}{Vector3}} Force\+Due\+To\+Gravity (\begin{DoxyParamCaption}\item[{float}]{mass,  }\item[{float}]{gravity }\end{DoxyParamCaption})}
+
+
+
+Calculate the force due to gravity. 
+
+\begin{DoxyDate}{Date}
+May 2021 
+\end{DoxyDate}
+\mbox{\Hypertarget{rigidbody_8h_aec94cc96cc69814097f420caaa1231d5}\label{rigidbody_8h_aec94cc96cc69814097f420caaa1231d5}} 
+\index{rigidbody.h@{rigidbody.h}!InitRigidbody@{InitRigidbody}}
+\index{InitRigidbody@{InitRigidbody}!rigidbody.h@{rigidbody.h}}
+\doxysubsubsection{\texorpdfstring{InitRigidbody()}{InitRigidbody()}}
+{\footnotesize\ttfamily void Init\+Rigidbody (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_rigidbody}{Rigidbody}} $\ast$}]{rb }\end{DoxyParamCaption})}
+
+
+
+Init a rigidbody with default values. 
+
+\begin{DoxyDate}{Date}
+May 2021 
+\end{DoxyDate}
+\mbox{\Hypertarget{rigidbody_8h_ab0c43059b74977be129a06fb78083b89}\label{rigidbody_8h_ab0c43059b74977be129a06fb78083b89}} 
+\index{rigidbody.h@{rigidbody.h}!VelocityAtTime@{VelocityAtTime}}
+\index{VelocityAtTime@{VelocityAtTime}!rigidbody.h@{rigidbody.h}}
+\doxysubsubsection{\texorpdfstring{VelocityAtTime()}{VelocityAtTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vector3}{Vector3}} Velocity\+At\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vector3}{Vector3}}}]{Init\+Velocity,  }\item[{\mbox{\hyperlink{struct_vector3}{Vector3}}}]{Acceleration,  }\item[{float}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Calculate the velocity at a given time. 
+
+\begin{DoxyDate}{Date}
+May 2021 
+\end{DoxyDate}

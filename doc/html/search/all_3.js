@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['ict289_2dproject_2ec_16',['ICT289-Project.c',['../_i_c_t289-_project_8c.html',1,'']]],
-  ['init_17',['init',['../window_8h.html#ae538b90df6e3f3e9578a811e8ea5a6ad',1,'window.c']]],
-  ['input_2eh_18',['input.h',['../input_8h.html',1,'']]]
+  ['force_23',['Force',['../rigidbody_8h.html#a54632aba31eeb94f2c490a6bc6248789',1,'rigidbody.c']]],
+  ['forceduetogravity_24',['ForceDueToGravity',['../rigidbody_8h.html#a315e3b50fa148f491bc71f45ea9c2d09',1,'rigidbody.c']]]
 ];

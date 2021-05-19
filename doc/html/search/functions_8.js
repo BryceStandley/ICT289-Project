@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['trianglearea_82',['TriangleArea',['../vector_8h.html#a9be15cfaef503d3d1ef2515b5e3032d9',1,'vector.c']]]
+  ['render_123',['Render',['../window_8h.html#a43920c017162ec39cb0f0e8f8f56b313',1,'window.c']]]
 ];
