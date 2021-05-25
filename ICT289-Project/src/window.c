@@ -4,8 +4,9 @@ Vector3 cPosition;
 Object3D boneModel;
 Object3D* models;
 
-
-//Gameobject *sceneObjects;
+//Maybe even store the objects in a hashmap of sorts, more intuitive than indexes still iterable
+Gameobject sceneObjects[MAX_SCENE_OBJECTS];
+char fileNames[MAX_SCENE_OBJECTS][14] = { "apple.off", "arrow.off", "bone.off", "cube.off"};
 
 void WindowInit(int argc, char** argv, int windowWidth, int windowHeight, char* title)
 {
@@ -37,6 +38,7 @@ void WindowInit(int argc, char** argv, int windowWidth, int windowHeight, char* 
 	printf("Program lanuched successfully!");
 
 	glutTimerFunc(1, InputTimer, 0);
+	glutTimerFunc(1, UpdatePhysics, 1);
 
 }
 
@@ -76,25 +78,20 @@ void SetLighting()
 // arrow projectile, and renders the arrows first falling, then having applied the 
 // velocity being shot, which may make it look choppy
 
+//inputs?
 void DrawBow() 
 {
 	//Animates the drawing of the bow, uses timer to pull string back, until a maximum value
 	//Maximum value yields maximum velocity
 }
 
+//might move to inputs?
 void Shoot() 
 {
 	// Will make the arrow object collidable, visible
 	//rotate it to the camera angle such that the point faces away
 	//Applies velocity to data model of given arrow object
 	//
-}
-
-void Update() 
-{
-	//All data models (gameobjects) are updated here..
-	//The appropriate physical data is manipulated here
-	//-such that Render(); will redraw these updated objects
 }
 
 void Render()
@@ -123,9 +120,13 @@ void Render()
 
 	//Drawing Off Files
 	glPopMatrix();
-	glTranslatef(-10.0f, 0.0f, 5.0f);
-	DrawOffFile(&boneModel);
-	//DrawOffModels(&models);
+
+	glTranslatef(10.0f, 3.0f, 5.0f);
+	DrawOffFile(&sceneObjects[0].object3D);
+
+	glTranslatef(5.0f, 3.0f, -5.0f);
+	DrawOffFile(&sceneObjects[3].object3D);
+
 
 
 	//Swap the buffers
@@ -172,6 +173,22 @@ void WindowReSize(int w, int h)
 }
 
 void LoadModels()
-{
-	if (!LoadOffFile("./res/models/bone.off", &boneModel)) printf("File at './res/models/bone.off' failed to load\n");
+{	
+	
+	
+	//This can be better implemented, just wanna see it WORK :')
+	for (int i = 0; i < MAX_SCENE_OBJECTS; i++)
+	{
+		Gameobject newOb;
+		InitRigidbody(&sceneObjects[i].rigidbody);
+		InitEmptyObject(&sceneObjects[i].object3D);
+
+		char concatTemp[50] = "./res/models/";
+		strcpy(&newOb.name,&fileNames[i]);
+
+		if (!LoadOffFile(strcat(&concatTemp, &fileNames[i]), &sceneObjects[i].object3D)) printf("File at './res/models/bone.off' failed to load\n");
+		newOb.object3D = sceneObjects[i].object3D;
+
+		sceneObjects[i] = newOb;
+	}
 }

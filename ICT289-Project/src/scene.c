@@ -19,10 +19,10 @@ void DrawCubeOnGround(float scale)
 }
 
 
-void DrawOffModels(Object3D* objects)
+void DrawOffModels(Gameobject* objects)
 {
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < MAX_SCENE_OBJECTS; i++)
 	{
-		DrawOffFile(&objects[i]);
+		DrawOffFile(&objects[i].object3D);
 	}
 }

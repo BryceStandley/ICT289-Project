@@ -40,7 +40,7 @@ int LoadOffFile(char* filePath, Object3D* object)
 	{
 		#if _WIN32
 		int x = 0, y = 0, z = 0, w = 0;
-			if (fscanf_s(file, "%d %d %d %d", &x, &y, &z, &w) == 0) return 0;
+			if (fscanf_s(file, "%d %d %d %d", &w ,&x, &y, &z) == 0) return 0;
 			object->faceIndices[i].x = (float)x;
 			object->faceIndices[i].y = (float)y;
 			object->faceIndices[i].z = (float)z;
@@ -76,7 +76,7 @@ void DrawOffFile(Object3D* object)
 		f.y = object->faceIndices[i].y;
 		f.z = object->faceIndices[i].z;
 
-		glBegin(GL_TRIANGLES);
+		glBegin(GL_LINE_LOOP);
 		glColor3f(RED);
 		glVertex3f(object->vertexPoints[(int)f.x].x, object->vertexPoints[(int)f.x].y, object->vertexPoints[(int)f.x].z);
 		glVertex3f(object->vertexPoints[(int)f.y].x, object->vertexPoints[(int)f.y].y, object->vertexPoints[(int)f.y].z);

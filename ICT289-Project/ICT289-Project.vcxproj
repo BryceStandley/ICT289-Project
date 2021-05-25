@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\camera.c" />
+    <ClCompile Include="src\gameobject.c" />
     <ClCompile Include="src\ICT289-Project.c" />
     <ClCompile Include="src\input.c" />
     <ClCompile Include="src\model.c" />
@@ -29,10 +30,10 @@
     <ClCompile Include="src\window.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="collider.h" />
-    <ClInclude Include="gameobject.h" />
     <ClInclude Include="src\camera.h" />
+    <ClInclude Include="src\collision.h" />
     <ClInclude Include="src\colours.h" />
+    <ClInclude Include="src\gameobject.h" />
     <ClInclude Include="src\input.h" />
     <ClInclude Include="src\model.h" />
     <ClInclude Include="src\rigidbody.h" />

@@ -39,6 +39,9 @@
     <ClCompile Include="src\rigidbody.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\gameobject.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\camera.h">
@@ -65,10 +68,10 @@
     <ClInclude Include="src\rigidbody.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gameobject.h">
+    <ClInclude Include="src\gameobject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="collider.h">
+    <ClInclude Include="src\collision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

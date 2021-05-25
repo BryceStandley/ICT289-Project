@@ -1,9 +1,12 @@
 #pragma once
 #ifndef SCENE_H
 #define SCENE_H
+#define MAX_SCENE_OBJECTS 4
+
 #include <GL/freeglut.h>
 #include "vector.h"
 #include "model.h"
+#include "gameobject.h"
 /**
  * \file scene.h
  * \author Bryce Standley
