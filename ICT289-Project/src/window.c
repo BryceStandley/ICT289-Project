@@ -94,6 +94,22 @@ void Shoot()
 	//
 }
 
+void UpdatePhysics(Gameobject* gameobject)
+{
+	//All data models (gameobjects) are updated here..
+	//The appropriate physical data is manipulated here
+	//-such that Render(); will redraw these updated objects
+
+	float deltaTime = 0;
+
+	Vector3 displacement = Displace(gameobject->rigidbody.Position, gameobject->rigidbody.velocity, gameobject->rigidbody.Acceleration, deltaTime);
+	float disAbs = sqrt(pow(displacement.x, 2) + pow(displacement.y, 2) + pow(displacement.z, 2));
+
+	gameobject->rigidbody.speed = disAbs / deltaTime;
+
+	glutTimerFunc(1, UpdatePhysics, 1);
+}
+
 void Render()
 {
 	//Clear the colours and transforms
