@@ -1,5 +1,6 @@
 #pragma once
 #include "vector.h"
+#include <stdbool.h>
 
 
 #define RIGIDBODY_H
@@ -23,8 +24,6 @@ typedef struct Rigidbody
 	float speed;
 	Vector3 Acceleration;
 	Vector3 Force;
-
-	Vector3 Position;
 	BODYTYPE type;
 }Rigidbody;
 

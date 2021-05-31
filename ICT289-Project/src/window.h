@@ -48,5 +48,22 @@ void WindowReSize(int w, int h);
 */
 void LoadModels();
 
+/**
+ * \author Bryce Standley
+ * \brief  Loads the endscreen image into opengl and creates a texture ID
+ * \date  May 2021
+ */
+GLuint LoadEndScreen(const char* filename, int width, int height);
+
+/**
+ * \file window.h
+ * \author Bryce Standley
+ * \brief Draws the end screen image to a quad on the screen
+ * \date  May 2021
+ */
+void DrawEndScreen();
+
+void UpdatePhysics(GameObject* gameobject);
+
 
 #endif // !WINDOW_H

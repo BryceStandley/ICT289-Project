@@ -1,12 +1,11 @@
 #pragma once
 #ifndef SCENE_H
 #define SCENE_H
-#define MAX_SCENE_OBJECTS 4
+#define MAX_SCENE_OBJECTS 5
 
 #include <GL/freeglut.h>
 #include "vector.h"
 #include "model.h"
-#include "gameobject.h"
 /**
  * \file scene.h
  * \author Bryce Standley
@@ -30,7 +29,7 @@ void DrawCubeOnGround(float scale);
 * \brief Used to draw multiple OFF models to the scene
 * \todo Fix memory alloc and param passing for rendering
 */
-void DrawOffModels(Object3D* objects);
+void DrawOffModels(GameObject* objects);
 
 #endif // !SCENE_H
 

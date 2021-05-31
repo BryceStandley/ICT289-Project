@@ -8,6 +8,7 @@ void InitRigidbody(Rigidbody* rb)
 	rb->speed = 0;
 	rb->Acceleration = (Vector3){ .x = 0, .y = rb->gravity, .z = 0 };
 	rb->Force = (Vector3){ .x = 0, .y = 0, .z = 0 };
+	rb->type = STATIC;
 }
 
 Vector3 VelocityAtTime(Vector3 InitVelocity, Vector3 Acceleration, float deltaTime)
@@ -36,6 +37,7 @@ Vector3 Displace(Vector3 position, Vector3 velocity, Vector3 Acceleration, float
 Vector3 FinalVelocity(Vector3 initVelocity, Vector3 Acceleration, Vector3 Displacement)
 {
 	Vector3 result = Add3(Pow3(initVelocity, 2), Multiply3(Scale3(Acceleration, 2), Displacement));
+	return result;
 }
 
 Vector3 Force(float mass, Vector3 Acceleration)

@@ -20,9 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\camera.c" />
-    <ClCompile Include="src\gameobject.c" />
     <ClCompile Include="src\ICT289-Project.c" />
     <ClCompile Include="src\input.c" />
+    <ClCompile Include="src\material.c" />
     <ClCompile Include="src\model.c" />
     <ClCompile Include="src\rigidbody.c" />
     <ClCompile Include="src\scene.c" />
@@ -33,8 +33,8 @@
     <ClInclude Include="src\camera.h" />
     <ClInclude Include="src\collision.h" />
     <ClInclude Include="src\colours.h" />
-    <ClInclude Include="src\gameobject.h" />
     <ClInclude Include="src\input.h" />
+    <ClInclude Include="src\material.h" />
     <ClInclude Include="src\model.h" />
     <ClInclude Include="src\rigidbody.h" />
     <ClInclude Include="src\scene.h" />

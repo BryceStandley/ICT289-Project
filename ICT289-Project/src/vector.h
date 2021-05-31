@@ -30,6 +30,13 @@ typedef struct Vector3 { float x, y, z; } Vector3;
  */
 typedef struct Vector4 { float x, y, z, w; } Vector4;
 
+/**
+ * \brief Vector data structure with 5 components
+ * create a vector5 by using a compund literal
+ * ie Vector5 v = (Vector5){.x = 0.0f, .y = 0.0f, .z = 0.0f, .w = 0.0f, .u = 0.0f};
+ */
+typedef struct Vector5 { float x, y, z, w, u; } Vector5;
+
 /** 
 * \brief Transform struct that can hold 3 vector3 data structures
 *  A transform can be initialized by using compound literals

@@ -213,7 +213,7 @@ float DotProduct3(Vector3 a, Vector3 b) { return (a.x * b.x) + (a.y * b.y) + (a.
 Vector3 CrossProduct3(Vector3 a, Vector3 b)
 {
 	Vector3 v;
-	v.x = (a.y * b.z) - (a.z - b.y);
+	v.x = (a.y * b.z) - (a.z * b.y);
 	v.y = (a.z * b.x) - (a.x * b.z);
 	v.z = (a.x * b.y) - (a.y * b.x);
 	return v;
@@ -251,27 +251,27 @@ float TriangleArea(float base, float height) { return 0.5 * base * height; }
 Vector2 Normalize2(Vector2 a)
 {
 	Vector2 v;
-	v.x = a.x * Magnatude2(a);
-	v.y = a.y * Magnatude2(a);
+	v.x = a.x / Magnatude2(a);
+	v.y = a.y / Magnatude2(a);
 	return v;
 }
 
 Vector3 Normalize3(Vector3 a)
 {
 	Vector3 v;
-	v.x = a.x * Magnatude3(a);
-	v.y = a.y * Magnatude3(a);
-	v.z = a.z * Magnatude3(a);
+	v.x = a.x / Magnatude3(a);
+	v.y = a.y / Magnatude3(a);
+	v.z = a.z / Magnatude3(a);
 	return v;
 }
 
 Vector4 Normalize4(Vector4 a)
 {
 	Vector4 v;
-	v.x = a.x * Magnatude4(a);
-	v.y = a.y * Magnatude4(a);
-	v.z = a.z * Magnatude4(a);
-	v.w = a.w * Magnatude4(a);
+	v.x = a.x / Magnatude4(a);
+	v.y = a.y / Magnatude4(a);
+	v.z = a.z / Magnatude4(a);
+	v.w = a.w / Magnatude4(a);
 	return v;
 }
 

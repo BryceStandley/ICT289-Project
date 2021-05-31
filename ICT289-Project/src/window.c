@@ -1,12 +1,19 @@
 #include "window.h"
 
 Vector3 cPosition;
-Object3D boneModel;
-Object3D* models;
+GameObject targetModel;
+GameObject bow;
+GLint endScreenTextureID;
+char* endScreenImagePath = "./res/images/endscreen.raw";
+int endScreenWidth = 800;
+int endScreenHeight = 600;
+float deltaTime = 0;
+float previousTime = 0;
+float currentTime = 0;
 
 //Maybe even store the objects in a hashmap of sorts, more intuitive than indexes still iterable
-Gameobject sceneObjects[MAX_SCENE_OBJECTS];
-char fileNames[MAX_SCENE_OBJECTS][14] = { "apple.off", "arrow.off", "bone.off", "cube.off"};
+GameObject sceneObjects[MAX_SCENE_OBJECTS];
+char fileNames[MAX_SCENE_OBJECTS][14] = { "apple.off", "arrow.off", "bow.off", "bone.off", "cube.off"};
 
 void WindowInit(int argc, char** argv, int windowWidth, int windowHeight, char* title)
 {
@@ -37,38 +44,35 @@ void WindowInit(int argc, char** argv, int windowWidth, int windowHeight, char* 
 
 	printf("Program lanuched successfully!");
 
+	previousTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0f;
+
 	glutTimerFunc(1, InputTimer, 0);
-	glutTimerFunc(1, UpdatePhysics, 1);
+	//glutTimerFunc(1, UpdatePhysics, 1);
 
 }
 
 void SetLighting()
 {
-	//Put Any lighting code here
 	//Lighting code used from labs
-	GLfloat lightPos[] = {1.0f, 1.0f, 1.0f, 0.0f };
-	GLfloat specular[] = {1.0f, 1.0f, 1.0f, 1.0f };
+	GLfloat lightPos[] = {10.0f, 60.0f, 10.0f, 1.0f };
+	GLfloat diffuse[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	GLfloat ambient[] = {0.2f, 0.2f, 0.2f, 1.0f };
-	GLfloat shininess[] = { 50.0f };
+
+	//Enable lighting
+	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0);
+
 	glShadeModel(GL_SMOOTH);
 
 	// Define position of light source
 	glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
 
 	// Define lighting model
-	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambient);
+	glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
 
-	// Define material properties
-	glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
-	glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
-	glMaterialfv(GL_FRONT, GL_DIFFUSE,specular);
-
-	glEnable(GL_COLOR_MATERIAL);
-
-	//Enable lighting
-	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
 	glEnable(GL_DEPTH_TEST);
+	glDisable(GL_LIGHTING);
 }
 
 //I forsee a problem with this
@@ -94,55 +98,102 @@ void Shoot()
 	//
 }
 
-void UpdatePhysics(Gameobject* gameobject)
+void UpdatePhysics(GameObject* gameobject)
 {
 	//All data models (gameobjects) are updated here..
 	//The appropriate physical data is manipulated here
 	//-such that Render(); will redraw these updated objects
 
-	float deltaTime = 0;
+	glutTimerFunc(1000/60, UpdatePhysics, 1);
+	currentTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0f;
+	deltaTime = currentTime - previousTime;
+	if (gameobject->rigidbody.type != STATIC)
+	{
+		Transform newTransorm;
+		newTransorm.Position = Displace(gameobject->transform.Position, gameobject->rigidbody.velocity, gameobject->rigidbody.Acceleration, deltaTime);
 
-	Vector3 displacement = Displace(gameobject->rigidbody.Position, gameobject->rigidbody.velocity, gameobject->rigidbody.Acceleration, deltaTime);
-	float disAbs = sqrt(pow(displacement.x, 2) + pow(displacement.y, 2) + pow(displacement.z, 2));
+		Rigidbody newRigidbody = gameobject->rigidbody;
+		newRigidbody.velocity = VelocityAtTime(gameobject->rigidbody.velocity, gameobject->rigidbody.Acceleration, deltaTime);
 
-	gameobject->rigidbody.speed = disAbs / deltaTime;
 
-	glutTimerFunc(1, UpdatePhysics, 1);
+		/*if (newTransorm.Position.y <= gameobject->ballRadius)
+		{
+			newRigidbody.velocity = Invert3(Scale3(newRigidbody.velocity, 0.75));
+			newTransorm.Position.y = ball->ballRadius;
+		}*/
+
+		gameobject->transform = newTransorm;
+		gameobject->rigidbody = newRigidbody;
+	}
+	previousTime = currentTime;
+	glutPostRedisplay();
+
 }
 
 void Render()
 {
 	//Clear the colours and transforms
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-
 	UpdateCamera(&camera);
-	SetLighting();
+	//printf("Camera.Forward: %f, %f, %f\n", camera.Forward.x, camera.Forward.y, camera.Forward.z);
+	sceneObjects[2].transform.Position = camera.transform.Position;
+
+	glPushMatrix();
+	TranslateToObjectPosition(&sceneObjects[2]);
+	glRotatef(-camera.transform.Rotation.y * (180.0f / M_PI), 0.0f, 1.0f, 0.0f);
+	glRotatef(camera.transform.Rotation.z * (180.0f / M_PI), 0.0f, 0.0f, 1.0f);
+
+
+	glTranslatef(0.005f, 0.1f, 1.25f);
+	glRotatef(105, 0, 1, 0);
+	glScalef(sceneObjects[2].transform.Scale.x, sceneObjects[2].transform.Scale.y, sceneObjects[2].transform.Scale.z);
+	DrawOffFile(&sceneObjects[2]);
+	if (setArrow) 
+	{
+		//set the arrow to the same position as the bow, should be in the center
+		//draw the arrow
+	}
+	glPopMatrix();
+
+	glPushMatrix();
+	if (fireArrow)
+	{
+		//set the arrows rb isStatic to false
+		//update the arrows position
+	}
+	glPopMatrix();
+
 
 	//Draw the ground plane
-	glColor3f(FORREST_GREEN);
+	glColor3f(DARK_GREEN);
 	DrawGroundPlane(100, 100);
 
 
 	//Draw a test cube
+	glPushMatrix();
 	glColor3f(WHITE);
 	glTranslatef(10.0f, 0.0f, 0.0f);
 	DrawCubeOnGround(1);
 	glPopMatrix();
+
 	//Draw a test cube
+	glPushMatrix();
 	glColor3f(RED);
 	glTranslatef(5.0f, 0.0f, -10.0f);
 	DrawCubeOnGround(1);
-
-	//Drawing Off Files
 	glPopMatrix();
 
-	glTranslatef(10.0f, 3.0f, 5.0f);
-	DrawOffFile(&sceneObjects[0].object3D);
+	//Drawing Off Files
+	DrawOffFile(&sceneObjects[0]);
 
-	glTranslatef(5.0f, 3.0f, -5.0f);
-	DrawOffFile(&sceneObjects[3].object3D);
 
+
+	if (endscreenDisplay)
+	{
+		DrawEndScreen();
+	}
 
 
 	//Swap the buffers
@@ -169,9 +220,20 @@ void init(int w, int h)
 	camera.transform.Rotation = (Vector3){ .x = 0.0f, .y = 0.0f, .z = 0.0f };
 	camera.Forward = (Vector3){ .x = 0.0f, .y = 0.0f, .z = -1.0f };
 
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+
+	GLdouble fov = 80;		// degrees
+	GLdouble aspect = 1;		// aspect ratio aspect = height/width
+	GLdouble nearVal = 0.001f;
+	GLdouble farVal = 1000;     // near and far clipping planes
+	gluPerspective(fov, aspect, nearVal, farVal);
+
 	UpdateCamera(&camera);
 
 	LoadModels();
+
+	endScreenTextureID = LoadEndScreen(endScreenImagePath, endScreenWidth, endScreenHeight);
 
 }
 
@@ -195,16 +257,66 @@ void LoadModels()
 	//This can be better implemented, just wanna see it WORK :')
 	for (int i = 0; i < MAX_SCENE_OBJECTS; i++)
 	{
-		Gameobject newOb;
+		GameObject newOb;
 		InitRigidbody(&sceneObjects[i].rigidbody);
-		InitEmptyObject(&sceneObjects[i].object3D);
+		InitEmptyObject(&sceneObjects[i]);
 
 		char concatTemp[50] = "./res/models/";
-		strcpy(&newOb.name,&fileNames[i]);
+		strcpy(&newOb.name, &fileNames[i]);
 
-		if (!LoadOffFile(strcat(&concatTemp, &fileNames[i]), &sceneObjects[i].object3D)) printf("File at './res/models/bone.off' failed to load\n");
-		newOb.object3D = sceneObjects[i].object3D;
+		if (!LoadOffFile(strcat(&concatTemp, &fileNames[i]), &newOb)) printf("File at './res/models/bone.off' failed to load\n");
+		//newOb = sceneObjects[i];
 
 		sceneObjects[i] = newOb;
 	}
+}
+
+
+GLuint LoadEndScreen(const char* filename, int width, int height)
+{
+	GLuint texture;
+	unsigned char* data;
+	FILE* file;
+	file = fopen(filename, "rb");
+	if (file == NULL) return 0;
+	data = (unsigned char*)malloc(width * height * 4);
+	fread(data, width * height * 4, 1, file);
+	fclose(file);
+
+	glGenTextures(1, &texture);
+	glBindTexture(GL_TEXTURE_2D, texture);
+	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_DECAL);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_DECAL);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	gluBuild2DMipmaps(GL_TEXTURE_2D, 4, width, height, GL_RGBA, GL_UNSIGNED_BYTE, data);
+
+	free(data);
+
+	return texture;
+	
+}
+
+void DrawEndScreen()
+{
+	DisplayEndScreen(&camera);
+
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glPushAttrib(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glPushMatrix();
+	glEnable(GL_TEXTURE_2D);
+
+	glBegin(GL_QUADS);
+	glNormal3f(0.0, 0.0, 1.0);
+	glTexCoord2d(1, 1); glVertex3f(-1.0, -1.0, 0.0);
+	glTexCoord2d(1, 0); glVertex3f(-1.0, 1.0, 0.0);
+	glTexCoord2d(0, 0); glVertex3f(1.0, 1.0, 0.0);
+	glTexCoord2d(0, 1); glVertex3f(1.0, -1.0, 0.0);
+	glEnd();
+
+	glDisable(GL_TEXTURE_2D);
+	glPopAttrib();
 }

@@ -60,6 +60,14 @@ void RotateCameraX(Camera* c, float incr);
 */
 void RotateCameraY(Camera* c, float incr);
 
+/**
+ * \file camera.h
+ * \author Bryce Standley
+ * \brief Updates the cameras look at settings to correctly display the endscreen image
+ * \date  May 2021
+ */
+void DisplayEndScreen(Camera* c);
+
 
 
 #endif // !CAMERA_H

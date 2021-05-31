@@ -8,6 +8,9 @@
 #include "vector.h"
 #include "colours.h"
 #include <GL/freeglut.h>
+#include "material.h"
+#include "rigidbody.h"
+#include <corecrt_math_defines.h>
 
 /**
  * \file model.h
@@ -21,30 +24,46 @@
 * \brief Structure of a 3D Model based arounf the OFF file type
 */
  
-typedef struct Object3D
+typedef struct GameObject
 {
+	char* name;
 	int numFaces;
 	int numPoints;
 	int numEdges;
 	Vector3* vertexPoints;
-	Vector4* faceIndices;
+	Vector5* faceIndices;
 	Transform transform;
-} Object3D;
+	Rigidbody rigidbody;
+	Vector3* normals;
+	int TextureID;
+	Material material;
+} GameObject;
 
 /*
 * \brief Init's values in the object before loading in the file. Similar to a default constructor for the object
 */
-void InitEmptyObject(Object3D* object);
+void InitEmptyObject(GameObject* object);
 
 /*
 * \brief Loads in a given 3D model OFF file and returns true or false for a successful load
 */
-int LoadOffFile(char* filePath, Object3D* object);
+int LoadOffFile(char* filePath, GameObject* object);
 
 /*
 * \brief Used to render a OFF file. Use this function within the glut render call
 */
-void DrawOffFile(Object3D* object);
+void DrawOffFile(GameObject* object);
+
+/**
+ * \file model.h
+ * \author Bryce Standley
+ * \brief Translates the scene to a gameobjects position
+ * \date  May 2021
+ */
+void TranslateToObjectPosition(GameObject* object);
+
+
+void SetName(GameObject* gameobject, char* name);
 
 
 #endif // !MODEL_H

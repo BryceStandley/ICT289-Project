@@ -14,6 +14,7 @@
 #define WHITE 1.0f, 1.0f, 1.0f
 #define RED 1.0f, 0.0f, 0.0f
 #define BLUE 0.0f, 0.0f, 1.0f
+#define GREEN 0.0f, 1.0f, 0.0f
 #define YELLOW 1.0f, 1.0f, 0.0f
 #define PURPLE 1.0f, 0.0f, 1.0f
 #define CYAN 0.5f, 1.0f, 1.0f
@@ -27,6 +28,7 @@
 #define BRONZE 0.1f, 0.1f, 0.0f
 #define DARK_BLUE 0.0f, 0.1f, 0.1f
 #define FORREST_GREEN 0.0f, 0.1f, 0.0f
+#define DARK_GREEN 0.0f, 0.5f, 0.0f
 #define BROWN 0.1f, 0.0f, 0.0f
 
 #endif // !COLOURS_H

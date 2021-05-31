@@ -5,9 +5,10 @@ void UpdateCameraLookAt(Camera* c)
 {
 	Vector3 v;
 	v.x = (cos(c->transform.Rotation.x) * cos(c->transform.Rotation.y)) + c->transform.Position.x;
-	v.y = sin(c->transform.Rotation.y) + +c->transform.Position.y;
-	v.z = (sin(c->transform.Rotation.x) * cos(c->transform.Rotation.y)) + +c->transform.Position.z;
+	v.y = sin(c->transform.Rotation.y) + c->transform.Position.y;
+	v.z = (sin(c->transform.Rotation.x) * cos(c->transform.Rotation.y)) + c->transform.Position.z;
 	c->LookAt = v;
+	
 }
 
 
@@ -47,7 +48,7 @@ void RotateCameraX(Camera* c, float angle)
 
 void RotateCameraY(Camera* c, float angle)
 {
-	float limit = 89.0 * M_PI / 180.0;
+	float limit = 89.0f * M_PI / 180.0f;
 	c->transform.Rotation.y += angle;
 	if (c->transform.Rotation.y < -limit)
 	{
@@ -72,4 +73,18 @@ void UpdateCamera(Camera* c)
 	gluLookAt(c->transform.Position.x, c->transform.Position.y, c->transform.Position.z,
 				c->LookAt.x, c->LookAt.y, c->LookAt.z,
 					c->Up.x, c->Up.y, c->Up.z);
+	c->Forward = Normalize3(c->LookAt);
+}
+
+void DisplayEndScreen(Camera* c)
+{
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	/* fov, aspect, near, far */
+	gluPerspective(60, 1, 1, 10);
+	gluLookAt(0, 0, -2, /* eye */
+				0, 0, 2, /* center */
+					0, 1, 0); /* up */
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
 }

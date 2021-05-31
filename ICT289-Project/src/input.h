@@ -13,6 +13,9 @@
 extern Camera camera;
 extern int viewportWidth;
 extern int viewportHieght;
+extern bool endscreenDisplay;
+extern bool setArrow;
+extern bool fireArrow;
 
 
 /**
