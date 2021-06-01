@@ -8,6 +8,8 @@
 #include "colours.h"
 #include "model.h"
 
+#define TARGET_FPS 1000.0f/60.0f
+
 /**
  * \file window.h
  * \author Bryce Standley
@@ -63,7 +65,7 @@ GLuint LoadEndScreen(const char* filename, int width, int height);
  */
 void DrawEndScreen();
 
-void UpdatePhysics(GameObject* gameobject);
+void UpdatePhysics(int k);
 
 
 #endif // !WINDOW_H

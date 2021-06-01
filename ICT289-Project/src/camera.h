@@ -15,13 +15,21 @@
 
 /*
 * \brief Data structure of the camera
+* \param transform - The transform data of the camera - position, rotation, scale
+* \param LookAt - The direction the camera is looking at
+* \param WorldUp - the up vector of the world to the camera
+* \param Forward - the vector thats always forward from the cameras view (normalized)
+* \param Up - Up vector in relation to the camera
+* \param Left - the left vector to the camera
 */
 typedef struct Camera
 {
 	Transform transform;
 	Vector3 LookAt;
-	Vector3 Up;
+	Vector3 WorldUp;
 	Vector3 Forward;
+	Vector3 Up;
+	Vector3 Left;
 }Camera;
 
 /*

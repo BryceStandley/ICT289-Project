@@ -62,6 +62,31 @@ void DrawOffFile(GameObject* object);
  */
 void TranslateToObjectPosition(GameObject* object);
 
+/**
+ * \file model.h
+ * \author Bryce Standley
+ * \brief Translates the scene to a given vec3
+ * \date  June 2021
+ */
+void TranslateToVec3Position(Vector3 a);
+
+/**
+ * \file model.h
+ * \author Bryce Standley
+ * \brief Uses openGl rotatef to rotate around a give axis in radians
+ * \date  June 2021
+ */
+void RotateAroundRad(Vector3 a);
+
+/**
+ * \file model.h
+ * \author Bryce Standley
+ * \brief Uses openGL rotatef to rotate a given axis in degrees
+ * \date  June 2021
+ */
+void RotateAroundDeg(Vector3 a);
+
+
 
 void SetName(GameObject* gameobject, char* name);
 

@@ -16,6 +16,7 @@ extern int viewportHieght;
 extern bool endscreenDisplay;
 extern bool setArrow;
 extern bool fireArrow;
+extern bool inAir;
 
 
 /**

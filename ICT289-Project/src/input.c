@@ -9,6 +9,7 @@ bool keys[256];
 bool endscreenDisplay = false;
 bool setArrow = false;
 bool fireArrow = false;
+bool inAir = false;
 
 void PressNormalInput(unsigned char key, int xVal, int yVal)
 {
@@ -44,6 +45,7 @@ void MouseButtonInput(int button, int state, int x, int y)
 			//draw bow
 			setArrow = true;
 			fireArrow = false;
+			inAir = false;
 		}
 	}
 
@@ -52,6 +54,7 @@ void MouseButtonInput(int button, int state, int x, int y)
 		//fire bow
 		fireArrow = true;
 		setArrow = false;
+		inAir = false;
 	}
 }
 

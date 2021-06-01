@@ -1,8 +1,5 @@
 #include "window.h"
 
-Vector3 cPosition;
-GameObject targetModel;
-GameObject bow;
 GLint endScreenTextureID;
 char* endScreenImagePath = "./res/images/endscreen.raw";
 int endScreenWidth = 800;
@@ -17,8 +14,6 @@ char fileNames[MAX_SCENE_OBJECTS][14] = { "apple.off", "arrow.off", "bow.off", "
 
 void WindowInit(int argc, char** argv, int windowWidth, int windowHeight, char* title)
 {
-	
-
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
 
@@ -47,7 +42,11 @@ void WindowInit(int argc, char** argv, int windowWidth, int windowHeight, char* 
 	previousTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0f;
 
 	glutTimerFunc(1, InputTimer, 0);
-	//glutTimerFunc(1, UpdatePhysics, 1);
+	glutTimerFunc(TARGET_FPS, UpdatePhysics, 1);
+
+	setArrow = false;
+	fireArrow = false;
+	inAir = false;
 
 }
 
@@ -98,36 +97,45 @@ void Shoot()
 	//
 }
 
-void UpdatePhysics(GameObject* gameobject)
+void UpdatePhysics(int k)
 {
 	//All data models (gameobjects) are updated here..
 	//The appropriate physical data is manipulated here
 	//-such that Render(); will redraw these updated objects
 
-	glutTimerFunc(1000/60, UpdatePhysics, 1);
+	glutTimerFunc(TARGET_FPS, UpdatePhysics, 1);
 	currentTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0f;
 	deltaTime = currentTime - previousTime;
-	if (gameobject->rigidbody.type != STATIC)
-	{
-		Transform newTransorm;
-		newTransorm.Position = Displace(gameobject->transform.Position, gameobject->rigidbody.velocity, gameobject->rigidbody.Acceleration, deltaTime);
 
-		Rigidbody newRigidbody = gameobject->rigidbody;
-		newRigidbody.velocity = VelocityAtTime(gameobject->rigidbody.velocity, gameobject->rigidbody.Acceleration, deltaTime);
-
-
-		/*if (newTransorm.Position.y <= gameobject->ballRadius)
+		for (int i = 0; i < MAX_SCENE_OBJECTS; i++)
 		{
-			newRigidbody.velocity = Invert3(Scale3(newRigidbody.velocity, 0.75));
-			newTransorm.Position.y = ball->ballRadius;
-		}*/
+			//Loop though all scene objects and check if their static or not
+			if (sceneObjects[i].rigidbody.type != STATIC)
+			{
+				//If the object isnt static, update their physics
+				Transform newTransorm;
+				newTransorm.Position = Displace(sceneObjects[i].transform.Position, sceneObjects[i].rigidbody.velocity, sceneObjects[i].rigidbody.Acceleration, deltaTime);
 
-		gameobject->transform = newTransorm;
-		gameobject->rigidbody = newRigidbody;
-	}
+				Rigidbody newRigidbody = sceneObjects[i].rigidbody;
+				newRigidbody.velocity = VelocityAtTime(sceneObjects[i].rigidbody.velocity, sceneObjects[i].rigidbody.Acceleration, deltaTime);
+
+				sceneObjects[i].transform = newTransorm;
+				sceneObjects[i].rigidbody = newRigidbody;
+			}
+
+			if (sceneObjects[i].transform.Position.y < 0)
+			{
+				// object on the floor
+				Vector3 currPos = sceneObjects[i].transform.Position;
+				currPos.y = 0;
+				sceneObjects[i].transform.Position = currPos;
+				sceneObjects[i].rigidbody.type = STATIC;
+
+			}
+		}
+
 	previousTime = currentTime;
 	glutPostRedisplay();
-
 }
 
 void Render()
@@ -137,34 +145,6 @@ void Render()
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	UpdateCamera(&camera);
-	//printf("Camera.Forward: %f, %f, %f\n", camera.Forward.x, camera.Forward.y, camera.Forward.z);
-	sceneObjects[2].transform.Position = camera.transform.Position;
-
-	glPushMatrix();
-	TranslateToObjectPosition(&sceneObjects[2]);
-	glRotatef(-camera.transform.Rotation.y * (180.0f / M_PI), 0.0f, 1.0f, 0.0f);
-	glRotatef(camera.transform.Rotation.z * (180.0f / M_PI), 0.0f, 0.0f, 1.0f);
-
-
-	glTranslatef(0.005f, 0.1f, 1.25f);
-	glRotatef(105, 0, 1, 0);
-	glScalef(sceneObjects[2].transform.Scale.x, sceneObjects[2].transform.Scale.y, sceneObjects[2].transform.Scale.z);
-	DrawOffFile(&sceneObjects[2]);
-	if (setArrow) 
-	{
-		//set the arrow to the same position as the bow, should be in the center
-		//draw the arrow
-	}
-	glPopMatrix();
-
-	glPushMatrix();
-	if (fireArrow)
-	{
-		//set the arrows rb isStatic to false
-		//update the arrows position
-	}
-	glPopMatrix();
-
 
 	//Draw the ground plane
 	glColor3f(DARK_GREEN);
@@ -188,6 +168,72 @@ void Render()
 	//Drawing Off Files
 	DrawOffFile(&sceneObjects[0]);
 
+	if (!setArrow && !fireArrow)
+	{
+		glPushMatrix();
+		RotateAroundRad(sceneObjects[1].transform.Rotation);
+		TranslateToObjectPosition(&sceneObjects[1]);
+		DrawOffFile(&sceneObjects[1]);
+		glPopMatrix();
+	}
+	/*
+	glLoadIdentity();
+	UpdateCamera(&camera);
+
+	sceneObjects[2].transform.Position = camera.transform.Position;
+	sceneObjects[2].transform.Position.y = 1.0f;
+	TranslateToVec3Position(sceneObjects[2].transform.Position);
+
+	glRotatef(-camera.transform.Rotation.y * (180.0f / M_PI), 0.0f, 0.0f, 1.0f);
+	float a1 = DotProduct3(sceneObjects[2].transform.Position, camera.Forward);
+	float magPos = Magnatude3(sceneObjects[2].transform.Position);
+	float magFwd = Magnatude3(camera.Forward);
+	float thetaX = (a1 / (magPos * magFwd)) * (180.0f / M_PI);
+	glRotatef(camera.transform.Rotation.x * (180.0f / M_PI), 0.0f, 1.0f, 0.0f);
+	TranslateToVec3Position((Vector3) {.x = 0.0f, .y = 0.0f, .z = -1.25f});
+	glRotatef(-70, 0, 1, 0);
+	*/
+	glPushMatrix();
+	glPushMatrix();
+	Vector3 c = camera.LookAt;
+	c.y = 1;
+	TranslateToVec3Position(Vector3Zero);
+	glRotatef(-camera.transform.Rotation.y, 0, 1, 0);
+	TranslateToVec3Position(c);
+	
+	//glRotatef(-camera.transform.Rotation.x, 1, 0, 1);
+	
+	DrawOffFile(&sceneObjects[2]);
+	glPopMatrix();
+	glPopMatrix();
+
+	if (setArrow && !fireArrow && !inAir)
+	{
+		glLoadIdentity();
+		UpdateCamera(&camera);
+
+		sceneObjects[1].transform = camera.transform;
+		TranslateToVec3Position(sceneObjects[1].transform.Position);
+		glRotatef(-camera.transform.Rotation.y * (180.0f / M_PI), 0.0f, 0.0f, 1.0f);
+		float a1 = DotProduct3(sceneObjects[1].transform.Position, camera.Forward);
+		float magPos = Magnatude3(sceneObjects[1].transform.Position);
+		float magFwd = Magnatude3(camera.Forward);
+		float thetaX = (a1 / (magPos * magFwd)) * (180.0f / M_PI);
+		glRotatef(camera.transform.Rotation.x* (180.0f / M_PI), 0.0f, 1.0f, 0.0f);
+		TranslateToVec3Position((Vector3) { .x = 0.0f, .y = 0.0f, .z = -1.25f });
+		glRotatef(-70, 0, 1, 0);
+		DrawOffFile(&sceneObjects[1]);
+		glPopMatrix();
+
+	}
+	else if (fireArrow && !setArrow && !inAir)
+	{
+		sceneObjects[1].rigidbody.type = DYNAMIC;
+		sceneObjects[1].rigidbody.velocity = Scale3(Multiply3(camera.Up, camera.Forward), 10.5f);
+		fireArrow = false;
+		inAir = true;
+	}
+
 
 
 	if (endscreenDisplay)
@@ -197,6 +243,7 @@ void Render()
 
 
 	//Swap the buffers
+	glFlush();
 	glutSwapBuffers();
 }
 
@@ -212,20 +259,18 @@ void init(int w, int h)
 	glutSetCursor(GLUT_CURSOR_NONE);
 	glutWarpPointer(viewportWidth / 2, viewportHieght / 2);
 
-	//Camera init to default values
-	cPosition = (Vector3){ .x = 0.0f, .y = 1.0f, .z = 0.0f };
-	camera.transform.Position = cPosition;
+	//Camera init to default values 
+	camera.transform.Position = (Vector3){ .x = 0.0f, .y = 1.0f, .z = 0.0f };
 	camera.LookAt = (Vector3){ .x = 5.0f, .y = 0.0f, .z = -10.0f };;
-	camera.Up = (Vector3){ .x = 0.0f, .y = 1.0f, .z = 0.0f };;
+	camera.WorldUp = (Vector3){ .x = 0.0f, .y = 1.0f, .z = 0.0f };;
 	camera.transform.Rotation = (Vector3){ .x = 0.0f, .y = 0.0f, .z = 0.0f };
-	camera.Forward = (Vector3){ .x = 0.0f, .y = 0.0f, .z = -1.0f };
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
 	GLdouble fov = 80;		// degrees
 	GLdouble aspect = 1;		// aspect ratio aspect = height/width
-	GLdouble nearVal = 0.001f;
+	GLdouble nearVal = 0.000001f;
 	GLdouble farVal = 1000;     // near and far clipping planes
 	gluPerspective(fov, aspect, nearVal, farVal);
 
@@ -264,8 +309,9 @@ void LoadModels()
 		char concatTemp[50] = "./res/models/";
 		strcpy(&newOb.name, &fileNames[i]);
 
-		if (!LoadOffFile(strcat(&concatTemp, &fileNames[i]), &newOb)) printf("File at './res/models/bone.off' failed to load\n");
-		//newOb = sceneObjects[i];
+		if (!LoadOffFile(strcat(&concatTemp, &fileNames[i]), &newOb)) printf("File at '%s' failed to load\n", &fileNames[i]);
+		Material plastic = Red_Shiny_Plastic;
+		newOb.material = plastic;
 
 		sceneObjects[i] = newOb;
 	}

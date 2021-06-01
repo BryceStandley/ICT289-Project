@@ -42,6 +42,16 @@ void StrafeCamera(Camera* c, float incr)
 void RotateCameraX(Camera* c, float angle)
 {
 	c->transform.Rotation.x += angle;
+	float degree = 360 * M_PI / 180.0f;
+	if (c->transform.Rotation.x > degree)
+	{
+		c->transform.Rotation.x = 0;
+	}
+
+	if (c->transform.Rotation.x < -degree)
+	{
+		c->transform.Rotation.x = 0;
+	}
 	UpdateCamera(c);
 }
 
@@ -72,8 +82,13 @@ void UpdateCamera(Camera* c)
 	glLoadIdentity();
 	gluLookAt(c->transform.Position.x, c->transform.Position.y, c->transform.Position.z,
 				c->LookAt.x, c->LookAt.y, c->LookAt.z,
-					c->Up.x, c->Up.y, c->Up.z);
+					c->WorldUp.x, c->WorldUp.y, c->WorldUp.z);
+
+	//Calculate related direction vectors based on the cameras position
 	c->Forward = Normalize3(c->LookAt);
+	c->Up = (Vector3){ .x = 0, .y = 1, .z = 0 };
+	c->Left = Normalize3(CrossProduct3(c->Up, c->Forward));
+	c->Up = Normalize3(CrossProduct3(c->Forward, c->Left));
 }
 
 void DisplayEndScreen(Camera* c)
@@ -84,7 +99,7 @@ void DisplayEndScreen(Camera* c)
 	gluPerspective(60, 1, 1, 10);
 	gluLookAt(0, 0, -2, /* eye */
 				0, 0, 2, /* center */
-					0, 1, 0); /* up */
+					0, 1, 0); /* WorldUp */
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 }

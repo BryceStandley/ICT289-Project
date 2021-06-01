@@ -98,14 +98,32 @@ void DrawOffFile(GameObject* object)
 		glVertex3f(p2.x, p2.y, p2.z);
 		glVertex3f(p3.x, p3.y, p3.z);
 		glEnd();
-		glDisable(GL_COLOR_MATERIAL);
-		glDisable(GL_NORMALIZE);
+		glDisable(GL_COLOR_MATERIAL | GL_NORMALIZE | GL_LIGHTING);
 	}
 }
 
 void TranslateToObjectPosition(GameObject* object)
 {
 	glTranslatef(object->transform.Position.x, object->transform.Position.y, object->transform.Position.z);
+}
+
+void TranslateToVec3Position(Vector3 a)
+{
+	glTranslatef(a.x, a.y, a.z);
+}
+
+void RotateAroundRad(Vector3 a)
+{
+	glRotatef(a.x * (180.0f / M_PI), 1.0f, 0.0f, 0.0f);
+	glRotatef(a.y * (180.0f / M_PI), 0.0f, 1.0f, 0.0f);
+	glRotatef(a.z * (180.0f / M_PI), 0.0f, 0.0f, 1.0f);
+}
+
+void RotateAroundDeg(Vector3 a)
+{
+	glRotatef(a.x, 1.0f, 0.0f, 0.0f);
+	glRotatef(a.y, 0.0f, 1.0f, 0.0f);
+	glRotatef(a.z, 0.0f, 0.0f, 1.0f);
 }
 
 void SetName(GameObject* gameobject, char* name)
