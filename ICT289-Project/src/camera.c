@@ -96,10 +96,12 @@ void UpdateCamera(Camera* c)
 	UpdateCameraMatrix(c);
 
 	//Calculate related direction vectors based on the cameras position
-	//c->Forward = Normalize3(DirectionVector3(Vector3Zero, c->LookAt));
+
 	c->Up = (Vector3){ .x = 0, .y = 1, .z = 0 };
 	c->Left = Normalize3(CrossProduct3(c->Up, c->Forward));
+	//c->Left = Normalize3(CrossProduct3(c->Forward, c->Up));
 	c->Up = CrossProduct3(c->Forward, c->Left);
+	//c->Up = CrossProduct3(c->Left, c->Forward);
 }
 
 void UpdateCameraMatrix(Camera* c)

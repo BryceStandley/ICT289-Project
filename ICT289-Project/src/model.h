@@ -38,6 +38,8 @@ typedef struct GameObject
 	Vector3* normals;
 	int TextureID;
 	Material material;
+	float collisionSphereRadius;
+	GLfloat rotationMatrix[16];
 } GameObject;
 
 /*

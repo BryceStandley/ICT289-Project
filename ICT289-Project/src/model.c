@@ -64,6 +64,68 @@ int LoadOffFile(char* filePath, GameObject* object)
 	object->transform.Rotation = Vector3Zero;
 	object->transform.Scale = Vector3One;
 	InitRigidbody(&object->rigidbody);
+
+	//find the collision sphere
+	float xMin = object->vertexPoints[0].x;
+	float xMax = object->vertexPoints[0].x;
+	float yMin = object->vertexPoints[0].y;
+	float yMax = object->vertexPoints[0].y;
+	float zMin = object->vertexPoints[0].z;
+	float zMax = object->vertexPoints[0].z;
+	float xCenter = 0.0;
+	float yCenter = 0.0;
+	float zCenter = 0.0;
+
+	for (int i = 0; i < object->numPoints; i++)
+	{
+		xCenter += object->vertexPoints[0].x;
+		yCenter += object->vertexPoints[0].y;
+		zCenter += object->vertexPoints[0].z;
+	}
+
+	xCenter /= object->numPoints;
+	yCenter /= object->numPoints;
+	zCenter /= object->numPoints;
+
+	for (int i = 0; i < object->numPoints; i++)
+	{
+		if (object->vertexPoints[i].x < xMin) { xMin = object->vertexPoints[i].x; }
+		if (object->vertexPoints[i].x > xMax) { xMax = object->vertexPoints[i].x; }
+
+		if (object->vertexPoints[i].y < yMin) { yMin = object->vertexPoints[i].y; }
+		if (object->vertexPoints[i].y > yMax) { yMax = object->vertexPoints[i].y; }
+
+		if (object->vertexPoints[i].z < zMin) { zMin = object->vertexPoints[i].z; }
+		if (object->vertexPoints[i].z > zMax) { zMax = object->vertexPoints[i].z; }
+	}
+
+	float radius = 0.0;
+	float* mag;
+	mag = (float*)malloc(object->numPoints * sizeof(float));
+	if (mag == NULL)
+	{
+		printf("Memory not allowcated!\n");
+	}
+	else
+	{
+		for (int i = 0; i < object->numPoints; i++)
+		{
+			Vector3 center = NewVector3(xCenter, yCenter, zCenter);
+			Vector3 point = NewVector3(object->vertexPoints[i].x, object->vertexPoints[i].y, object->vertexPoints[i].z);
+			mag[i] = Distance3(point, center);
+		}
+	}
+	radius = mag[0];
+
+	for (int i = 1; i < object->numPoints; i++)
+	{
+		if (mag[i] > radius)
+		{
+			radius = mag[i];
+		}
+	}
+
+	object->collisionSphereRadius = radius;
 	return 1;
 }
 

@@ -30,6 +30,8 @@ typedef struct Material
 
 #define Red_Shiny_Plastic  { {0.3f, 0.0f, 0.0f, 1.0f}, {0.6f, 0.0f, 0.0f, 1.0f}, {0.8f, 0.6f, 0.6f, 1.0f}, {100.0f} }
 
+#define Wood  { {0.658f,  0.450f, 0.086f, 1.0f}, {0.6f, 0.0f, 0.0f, 1.0f}, {0.8f, 0.6f, 0.6f, 1.0f}, {100.0f} }
+
 
 /**
  * \file material.h

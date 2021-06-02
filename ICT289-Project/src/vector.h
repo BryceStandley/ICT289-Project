@@ -80,6 +80,13 @@ float Magnatude4(Vector4 a);
 float Distance2(Vector2 a, Vector2 b);
 
 /**
+ * \brief Finds the distance between two Vector3's
+ * \param Vector3 a
+ * \param Vector3 b
+ */
+float Distance3(Vector3 a, Vector3 b);
+
+/**
  * \brief Finds the distance between two Vector4's
  * \param Vector4 a
  * \param Vector4 b
@@ -316,6 +323,14 @@ Vector3 Invert3(Vector3 a);
  * \param Vector4 a
  */
 Vector4 Invert4(Vector4 a);
+
+/**
+ * \file vector.h
+ * \author Bryce Standley
+ * \brief Creates a new vector3 out of xyz components and returns it
+ * \date  June 2021
+ */
+Vector3 NewVector3(float x, float y, float z);
 
 #endif // !VECTOR_H
 

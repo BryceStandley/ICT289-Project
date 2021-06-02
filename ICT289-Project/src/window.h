@@ -65,7 +65,29 @@ GLuint LoadEndScreen(const char* filename, int width, int height);
  */
 void DrawEndScreen();
 
+/**
+ * \file window.h
+ * \author Bryce Standley
+ * \brief Updates all objects with physics
+ * \date  June 2021
+ */
 void UpdatePhysics(int k);
+
+/**
+ * \file window.h
+ * \author Bryce Standley
+ * \brief Draws the bow to the scene
+ * \date  June 2021
+ */
+void DrawBow();
+
+/**
+ * \file window.h
+ * \author Bryce Standley
+ * \brief Draws the arrow
+ * \date  June 2021
+ */
+void DrawArrow();
 
 
 #endif // !WINDOW_H

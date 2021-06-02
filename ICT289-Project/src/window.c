@@ -74,34 +74,9 @@ void SetLighting()
 	glDisable(GL_LIGHTING);
 }
 
-//I forsee a problem with this
-// are the callbacks run simutaneously?
-// because the data model may run Updated(), apply gravity
-// While the player halfway through the application of gravity, applies the
-// arrow projectile, and renders the arrows first falling, then having applied the 
-// velocity being shot, which may make it look choppy
-
-//inputs?
-void DrawBow() 
-{
-	//Animates the drawing of the bow, uses timer to pull string back, until a maximum value
-	//Maximum value yields maximum velocity
-}
-
-//might move to inputs?
-void Shoot() 
-{
-	// Will make the arrow object collidable, visible
-	//rotate it to the camera angle such that the point faces away
-	//Applies velocity to data model of given arrow object
-	//
-}
 
 void UpdatePhysics(int k)
 {
-	//All data models (gameobjects) are updated here..
-	//The appropriate physical data is manipulated here
-	//-such that Render(); will redraw these updated objects
 
 	glutTimerFunc(TARGET_FPS, UpdatePhysics, 1);
 	currentTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0f;
@@ -123,6 +98,24 @@ void UpdatePhysics(int k)
 				temp.transform = newTransorm;
 				temp.rigidbody = newRigidbody;
 				UpdateGameObject(&sceneObjects[i], temp);
+
+				//loop though all other scene objects and check if their within a set distance of another object
+				for (int k = 0; k < MAX_SCENE_OBJECTS; k++)
+				{
+					//Dont check collisions with our self or the bow
+					if (k == 1 || k == 2) continue;
+
+					float dist = Distance3(sceneObjects[1].transform.Position, sceneObjects[k].transform.Position);
+					if (dist < sceneObjects[k].collisionSphereRadius / 3)
+					{
+						GameObject temp = sceneObjects[1];
+						Vector3 currPos = sceneObjects[1].transform.Position;
+						temp.transform.Position = currPos;
+						temp.rigidbody.type = STATIC;
+						UpdateGameObject(&sceneObjects[i], temp);
+					}
+
+				}
 			}
 
 			if (sceneObjects[i].transform.Position.y < 0)
@@ -136,6 +129,8 @@ void UpdatePhysics(int k)
 				UpdateGameObject(&sceneObjects[i], temp);
 
 			}
+
+			
 		}
 
 	previousTime = currentTime;
@@ -154,119 +149,38 @@ void Render()
 	glColor3f(DARK_GREEN);
 	DrawGroundPlane(100, 100);
 
-
-	//Draw a test cube
-	glPushMatrix();
-	glColor3f(WHITE);
-	glTranslatef(10.0f, 0.0f, 0.0f);
-	DrawCubeOnGround(1);
-	glPopMatrix();
-
-	//Draw a test cube
-	glPushMatrix();
-	glColor3f(RED);
-	glTranslatef(5.0f, 0.0f, -10.0f);
-	DrawCubeOnGround(1);
-	glPopMatrix();
-
 	//Drawing Off Files
-	DrawOffFile(&sceneObjects[0]);
-
-	if (!setArrow && !fireArrow)
-	{
-		glPushMatrix();
-		TranslateToObjectPosition(&sceneObjects[1]);
-		Mat4 m = Identity();
-		m.x1 = camera.Left.x; m.y1 = camera.Left.y; m.z1 = camera.Left.z;
-		m.x2 = camera.Up.x; m.y2 = camera.Up.y; m.z2 = camera.Up.z;
-		m.x3 = camera.Forward.x; m.y3 = camera.Forward.y; m.z3 = camera.Forward.z;
-		glMultMatrixf(Mat4ToGLMatrix(m));
-		glRotatef(105, 0, 1, 0);
-		DrawOffFile(&sceneObjects[1]);
-		glPopMatrix();
-	}
-
 	glPushMatrix();
-	Vector3 bowPos, cPos, lPos;
-	cPos = camera.transform.Position;
-	lPos = camera.Forward;
-	//lPos.y = 0;
-	bowPos.x = cPos.x + lPos.x * 2;
-	bowPos.y = cPos.y + lPos.y * 2;
-	bowPos.z = cPos.z + lPos.z * 2;
-	
-	Vector3 oldPos = sceneObjects[2].transform.Position;
-	sceneObjects[2].transform.Position = bowPos;
-	//translate
-	TranslateToObjectPosition(&sceneObjects[2]);
-	//scale
-	float scale = sceneObjects[2].transform.Scale.x;
+	sceneObjects[0].transform.Position.x = -5;
+	sceneObjects[0].transform.Position.y = 1;
+	sceneObjects[0].transform.Position.z = 10;
+	TranslateToObjectPosition(&sceneObjects[0]);
+	float scale = sceneObjects[0].transform.Scale.x;
 	glScalef(scale, scale, scale);
-	
-	Mat4 m = Identity();
-	m.x1 = camera.Left.x; m.y1 = camera.Left.y; m.z1 = camera.Left.z;
-	m.x2 = camera.Up.x; m.y2 = camera.Up.y; m.z2 = camera.Up.z; 
-	m.x3 = camera.Forward.x; m.y3 = camera.Forward.y; m.z3 = camera.Forward.z;
-	glMultMatrixf(Mat4ToGLMatrix(m));
-	glRotatef(105, 0, 1, 0);
-
-	DrawOffFile(&sceneObjects[2]);
+	DrawOffFile(&sceneObjects[0]);
 	glPopMatrix();
-
-
 
 	glPushMatrix();
-	if (setArrow && !fireArrow && !inAir)
-	{
-		
-		/*
-		Vector3 c = camera.LookAt;
-		c.y = 1;
-		TranslateToVec3Position(c);
-		*/
+	sceneObjects[3].transform.Position.x = 10;
+	sceneObjects[3].transform.Position.y = 4;
+	TranslateToObjectPosition(&sceneObjects[3]);
+	scale = sceneObjects[3].transform.Scale.x;
+	glScalef(scale, scale, scale);
+	DrawOffFile(&sceneObjects[3]);
+	glPopMatrix();
 
-		Vector3 arrowPos, cPos, lPos;
-		cPos = camera.transform.Position;
-		lPos = camera.Forward;
-		lPos.y = 0;
-		arrowPos.x = cPos.x + lPos.x * 2;
-		arrowPos.y = cPos.y + lPos.y * 2;
-		arrowPos.z = cPos.z + lPos.z * 2;
-
-		sceneObjects[1].transform.Position = arrowPos;
-		//translate
-		TranslateToObjectPosition(&sceneObjects[1]);
-		//scale
-		float scale = sceneObjects[1].transform.Scale.x;
-		glScalef(scale, scale, scale);
-
-		//rotate
-		Mat4 m = Identity();
-		m.x1 = camera.Left.x; m.y1 = camera.Left.y; m.z1 = camera.Left.z;
-		m.x2 = camera.Up.x; m.y2 = camera.Up.y; m.z2 = camera.Up.z;
-		m.x3 = camera.Forward.x; m.y3 = camera.Forward.y; m.z3 = camera.Forward.z;
-		glMultMatrixf(Mat4ToGLMatrix(m));
-		glRotatef(105, 0, 1, 0);
-		
-		DrawOffFile(&sceneObjects[1]);
-		
-
-	}
-	else if (fireArrow && !setArrow && !inAir)
-	{
-		Vector3 pos = camera.transform.Position;
-		pos.y = 1.0f;
-		sceneObjects[1].transform.Position = pos;
-		sceneObjects[1].rigidbody.type = DYNAMIC;
-		sceneObjects[1].rigidbody.velocity = Vector3Zero;
-		Vector3 velo = Scale3(camera.Forward, 15);
-		sceneObjects[1].rigidbody.velocity = velo;
-		fireArrow = false;
-		inAir = true;
-	}
+	glPushMatrix();
+	sceneObjects[4].transform.Position.y = 3;
+	sceneObjects[4].transform.Position.z = -4;
+	scale = sceneObjects[4].transform.Scale.x;
+	glScalef(scale, scale, scale);
+	TranslateToObjectPosition(&sceneObjects[4]);
+	DrawOffFile(&sceneObjects[4]);
 	glPopMatrix();
 
 
+	DrawArrow();
+	DrawBow();
 
 	if (endscreenDisplay)
 	{
@@ -355,9 +269,16 @@ void LoadModels()
 		if (!LoadOffFile(strcat(&concatTemp, &fileNames[i]), &newOb)) printf("File at '%s' failed to load\n", &fileNames[i]);
 		Material plastic = Red_Shiny_Plastic;
 		newOb.material = plastic;
+		newOb.name = fileNames[i];
 
 		sceneObjects[i] = newOb;
 	}
+	Material wMat = Wood;
+	sceneObjects[2].material = wMat;
+
+	sceneObjects[0].transform.Scale.x = 0.5f;
+	sceneObjects[3].transform.Scale.x = 0.5f;
+	sceneObjects[4].transform.Scale.x = 0.5f;
 }
 
 
@@ -408,4 +329,109 @@ void DrawEndScreen()
 
 	glDisable(GL_TEXTURE_2D);
 	glPopAttrib();
+}
+
+void DrawBow()
+{
+	glPushMatrix();
+	Vector3 bowPos, cPos, lPos;
+	cPos = camera.transform.Position;
+	lPos = camera.Forward;
+	bowPos.x = cPos.x + lPos.x * 2;
+	bowPos.y = cPos.y + lPos.y * 2;
+	bowPos.z = cPos.z + lPos.z * 2;
+
+	Vector3 oldPos = sceneObjects[2].transform.Position;
+	sceneObjects[2].transform.Position = bowPos;
+
+	float scale = sceneObjects[2].transform.Scale.x;
+	glScalef(scale, scale, scale);
+
+	Mat4 m = Identity();
+	m.x1 = camera.Left.x; m.y1 = camera.Left.y; m.z1 = camera.Left.z;
+	m.x2 = camera.Up.x; m.y2 = camera.Up.y; m.z2 = camera.Up.z;
+	m.x3 = camera.Forward.x; m.y3 = camera.Forward.y; m.z3 = camera.Forward.z;
+	m.x4 = bowPos.x; m.y4 = bowPos.y; m.z4 = bowPos.z;
+	glMultMatrixf(Mat4ToGLMatrix(m));
+	glRotatef(105, 0, 1, 0);
+
+	DrawOffFile(&sceneObjects[2]);
+	glPopMatrix();
+}
+
+void DrawArrow()
+{
+	if (!setArrow && !fireArrow)
+	{
+		glPushMatrix();
+		TranslateToObjectPosition(&sceneObjects[1]);
+
+		if (sceneObjects[1].rigidbody.type != STATIC)
+		{
+			Mat4 m = Identity();
+			m.x1 = camera.Left.x; m.y1 = camera.Left.y; m.z1 = camera.Left.z;
+			m.x2 = camera.Up.x; m.y2 = camera.Up.y; m.z2 = camera.Up.z;
+			m.x3 = camera.Forward.x; m.y3 = camera.Forward.y; m.z3 = camera.Forward.z;
+			glMultMatrixf(Mat4ToGLMatrix(m));
+			glRotatef(105, 0, 1, 0);
+			glGetFloatv(GL_MODELVIEW_MATRIX, &sceneObjects[1].rotationMatrix);
+		}
+		else
+		{
+			//glMultMatrixf(sceneObjects[1].rotationMatrix);
+		}
+
+
+		DrawOffFile(&sceneObjects[1]);
+		glPopMatrix();
+	}
+
+
+
+
+
+	glPushMatrix();
+	if (setArrow && !fireArrow && !inAir)
+	{
+
+		Vector3 arrowPos, cPos, lPos;
+		cPos = camera.transform.Position;
+		lPos = camera.Forward;
+		lPos.y = 0;
+		arrowPos.x = cPos.x + lPos.x * 2;
+		arrowPos.y = cPos.y + lPos.y * 2;
+		arrowPos.z = cPos.z + lPos.z * 2;
+
+		sceneObjects[1].transform.Position = arrowPos;
+
+		//scale
+		float scale = sceneObjects[1].transform.Scale.x;
+		glScalef(scale, scale, scale);
+
+		//rotate
+		Mat4 m = Identity();
+		m.x1 = camera.Left.x; m.y1 = camera.Left.y; m.z1 = camera.Left.z;
+		m.x2 = camera.Up.x; m.y2 = camera.Up.y; m.z2 = camera.Up.z;
+		m.x3 = camera.Forward.x; m.y3 = camera.Forward.y; m.z3 = camera.Forward.z;
+		m.x4 = arrowPos.x; m.y4 = arrowPos.y; m.z4 = arrowPos.z;
+		glMultMatrixf(Mat4ToGLMatrix(m));
+		glRotatef(105, 0, 1, 0);
+
+		DrawOffFile(&sceneObjects[1]);
+
+
+	}
+	else if (fireArrow && !setArrow && !inAir)
+	{
+		Vector3 pos = camera.transform.Position;
+		pos.y = 1.0f;
+		sceneObjects[1].transform.Position = pos;
+		sceneObjects[1].rigidbody.type = DYNAMIC;
+		sceneObjects[1].rigidbody.velocity = Vector3Zero;
+		Vector3 velo = Scale3(camera.Forward, 15);
+		sceneObjects[1].rigidbody.velocity = velo;
+		fireArrow = false;
+		inAir = true;
+	}
+	glPopMatrix();
 }

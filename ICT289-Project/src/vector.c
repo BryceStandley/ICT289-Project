@@ -298,3 +298,8 @@ Vector4 Invert4(Vector4 a)
 	a.w *= -1;
 	return a;
 }
+
+Vector3 NewVector3(float x, float y, float z)
+{
+	return (Vector3) { .x = x, .y = y, .z = z };
+}
