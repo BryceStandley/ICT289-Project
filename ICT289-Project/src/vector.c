@@ -225,7 +225,7 @@ float Angle2(Vector2 a, Vector2 b)
 	float AdotB = DotProduct2(a, b);
 	float normA = Magnatude2(a);
 	float normB = Magnatude2(b);
-	return acos(AdotB / (normA * normB));
+	return acos(AdotB / (normA * normB)) * 180 / M_PI;
 }
 
 float Angle3(Vector3 a, Vector3 b)
@@ -233,7 +233,7 @@ float Angle3(Vector3 a, Vector3 b)
 	float AdotB = DotProduct3(a, b);
 	float normA = Magnatude3(a);
 	float normB = Magnatude3(b);
-	return acos(AdotB / (normA * normB));
+	return acos(AdotB / (normA * normB)) * 180 / M_PI;
 }
 
 

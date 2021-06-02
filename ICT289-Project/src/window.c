@@ -176,6 +176,12 @@ void Render()
 	{
 		glPushMatrix();
 		TranslateToObjectPosition(&sceneObjects[1]);
+		Mat4 m = Identity();
+		m.x1 = camera.Left.x; m.y1 = camera.Left.y; m.z1 = camera.Left.z;
+		m.x2 = camera.Up.x; m.y2 = camera.Up.y; m.z2 = camera.Up.z;
+		m.x3 = camera.Forward.x; m.y3 = camera.Forward.y; m.z3 = camera.Forward.z;
+		glMultMatrixf(Mat4ToGLMatrix(m));
+		glRotatef(105, 0, 1, 0);
 		DrawOffFile(&sceneObjects[1]);
 		glPopMatrix();
 	}
@@ -184,19 +190,26 @@ void Render()
 	Vector3 bowPos, cPos, lPos;
 	cPos = camera.transform.Position;
 	lPos = camera.Forward;
-	lPos.y = 0;
+	//lPos.y = 0;
 	bowPos.x = cPos.x + lPos.x * 2;
 	bowPos.y = cPos.y + lPos.y * 2;
 	bowPos.z = cPos.z + lPos.z * 2;
-
+	
+	Vector3 oldPos = sceneObjects[2].transform.Position;
 	sceneObjects[2].transform.Position = bowPos;
 	//translate
 	TranslateToObjectPosition(&sceneObjects[2]);
 	//scale
 	float scale = sceneObjects[2].transform.Scale.x;
 	glScalef(scale, scale, scale);
-	//rotate
-	glRotatef(sceneObjects[2].transform.Rotation.y, 0, 1, 0);
+	
+	Mat4 m = Identity();
+	m.x1 = camera.Left.x; m.y1 = camera.Left.y; m.z1 = camera.Left.z;
+	m.x2 = camera.Up.x; m.y2 = camera.Up.y; m.z2 = camera.Up.z; 
+	m.x3 = camera.Forward.x; m.y3 = camera.Forward.y; m.z3 = camera.Forward.z;
+	glMultMatrixf(Mat4ToGLMatrix(m));
+	glRotatef(105, 0, 1, 0);
+
 	DrawOffFile(&sceneObjects[2]);
 	glPopMatrix();
 
@@ -226,8 +239,14 @@ void Render()
 		//scale
 		float scale = sceneObjects[1].transform.Scale.x;
 		glScalef(scale, scale, scale);
+
 		//rotate
-		glRotatef(sceneObjects[1].transform.Rotation.y, 0, 1, 0);
+		Mat4 m = Identity();
+		m.x1 = camera.Left.x; m.y1 = camera.Left.y; m.z1 = camera.Left.z;
+		m.x2 = camera.Up.x; m.y2 = camera.Up.y; m.z2 = camera.Up.z;
+		m.x3 = camera.Forward.x; m.y3 = camera.Forward.y; m.z3 = camera.Forward.z;
+		glMultMatrixf(Mat4ToGLMatrix(m));
+		glRotatef(105, 0, 1, 0);
 		
 		DrawOffFile(&sceneObjects[1]);
 		

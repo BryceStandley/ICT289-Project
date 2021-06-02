@@ -2,6 +2,7 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 #include <math.h>
+#include <corecrt_math_defines.h>
 /**
  * \file vector.h
  * \author Bryce Standley
@@ -254,13 +255,13 @@ float DotProduct3(Vector3 a, Vector3 b);
 Vector3 CrossProduct3(Vector3 a, Vector3 b);
 
 /**
- * \brief Finds the angle between two Direction Vector2's
+ * \brief Finds the angle between two Direction Vector2's in degrees
  * \param Two directional vectors of type Vector2
  */
 float Angle2(Vector2 a, Vector2 b);
 
 /**
- * \brief Finds the angle between two Direction Vector3's
+ * \brief Finds the angle between two Direction Vector3's in Degrees
  * \param Two directional vectors of type Vector3
  */
 float Angle3(Vector3 a, Vector3 b);
