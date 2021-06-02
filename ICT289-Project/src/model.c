@@ -75,6 +75,8 @@ void InitEmptyObject(GameObject* object)
 	object->transform.Position = Vector3Zero;
 	object->transform.Rotation = Vector3Zero;
 	object->transform.Scale = Vector3One;
+	Vector3 rot = RadiansToDegrees(object->transform.Rotation);
+	object->transform.QuatRotation = EulerToQuaternion(rot);
 }
 
 void DrawOffFile(GameObject* object)
@@ -130,3 +132,23 @@ void SetName(GameObject* gameobject, char* name)
 {
 	strcpy(&gameobject->name, &name);
 }
+
+void UpdateGameObject(GameObject* gameObjectToUpdate, GameObject tempGameObject)
+{
+	//Assign all the temp data to the original object
+	gameObjectToUpdate->name = tempGameObject.name;
+	gameObjectToUpdate->numFaces = tempGameObject.numFaces;
+	gameObjectToUpdate->numPoints = tempGameObject.numPoints;
+	gameObjectToUpdate->numEdges = tempGameObject.numEdges;
+	gameObjectToUpdate->vertexPoints = tempGameObject.vertexPoints;
+	gameObjectToUpdate->transform = tempGameObject.transform;
+	gameObjectToUpdate->rigidbody = tempGameObject.rigidbody;
+	gameObjectToUpdate->normals = tempGameObject.normals;
+	gameObjectToUpdate->TextureID = tempGameObject.TextureID;
+	gameObjectToUpdate->material = tempGameObject.material;
+
+	//update rotations
+	Vector3 rotation = RadiansToDegrees(gameObjectToUpdate->transform.Rotation);
+	gameObjectToUpdate->transform.QuatRotation = EulerToQuaternion(rotation);
+}
+

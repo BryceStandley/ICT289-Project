@@ -112,24 +112,28 @@ void UpdatePhysics(int k)
 			//Loop though all scene objects and check if their static or not
 			if (sceneObjects[i].rigidbody.type != STATIC)
 			{
+				GameObject temp = sceneObjects[i];
 				//If the object isnt static, update their physics
-				Transform newTransorm;
+				Transform newTransorm = temp.transform;
 				newTransorm.Position = Displace(sceneObjects[i].transform.Position, sceneObjects[i].rigidbody.velocity, sceneObjects[i].rigidbody.Acceleration, deltaTime);
 
-				Rigidbody newRigidbody = sceneObjects[i].rigidbody;
+				Rigidbody newRigidbody = temp.rigidbody;
 				newRigidbody.velocity = VelocityAtTime(sceneObjects[i].rigidbody.velocity, sceneObjects[i].rigidbody.Acceleration, deltaTime);
 
-				sceneObjects[i].transform = newTransorm;
-				sceneObjects[i].rigidbody = newRigidbody;
+				temp.transform = newTransorm;
+				temp.rigidbody = newRigidbody;
+				UpdateGameObject(&sceneObjects[i], temp);
 			}
 
 			if (sceneObjects[i].transform.Position.y < 0)
 			{
+				GameObject temp = sceneObjects[i];
 				// object on the floor
 				Vector3 currPos = sceneObjects[i].transform.Position;
 				currPos.y = 0;
-				sceneObjects[i].transform.Position = currPos;
-				sceneObjects[i].rigidbody.type = STATIC;
+				temp.transform.Position = currPos;
+				temp.rigidbody.type = STATIC;
+				UpdateGameObject(&sceneObjects[i], temp);
 
 			}
 		}
@@ -171,74 +175,95 @@ void Render()
 	if (!setArrow && !fireArrow)
 	{
 		glPushMatrix();
-		RotateAroundRad(sceneObjects[1].transform.Rotation);
 		TranslateToObjectPosition(&sceneObjects[1]);
 		DrawOffFile(&sceneObjects[1]);
 		glPopMatrix();
 	}
-	/*
-	glLoadIdentity();
-	UpdateCamera(&camera);
 
-	sceneObjects[2].transform.Position = camera.transform.Position;
-	sceneObjects[2].transform.Position.y = 1.0f;
-	TranslateToVec3Position(sceneObjects[2].transform.Position);
+	glPushMatrix();
+	Vector3 bowPos, cPos, lPos;
+	cPos = camera.transform.Position;
+	lPos = camera.Forward;
+	lPos.y = 0;
+	bowPos.x = cPos.x + lPos.x * 2;
+	bowPos.y = cPos.y + lPos.y * 2;
+	bowPos.z = cPos.z + lPos.z * 2;
 
-	glRotatef(-camera.transform.Rotation.y * (180.0f / M_PI), 0.0f, 0.0f, 1.0f);
-	float a1 = DotProduct3(sceneObjects[2].transform.Position, camera.Forward);
-	float magPos = Magnatude3(sceneObjects[2].transform.Position);
-	float magFwd = Magnatude3(camera.Forward);
-	float thetaX = (a1 / (magPos * magFwd)) * (180.0f / M_PI);
-	glRotatef(camera.transform.Rotation.x * (180.0f / M_PI), 0.0f, 1.0f, 0.0f);
-	TranslateToVec3Position((Vector3) {.x = 0.0f, .y = 0.0f, .z = -1.25f});
-	glRotatef(-70, 0, 1, 0);
-	*/
-	glPushMatrix();
-	glPushMatrix();
-	Vector3 c = camera.LookAt;
-	c.y = 1;
-	TranslateToVec3Position(Vector3Zero);
-	glRotatef(-camera.transform.Rotation.y, 0, 1, 0);
-	TranslateToVec3Position(c);
-	
-	//glRotatef(-camera.transform.Rotation.x, 1, 0, 1);
-	
+	sceneObjects[2].transform.Position = bowPos;
+	//translate
+	TranslateToObjectPosition(&sceneObjects[2]);
+	//scale
+	float scale = sceneObjects[2].transform.Scale.x;
+	glScalef(scale, scale, scale);
+	//rotate
+	glRotatef(sceneObjects[2].transform.Rotation.y, 0, 1, 0);
 	DrawOffFile(&sceneObjects[2]);
 	glPopMatrix();
-	glPopMatrix();
 
+
+
+	glPushMatrix();
 	if (setArrow && !fireArrow && !inAir)
 	{
-		glLoadIdentity();
-		UpdateCamera(&camera);
+		
+		/*
+		Vector3 c = camera.LookAt;
+		c.y = 1;
+		TranslateToVec3Position(c);
+		*/
 
-		sceneObjects[1].transform = camera.transform;
-		TranslateToVec3Position(sceneObjects[1].transform.Position);
-		glRotatef(-camera.transform.Rotation.y * (180.0f / M_PI), 0.0f, 0.0f, 1.0f);
-		float a1 = DotProduct3(sceneObjects[1].transform.Position, camera.Forward);
-		float magPos = Magnatude3(sceneObjects[1].transform.Position);
-		float magFwd = Magnatude3(camera.Forward);
-		float thetaX = (a1 / (magPos * magFwd)) * (180.0f / M_PI);
-		glRotatef(camera.transform.Rotation.x* (180.0f / M_PI), 0.0f, 1.0f, 0.0f);
-		TranslateToVec3Position((Vector3) { .x = 0.0f, .y = 0.0f, .z = -1.25f });
-		glRotatef(-70, 0, 1, 0);
+		Vector3 arrowPos, cPos, lPos;
+		cPos = camera.transform.Position;
+		lPos = camera.Forward;
+		lPos.y = 0;
+		arrowPos.x = cPos.x + lPos.x * 2;
+		arrowPos.y = cPos.y + lPos.y * 2;
+		arrowPos.z = cPos.z + lPos.z * 2;
+
+		sceneObjects[1].transform.Position = arrowPos;
+		//translate
+		TranslateToObjectPosition(&sceneObjects[1]);
+		//scale
+		float scale = sceneObjects[1].transform.Scale.x;
+		glScalef(scale, scale, scale);
+		//rotate
+		glRotatef(sceneObjects[1].transform.Rotation.y, 0, 1, 0);
+		
 		DrawOffFile(&sceneObjects[1]);
-		glPopMatrix();
+		
 
 	}
 	else if (fireArrow && !setArrow && !inAir)
 	{
+		Vector3 pos = camera.transform.Position;
+		pos.y = 1.0f;
+		sceneObjects[1].transform.Position = pos;
 		sceneObjects[1].rigidbody.type = DYNAMIC;
-		sceneObjects[1].rigidbody.velocity = Scale3(Multiply3(camera.Up, camera.Forward), 10.5f);
+		sceneObjects[1].rigidbody.velocity = Vector3Zero;
+		Vector3 velo = Scale3(camera.Forward, 15);
+		sceneObjects[1].rigidbody.velocity = velo;
 		fireArrow = false;
 		inAir = true;
 	}
+	glPopMatrix();
 
 
 
 	if (endscreenDisplay)
 	{
 		DrawEndScreen();
+	}
+	else
+	{
+		glMatrixMode(GL_PROJECTION);
+		glLoadIdentity();
+
+		GLdouble fov = 80;		// degrees
+		GLdouble aspect = 1;		// aspect ratio aspect = height/width
+		GLdouble nearVal = 0.1f;
+		GLdouble farVal = 1000;     // near and far clipping planes
+		gluPerspective(fov, aspect, nearVal, farVal);
+		glMatrixMode(GL_MODELVIEW);
 	}
 
 
@@ -253,7 +278,7 @@ void init(int w, int h)
 	viewportHieght = h;
 
 	//Put opening init calls here
-	glClearColor(BLACK, 1.0f);
+	glClearColor(WHITE, 1.0f);
 
 	//disable the cursor and move it to the center of the window
 	glutSetCursor(GLUT_CURSOR_NONE);
@@ -267,13 +292,12 @@ void init(int w, int h)
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-
 	GLdouble fov = 80;		// degrees
 	GLdouble aspect = 1;		// aspect ratio aspect = height/width
-	GLdouble nearVal = 0.000001f;
+	GLdouble nearVal = 0.1f;
 	GLdouble farVal = 1000;     // near and far clipping planes
 	gluPerspective(fov, aspect, nearVal, farVal);
-
+	glMatrixMode(GL_MODELVIEW);
 	UpdateCamera(&camera);
 
 	LoadModels();
@@ -303,8 +327,8 @@ void LoadModels()
 	for (int i = 0; i < MAX_SCENE_OBJECTS; i++)
 	{
 		GameObject newOb;
-		InitRigidbody(&sceneObjects[i].rigidbody);
-		InitEmptyObject(&sceneObjects[i]);
+		InitRigidbody(&newOb.rigidbody);
+		InitEmptyObject(&newOb);
 
 		char concatTemp[50] = "./res/models/";
 		strcpy(&newOb.name, &fileNames[i]);

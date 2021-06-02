@@ -4,6 +4,7 @@
 #include <GL/freeglut.h>
 #include"vector.h"
 #include <corecrt_math_defines.h>
+#include "Transform.h"
 
 /**
  * \file camera.h
@@ -30,6 +31,7 @@ typedef struct Camera
 	Vector3 Forward;
 	Vector3 Up;
 	Vector3 Left;
+	Mat4 CameraLookAtMatrix;
 }Camera;
 
 /*
@@ -43,6 +45,14 @@ void UpdateCameraLookAt(Camera* c);
 * \brief Updates the camera and the gluLookAt function
 */
 void UpdateCamera(Camera* c);
+
+/**
+ * \file camera.h
+ * \author Bryce Standley
+ * \brief Updates the cameras look at matrix
+ * \date  June 2021
+ */
+void UpdateCameraMatrix(Camera* c);
 
 /*
 * \fn void MoveCamera(Camera* c, float incr)

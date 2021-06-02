@@ -3,11 +3,17 @@
 
 void UpdateCameraLookAt(Camera* c)
 {
-	Vector3 v;
-	v.x = (cos(c->transform.Rotation.x) * cos(c->transform.Rotation.y)) + c->transform.Position.x;
-	v.y = sin(c->transform.Rotation.y) + c->transform.Position.y;
-	v.z = (sin(c->transform.Rotation.x) * cos(c->transform.Rotation.y)) + c->transform.Position.z;
-	c->LookAt = v;
+	Vector3 v, v2;
+	v.x = (cos(c->transform.Rotation.x) * cos(c->transform.Rotation.y));
+	v.y = sin(c->transform.Rotation.y);
+	v.z = (sin(c->transform.Rotation.x) * cos(c->transform.Rotation.y));
+
+	v2 = v;
+	v2.x += c->transform.Position.x;
+	v2.y += c->transform.Position.y;
+	v2.z += c->transform.Position.z;
+	c->LookAt = v2;
+	c->Forward = v;
 	
 }
 
@@ -42,6 +48,7 @@ void StrafeCamera(Camera* c, float incr)
 void RotateCameraX(Camera* c, float angle)
 {
 	c->transform.Rotation.x += angle;
+	
 	float degree = 360 * M_PI / 180.0f;
 	if (c->transform.Rotation.x > degree)
 	{
@@ -52,6 +59,7 @@ void RotateCameraX(Camera* c, float angle)
 	{
 		c->transform.Rotation.x = 0;
 	}
+	
 	UpdateCamera(c);
 }
 
@@ -60,6 +68,7 @@ void RotateCameraY(Camera* c, float angle)
 {
 	float limit = 89.0f * M_PI / 180.0f;
 	c->transform.Rotation.y += angle;
+	
 	if (c->transform.Rotation.y < -limit)
 	{
 		c->transform.Rotation.y = -limit;
@@ -69,7 +78,7 @@ void RotateCameraY(Camera* c, float angle)
 	{
 		c->transform.Rotation.y = limit;
 	}
-
+	
 	UpdateCamera(c);
 }
 
@@ -84,11 +93,31 @@ void UpdateCamera(Camera* c)
 				c->LookAt.x, c->LookAt.y, c->LookAt.z,
 					c->WorldUp.x, c->WorldUp.y, c->WorldUp.z);
 
+	UpdateCameraMatrix(c);
+
 	//Calculate related direction vectors based on the cameras position
-	c->Forward = Normalize3(c->LookAt);
+	//c->Forward = Normalize3(DirectionVector3(Vector3Zero, c->LookAt));
 	c->Up = (Vector3){ .x = 0, .y = 1, .z = 0 };
 	c->Left = Normalize3(CrossProduct3(c->Up, c->Forward));
-	c->Up = Normalize3(CrossProduct3(c->Forward, c->Left));
+	c->Up = CrossProduct3(c->Forward, c->Left);
+}
+
+void UpdateCameraMatrix(Camera* c)
+{
+	Vector3 f = DirectionVector3(c->LookAt, c->transform.Position);
+	Vector3 up = c->WorldUp;
+
+	f = Normalize3(f);
+	up = Normalize3(up);
+	Vector3 s = CrossProduct3(f, up);
+	s = Normalize3(s);
+	Vector3 u = CrossProduct3(s, f);
+	Mat4 m = Identity();
+	m.x1 = s.x; m.y1 = s.y; m.z1 = s.z;
+	m.x2 = u.x; m.y2 = u.y; m.z2 = u.z;
+	m.x3 = -f.x; m.y3 = -f.y; m.z3 = -f.z;
+	c->CameraLookAtMatrix = m;
+
 }
 
 void DisplayEndScreen(Camera* c)

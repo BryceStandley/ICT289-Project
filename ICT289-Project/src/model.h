@@ -11,6 +11,7 @@
 #include "material.h"
 #include "rigidbody.h"
 #include <corecrt_math_defines.h>
+#include "Transform.h"
 
 /**
  * \file model.h
@@ -85,6 +86,14 @@ void RotateAroundRad(Vector3 a);
  * \date  June 2021
  */
 void RotateAroundDeg(Vector3 a);
+
+/**
+ * \file model.h
+ * \author Bryce Standley
+ * \brief Updates a game object's information with a temp game object
+ * \date  June 2021
+ */
+void UpdateGameObject(GameObject* gameObjectToUpdate, GameObject tempGameObject);
 
 
 

@@ -23,9 +23,12 @@
     <ClCompile Include="src\ICT289-Project.c" />
     <ClCompile Include="src\input.c" />
     <ClCompile Include="src\material.c" />
+    <ClCompile Include="src\Matrix.c" />
     <ClCompile Include="src\model.c" />
+    <ClCompile Include="src\Quaternion.c" />
     <ClCompile Include="src\rigidbody.c" />
     <ClCompile Include="src\scene.c" />
+    <ClCompile Include="src\Transform.c" />
     <ClCompile Include="src\vector.c" />
     <ClCompile Include="src\window.c" />
   </ItemGroup>
@@ -35,9 +38,12 @@
     <ClInclude Include="src\colours.h" />
     <ClInclude Include="src\input.h" />
     <ClInclude Include="src\material.h" />
+    <ClInclude Include="src\Matrix.h" />
     <ClInclude Include="src\model.h" />
+    <ClInclude Include="src\Quaternion.h" />
     <ClInclude Include="src\rigidbody.h" />
     <ClInclude Include="src\scene.h" />
+    <ClInclude Include="src\Transform.h" />
     <ClInclude Include="src\vector.h" />
     <ClInclude Include="src\window.h" />
   </ItemGroup>

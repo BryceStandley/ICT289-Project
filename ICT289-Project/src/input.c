@@ -4,7 +4,7 @@ Camera camera;
 int viewportWidth;
 int viewportHieght;
 const float cameraTranslationSpeed = 0.01f;
-const float cameraRotationSpeed = M_PI / 180 * 0.2f;
+const float cameraRotationSpeed = 0.01f;//M_PI / 180 * 0.2f;
 bool keys[256];
 bool endscreenDisplay = false;
 bool setArrow = false;
@@ -93,18 +93,28 @@ void InputTimer(int value)
 	{
 		if (keys['w'] || keys['W'])
 		{
+			//camera.transform.Position.x += camera.LookAt.x * cameraTranslationSpeed;
+			//camera.transform.Position.z += camera.LookAt.z * cameraTranslationSpeed;
 			MoveCamera(&camera, cameraTranslationSpeed);
+
+
 		}
 		if (keys['s'] || keys['S'])
 		{
+			//camera.transform.Position.x -= camera.LookAt.x * cameraTranslationSpeed;
+			//camera.transform.Position.z -= camera.LookAt.z * cameraTranslationSpeed;
 			MoveCamera(&camera, -cameraTranslationSpeed);
 		}
 		if (keys['a'] || keys['A'])
 		{
+			//camera.transform.Position.x += camera.LookAt.z * cameraTranslationSpeed;
+			//camera.transform.Position.z -= camera.LookAt.x * cameraTranslationSpeed;
 			StrafeCamera(&camera, cameraTranslationSpeed);
 		}
 		if (keys['d'] || keys['D'])
 		{
+			//camera.transform.Position.x -= camera.LookAt.z * cameraTranslationSpeed;
+			//camera.transform.Position.z += camera.LookAt.x * cameraTranslationSpeed;
 			StrafeCamera(&camera, -cameraTranslationSpeed);
 		}
 	}
