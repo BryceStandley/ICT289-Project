@@ -1,0 +1,105 @@
+\hypertarget{_quaternion_8h}{}\doxysection{ICT289-\/\+Project/src/\+Quaternion.h File Reference}
+\label{_quaternion_8h}\index{ICT289-\/Project/src/Quaternion.h@{ICT289-\/Project/src/Quaternion.h}}
+
+
+\mbox{\hyperlink{struct_quaternion}{Quaternion}} functionality for open\+GL.  
+
+
+{\ttfamily \#include \char`\"{}Vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$corecrt\+\_\+math\+\_\+defines.\+h$>$}\newline
+Include dependency graph for Quaternion.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{_quaternion_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_quaternion_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_quaternion}{Quaternion}}
+\begin{DoxyCompactList}\small\item\em Structure of a quaternion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_quaternion_8h_a8b8ae6480df2117ee6e3edd97c4309a0}\label{_quaternion_8h_a8b8ae6480df2117ee6e3edd97c4309a0}} 
+typedef struct \mbox{\hyperlink{struct_quaternion}{Quaternion}} \mbox{\hyperlink{_quaternion_8h_a8b8ae6480df2117ee6e3edd97c4309a0}{Quaternion}}
+\begin{DoxyCompactList}\small\item\em Structure of a quaternion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_quaternion_8h_a68240a644210fc32a863a4cb5509d42d}\label{_quaternion_8h_a68240a644210fc32a863a4cb5509d42d}} 
+float {\bfseries Magnitude\+Quaternion} (\mbox{\hyperlink{struct_quaternion}{Quaternion}} q)
+\item 
+\mbox{\Hypertarget{_quaternion_8h_ab8b64280fe1ad2eda33975d553d2dd6e}\label{_quaternion_8h_ab8b64280fe1ad2eda33975d553d2dd6e}} 
+\mbox{\hyperlink{struct_quaternion}{Quaternion}} {\bfseries Normalise\+Quaternion} (\mbox{\hyperlink{struct_quaternion}{Quaternion}} q)
+\item 
+\mbox{\Hypertarget{_quaternion_8h_a34f803e9fed1d9d2f15366fc9ff20503}\label{_quaternion_8h_a34f803e9fed1d9d2f15366fc9ff20503}} 
+\mbox{\hyperlink{struct_quaternion}{Quaternion}} {\bfseries Multiply\+Quaternion} (\mbox{\hyperlink{struct_quaternion}{Quaternion}} a, \mbox{\hyperlink{struct_quaternion}{Quaternion}} b)
+\item 
+\mbox{\Hypertarget{_quaternion_8h_a0baf8c33a5cbace1ae3bd439e7a34b89}\label{_quaternion_8h_a0baf8c33a5cbace1ae3bd439e7a34b89}} 
+\mbox{\hyperlink{struct_quaternion}{Quaternion}} {\bfseries New\+Quaternion} (float w, float x, float y, float z)
+\item 
+\mbox{\Hypertarget{_quaternion_8h_a69e65f45c6529139e0c10d326830e26e}\label{_quaternion_8h_a69e65f45c6529139e0c10d326830e26e}} 
+\mbox{\hyperlink{struct_quaternion}{Quaternion}} {\bfseries Local\+Rotation\+Quaternion} (\mbox{\hyperlink{struct_vector3}{Vector3}} axis, float angle)
+\item 
+\mbox{\Hypertarget{_quaternion_8h_aeb0e5e357fc2b526cf006f6621a6cdda}\label{_quaternion_8h_aeb0e5e357fc2b526cf006f6621a6cdda}} 
+\mbox{\hyperlink{struct_mat4}{Mat4}} {\bfseries Quaternion\+To\+Mat4} (\mbox{\hyperlink{struct_quaternion}{Quaternion}} q)
+\item 
+\mbox{\Hypertarget{_quaternion_8h_a79e578d3b854c2b3ec6c7f7c0aa13689}\label{_quaternion_8h_a79e578d3b854c2b3ec6c7f7c0aa13689}} 
+\mbox{\hyperlink{struct_quaternion}{Quaternion}} {\bfseries Euler\+To\+Quaternion} (\mbox{\hyperlink{struct_vector3}{Vector3}} euler)
+\item 
+\mbox{\Hypertarget{_quaternion_8h_acd892883e7bf2b577db7bdee5aeafc6d}\label{_quaternion_8h_acd892883e7bf2b577db7bdee5aeafc6d}} 
+\mbox{\hyperlink{struct_vector3}{Vector3}} {\bfseries Radians\+To\+Degrees} (\mbox{\hyperlink{struct_vector3}{Vector3}} rad)
+\item 
+\mbox{\Hypertarget{_quaternion_8h_a4c4457c79ffc0ecc27e9ae3994e7cea0}\label{_quaternion_8h_a4c4457c79ffc0ecc27e9ae3994e7cea0}} 
+\mbox{\hyperlink{struct_quaternion}{Quaternion}} {\bfseries Mat4\+To\+Quaternion} (\mbox{\hyperlink{struct_mat4}{Mat4}} m)
+\item 
+\mbox{\Hypertarget{_quaternion_8h_ace4858d48fa1fb5f6fd89a406a8460d2}\label{_quaternion_8h_ace4858d48fa1fb5f6fd89a406a8460d2}} 
+\mbox{\hyperlink{struct_quaternion}{Quaternion}} {\bfseries Scale\+Quaternion} (\mbox{\hyperlink{struct_quaternion}{Quaternion}} q, float scale)
+\item 
+\mbox{\Hypertarget{_quaternion_8h_a2c40da5ffaf41acd0cdeff3a384b1380}\label{_quaternion_8h_a2c40da5ffaf41acd0cdeff3a384b1380}} 
+\mbox{\hyperlink{struct_vector3}{Vector3}} {\bfseries Quaternion\+To\+Euler} (\mbox{\hyperlink{struct_quaternion}{Quaternion}} q)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{struct_quaternion}{Quaternion}} functionality for open\+GL. 
+
+Converts a euler angle vector into a quaternion.
+
+Scales a quaternion by a set factor.
+
+Converts a mat4 matrix back into a quaternion.
+
+Converts a rotation vector in radians to degrees / euler angles.
+
+Converts starndard degree angles in a euler vector 3 to quaternion data.
+
+Converts a rotation quaternion to a 4 x 4 matrix.
+
+Creates a new local rotation quaternion with around axis and angle.
+
+Creates a new quaternion with given w, x, y, z components.
+
+Multiply quaternion A by B. NOTE multiplying A by B is not the same as multiplying B by A.
+
+Used to normalise a quaternion between 0 and 1.
+
+Finds the magnatude of a quaternion.
+
+\begin{DoxyAuthor}{Author}
+Bryce Standley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2021 
+\end{DoxyDate}

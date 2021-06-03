@@ -1,0 +1,6 @@
+<map id="Add3" name="Add3">
+<area shape="rect" id="node1" title="Adds two Vector3&#39;s together." alt="" coords="168,56,220,83"/>
+<area shape="rect" id="node2" href="$rigidbody_8h.html#a4b4ad059679ac79295d71b4a88ad6c82" title="Average of two velocities." alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node3" href="$rigidbody_8h.html#a8a91647f4971af971ff7d4121691eaae" title="Calculate the new displacement of a object at a given time." alt="" coords="27,56,99,83"/>
+<area shape="rect" id="node4" href="$rigidbody_8h.html#ab0c43059b74977be129a06fb78083b89" title="Calculate the velocity at a given time." alt="" coords="7,107,118,133"/>
+</map>

@@ -8,11 +8,10 @@
 #pragma once
 #include <GL/freeglut.h>
 #include "vector.h"
+
 /**
- * \file Matrix.h
  * \author Bryce Standley
  * \brief Structure of a 4 x 4 matrix
- * \date  June 2021
  */
 typedef struct Mat4
 {

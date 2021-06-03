@@ -1,0 +1,9 @@
+<map id="GameObject" name="GameObject">
+<area shape="rect" id="node1" title="Structure of a 3D Model based arounf the OFF file type." alt="" coords="192,216,287,243"/>
+<area shape="rect" id="node2" href="$struct_material.html" title="Material structure for holding all component data." alt="" coords="5,125,73,152"/>
+<area shape="rect" id="node3" href="$struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V..." alt="" coords="246,5,313,32"/>
+<area shape="rect" id="node4" href="$struct_transform.html" title="Transform struct that can hold 3 vector3 data structures and a quaternion for rotation A transform ca..." alt="" coords="97,125,176,152"/>
+<area shape="rect" id="node7" href="$struct_rigidbody.html" title="Data structure of a physics rigidbody." alt="" coords="200,125,279,152"/>
+<area shape="rect" id="node5" href="$struct_quaternion.html" title="Structure of a quaternion." alt="" coords="42,5,127,32"/>
+<area shape="rect" id="node6" href="$struct_vector5.html" title="Vector data structure with 5 components create a vector5 by using a compund literal ie Vector5 v = (V..." alt="" coords="303,125,370,152"/>
+</map>

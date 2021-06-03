@@ -1,0 +1,5 @@
+<map id="Magnatude2" name="Magnatude2">
+<area shape="rect" id="node1" title="Find the magnatude of a Vector2." alt="" coords="140,31,233,57"/>
+<area shape="rect" id="node2" href="$vector_8h.html#a0bf0708735e66f1e450827840aa751cf" title="Finds the angle between two Direction Vector2&#39;s in degrees." alt="" coords="17,5,80,32"/>
+<area shape="rect" id="node3" href="$vector_8h.html#a4295b2d3346990c12733c66b32853dc9" title="Normalizes a Vector2." alt="" coords="5,56,92,83"/>
+</map>

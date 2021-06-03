@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['magnatude2_111',['Magnatude2',['../vector_8h.html#ad37c4c1e95f98c1f4fb7dd519de45282',1,'vector.c']]],
-  ['magnatude3_112',['Magnatude3',['../vector_8h.html#a74e97ba7e0685d142af418969743a4bf',1,'vector.c']]],
-  ['magnatude4_113',['Magnatude4',['../vector_8h.html#ad2f9062d2300d535324469bae8c663b4',1,'vector.c']]],
-  ['multiply2_114',['Multiply2',['../vector_8h.html#ae94b9987f23e5389f561057c0ac80315',1,'vector.c']]],
-  ['multiply3_115',['Multiply3',['../vector_8h.html#a448939250787fe8e86a34226b2c44a70',1,'vector.c']]],
-  ['multiply4_116',['Multiply4',['../vector_8h.html#a28bbd66289920f17b964d68c4449ae63',1,'vector.c']]]
+  ['loadendscreen_161',['LoadEndScreen',['../window_8h.html#afbccb445eda4392e4bfd169b1fce8425',1,'window.c']]],
+  ['loadmodels_162',['LoadModels',['../window_8h.html#a5853bf3749d69ddd5e65956a472f3cd1',1,'window.c']]],
+  ['loadofffile_163',['LoadOffFile',['../model_8h.html#a573e2753dda5550deb261c9e6837b2ab',1,'model.c']]]
 ];

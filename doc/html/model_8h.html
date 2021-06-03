@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ICT289 Project: ICT289-Project/src/model.h File Reference</title>
+<title>BowTime - ICT289 Project: ICT289-Project/src/model.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ICT289 Project
-   &#160;<span id="projectnumber">2</span>
+   <div id="projectname">BowTime - ICT289 Project
+   &#160;<span id="projectnumber">v3</span>
    </div>
   </td>
  </tr>
@@ -100,36 +100,108 @@ $(document).ready(function(){initNavTree('model_8h.html',''); initResizable(); }
 <code>#include &quot;<a class="el" href="vector_8h_source.html">vector.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="colours_8h_source.html">colours.h</a>&quot;</code><br />
 <code>#include &lt;GL/freeglut.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="material_8h_source.html">material.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rigidbody_8h_source.html">rigidbody.h</a>&quot;</code><br />
+<code>#include &lt;corecrt_math_defines.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_transform_8h_source.html">Transform.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for model.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="model_8h__incl.png" border="0" usemap="#a_i_c_t289-_project_2src_2model_8h" alt=""/></div>
+<map name="a_i_c_t289-_project_2src_2model_8h" id="a_i_c_t289-_project_2src_2model_8h">
+<area shape="rect" title="Used to load and manage models into the program." alt="" coords="374,5,503,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,67,121"/>
+<area shape="rect" title=" " alt="" coords="91,95,155,121"/>
+<area shape="rect" title=" " alt="" coords="179,95,242,121"/>
+<area shape="rect" href="vector_8h.html" title="2D, 3D and 4D Vector Math fucntions" alt="" coords="376,319,443,345"/>
+<area shape="rect" title=" " alt="" coords="465,393,623,420"/>
+<area shape="rect" href="colours_8h.html" title="Large lookup table for colours to be used within the program." alt="" coords="820,95,895,121"/>
+<area shape="rect" title=" " alt="" coords="719,319,815,345"/>
+<area shape="rect" href="material_8h.html" title="Data structures of all materials within the application." alt="" coords="770,244,849,271"/>
+<area shape="rect" href="rigidbody_8h.html" title="Physics functions to be used to animate objects." alt="" coords="340,95,425,121"/>
+<area shape="rect" href="_transform_8h.html" title="Basic structure and functions of a transform." alt="" coords="449,95,540,121"/>
+<area shape="rect" title=" " alt="" coords="378,393,441,420"/>
+<area shape="rect" title=" " alt="" coords="356,169,431,196"/>
+<area shape="rect" href="_quaternion_8h.html" title="Quaternion functionality for openGL." alt="" coords="505,169,601,196"/>
+<area shape="rect" href="_matrix_8h.html" title="All functions and structures of a Matrix." alt="" coords="575,244,644,271"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="model_8h__dep__incl.png" border="0" usemap="#a_i_c_t289-_project_2src_2model_8hdep" alt=""/></div>
+<map name="a_i_c_t289-_project_2src_2model_8hdep" id="a_i_c_t289-_project_2src_2model_8hdep">
+<area shape="rect" title="Used to load and manage models into the program." alt="" coords="56,5,185,47"/>
+<area shape="rect" href="scene_8h.html" title="Functions to render objects within the scene." alt="" coords="5,95,135,136"/>
+<area shape="rect" href="window_8h.html" title="Main window file that contains all functions related to the window and the program." alt="" coords="56,184,185,225"/>
+<area shape="rect" href="_i_c_t289-_project_8c.html" title="Main program entry point." alt="" coords="56,273,185,315"/>
+</map>
+</div>
 </div>
 <p><a href="model_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_object3_d.html">Object3D</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game_object.html">GameObject</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure of a 3D Model based arounf the OFF file type.  <a href="struct_game_object.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a8d7d5f3bc4782fed51a9d4dd8e25c116"><td class="memItemLeft" align="right" valign="top"><a id="a8d7d5f3bc4782fed51a9d4dd8e25c116"></a>
-typedef struct <a class="el" href="struct_object3_d.html">Object3D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Object3D</b></td></tr>
-<tr class="separator:a8d7d5f3bc4782fed51a9d4dd8e25c116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0fb707a835e2853e4ab457d743d9640"><td class="memItemLeft" align="right" valign="top"><a id="ab0fb707a835e2853e4ab457d743d9640"></a>
+typedef struct <a class="el" href="struct_game_object.html">GameObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="model_8h.html#ab0fb707a835e2853e4ab457d743d9640">GameObject</a></td></tr>
+<tr class="memdesc:ab0fb707a835e2853e4ab457d743d9640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure of a 3D Model based arounf the OFF file type. <br /></td></tr>
+<tr class="separator:ab0fb707a835e2853e4ab457d743d9640"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad9483dd5ea4ef8c61a06008b02a05a72"><td class="memItemLeft" align="right" valign="top"><a id="ad9483dd5ea4ef8c61a06008b02a05a72"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>InitEmptyObject</b> (<a class="el" href="struct_object3_d.html">Object3D</a> *object)</td></tr>
-<tr class="separator:ad9483dd5ea4ef8c61a06008b02a05a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a597ded1bda8399a0ce576f8909c85e55"><td class="memItemLeft" align="right" valign="top"><a id="a597ded1bda8399a0ce576f8909c85e55"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>LoadOffFile</b> (char *filePath, <a class="el" href="struct_object3_d.html">Object3D</a> *object)</td></tr>
-<tr class="separator:a597ded1bda8399a0ce576f8909c85e55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f33b016079a82e342b4a257785a0257"><td class="memItemLeft" align="right" valign="top"><a id="a7f33b016079a82e342b4a257785a0257"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawOffFile</b> (<a class="el" href="struct_object3_d.html">Object3D</a> *object)</td></tr>
-<tr class="separator:a7f33b016079a82e342b4a257785a0257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87ea81c2369d712d01bcdaf6e6834730"><td class="memItemLeft" align="right" valign="top"><a id="a87ea81c2369d712d01bcdaf6e6834730"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="model_8h.html#a87ea81c2369d712d01bcdaf6e6834730">InitEmptyObject</a> (<a class="el" href="struct_game_object.html">GameObject</a> *object)</td></tr>
+<tr class="memdesc:a87ea81c2369d712d01bcdaf6e6834730"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init's values in the object before loading in the file. Similar to a default constructor for the object. <br /></td></tr>
+<tr class="separator:a87ea81c2369d712d01bcdaf6e6834730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a573e2753dda5550deb261c9e6837b2ab"><td class="memItemLeft" align="right" valign="top"><a id="a573e2753dda5550deb261c9e6837b2ab"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="model_8h.html#a573e2753dda5550deb261c9e6837b2ab">LoadOffFile</a> (char *filePath, <a class="el" href="struct_game_object.html">GameObject</a> *object)</td></tr>
+<tr class="memdesc:a573e2753dda5550deb261c9e6837b2ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads in a given 3D model OFF file and returns true or false for a successful load. <br /></td></tr>
+<tr class="separator:a573e2753dda5550deb261c9e6837b2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f3e2681f2c5332286d0b02a94857591"><td class="memItemLeft" align="right" valign="top"><a id="a3f3e2681f2c5332286d0b02a94857591"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="model_8h.html#a3f3e2681f2c5332286d0b02a94857591">DrawOffFile</a> (<a class="el" href="struct_game_object.html">GameObject</a> *object)</td></tr>
+<tr class="memdesc:a3f3e2681f2c5332286d0b02a94857591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to render a OFF file. Use this function within the glut render call. <br /></td></tr>
+<tr class="separator:a3f3e2681f2c5332286d0b02a94857591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9742f411dff3f9b3dcaa24f7607f57a9"><td class="memItemLeft" align="right" valign="top"><a id="a9742f411dff3f9b3dcaa24f7607f57a9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>TranslateToObjectPosition</b> (<a class="el" href="struct_game_object.html">GameObject</a> *object)</td></tr>
+<tr class="separator:a9742f411dff3f9b3dcaa24f7607f57a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace45bc7a3ccd821a12449807bba22483"><td class="memItemLeft" align="right" valign="top"><a id="ace45bc7a3ccd821a12449807bba22483"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>TranslateToVec3Position</b> (<a class="el" href="struct_vector3.html">Vector3</a> a)</td></tr>
+<tr class="separator:ace45bc7a3ccd821a12449807bba22483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdfbb53fe25eccea3e6c0af5a8505620"><td class="memItemLeft" align="right" valign="top"><a id="acdfbb53fe25eccea3e6c0af5a8505620"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>RotateAroundRad</b> (<a class="el" href="struct_vector3.html">Vector3</a> a)</td></tr>
+<tr class="separator:acdfbb53fe25eccea3e6c0af5a8505620"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e14ad5fea6c2f0b9e82decba36b69df"><td class="memItemLeft" align="right" valign="top"><a id="a5e14ad5fea6c2f0b9e82decba36b69df"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>RotateAroundDeg</b> (<a class="el" href="struct_vector3.html">Vector3</a> a)</td></tr>
+<tr class="separator:a5e14ad5fea6c2f0b9e82decba36b69df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac19354e099b0ae5cfcd429e066d1147c"><td class="memItemLeft" align="right" valign="top"><a id="ac19354e099b0ae5cfcd429e066d1147c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateGameObject</b> (<a class="el" href="struct_game_object.html">GameObject</a> *gameObjectToUpdate, <a class="el" href="struct_game_object.html">GameObject</a> tempGameObject)</td></tr>
+<tr class="separator:ac19354e099b0ae5cfcd429e066d1147c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cad7b1e39acbc2d24d7099039368ca7"><td class="memItemLeft" align="right" valign="top"><a id="a1cad7b1e39acbc2d24d7099039368ca7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetName</b> (<a class="el" href="struct_game_object.html">GameObject</a> *gameobject, char *name)</td></tr>
+<tr class="separator:a1cad7b1e39acbc2d24d7099039368ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Used to load and manage models into the program. </p>
-<dl class="section author"><dt>Author</dt><dd>Bryce Standley</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>April 2021 </dd></dl>
+<p>Sets the name of a object.</p>
+<p>Updates a game object's information with a temp game object.</p>
+<p>Uses openGL rotatef to rotate a given axis in degrees.</p>
+<p>Uses openGl rotatef to rotate around a give axis in radians.</p>
+<p>Translates the scene to a given vec3.</p>
+<p>Translates the scene to a gameobjects position.</p>
+<dl class="section author"><dt>Author</dt><dd>Bryce Standley </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>April 2021</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Bryce Standley </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>May 2021</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Bryce Standley </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 2021</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Maea Havea </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 2021 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

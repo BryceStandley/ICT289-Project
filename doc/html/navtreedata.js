@@ -24,7 +24,8 @@
 */
 var NAVTREE =
 [
-  [ "ICT289 Project", "index.html", [
+  [ "BowTime - ICT289 Project", "index.html", [
+    [ "Todo List", "todo.html", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ]
@@ -34,6 +35,7 @@ var NAVTREE =
       [ "Globals", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
@@ -43,7 +45,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_i_c_t289-_project_8c.html"
+"_i_c_t289-_project_8c.html",
+"vector_8h.html#ac60fcc424b5db4f8de86dcf75c5bd7b7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ICT289 Project: ICT289-Project/src/rigidbody.h File Reference</title>
+<title>BowTime - ICT289 Project: ICT289-Project/src/rigidbody.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ICT289 Project
-   &#160;<span id="projectnumber">2</span>
+   <div id="projectname">BowTime - ICT289 Project
+   &#160;<span id="projectnumber">v3</span>
    </div>
   </td>
  </tr>
@@ -84,7 +84,9 @@ $(document).ready(function(){initNavTree('rigidbody_8h.html',''); initResizable(
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">rigidbody.h File Reference</div>  </div>
@@ -94,19 +96,54 @@ $(document).ready(function(){initNavTree('rigidbody_8h.html',''); initResizable(
 <p>Physics functions to be used to animate objects.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="vector_8h_source.html">vector.h</a>&quot;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for rigidbody.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="rigidbody_8h__incl.png" border="0" usemap="#a_i_c_t289-_project_2src_2rigidbody_8h" alt=""/></div>
+<map name="a_i_c_t289-_project_2src_2rigidbody_8h" id="a_i_c_t289-_project_2src_2rigidbody_8h">
+<area shape="rect" title="Physics functions to be used to animate objects." alt="" coords="85,5,215,47"/>
+<area shape="rect" href="vector_8h.html" title="2D, 3D and 4D Vector Math fucntions" alt="" coords="70,95,137,121"/>
+<area shape="rect" title=" " alt="" coords="161,95,235,121"/>
+<area shape="rect" title=" " alt="" coords="5,169,68,196"/>
+<area shape="rect" title=" " alt="" coords="93,169,250,196"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="rigidbody_8h__dep__incl.png" border="0" usemap="#a_i_c_t289-_project_2src_2rigidbody_8hdep" alt=""/></div>
+<map name="a_i_c_t289-_project_2src_2rigidbody_8hdep" id="a_i_c_t289-_project_2src_2rigidbody_8hdep">
+<area shape="rect" title="Physics functions to be used to animate objects." alt="" coords="56,5,185,47"/>
+<area shape="rect" href="model_8h.html" title="Used to load and manage models into the program." alt="" coords="56,95,185,136"/>
+<area shape="rect" href="scene_8h.html" title="Functions to render objects within the scene." alt="" coords="5,184,135,225"/>
+<area shape="rect" href="window_8h.html" title="Main window file that contains all functions related to the window and the program." alt="" coords="56,273,185,315"/>
+<area shape="rect" href="_i_c_t289-_project_8c.html" title="Main program entry point." alt="" coords="56,363,185,404"/>
+</map>
+</div>
 </div>
 <p><a href="rigidbody_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_rigidbody.html">Rigidbody</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structure of a physics rigidbody.  <a href="struct_rigidbody.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a427ce6aa99e787700fdd6c78b2633d84"><td class="memItemLeft" align="right" valign="top"><a id="a427ce6aa99e787700fdd6c78b2633d84"></a>
-typedef struct <a class="el" href="struct_rigidbody.html">Rigidbody</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Rigidbody</b></td></tr>
+typedef struct <a class="el" href="struct_rigidbody.html">Rigidbody</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rigidbody_8h.html#a427ce6aa99e787700fdd6c78b2633d84">Rigidbody</a></td></tr>
+<tr class="memdesc:a427ce6aa99e787700fdd6c78b2633d84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structure of a physics rigidbody. <br /></td></tr>
 <tr class="separator:a427ce6aa99e787700fdd6c78b2633d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ad8e494b684b21648d02d8481d165d159"><td class="memItemLeft" align="right" valign="top"><a id="ad8e494b684b21648d02d8481d165d159"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>BODYTYPE</b> { <b>DYNAMIC</b>
+, <b>KINEMATIC</b>
+, <b>STATIC</b>
+ }</td></tr>
+<tr class="separator:ad8e494b684b21648d02d8481d165d159"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -134,8 +171,11 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Physics functions to be used to animate objects. </p>
+<p>enum of the different body types of a physics object</p>
 <dl class="section author"><dt>Author</dt><dd>Bryce Standley </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>May 2021 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>May 2021</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Maea Havea </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 2021 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a9cb7eb0fe8d156736a928c1c50e6be80"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9cb7eb0fe8d156736a928c1c50e6be80">&#9670;&nbsp;</a></span>Acceleration()</h2>
@@ -165,6 +205,26 @@ Functions</h2></td></tr>
 
 <p>Calculate the acceleration at a given time. </p>
 <dl class="section date"><dt>Date</dt><dd>May 2021 </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="rigidbody_8h_a9cb7eb0fe8d156736a928c1c50e6be80_cgraph.png" border="0" usemap="#arigidbody_8h_a9cb7eb0fe8d156736a928c1c50e6be80_cgraph" alt=""/></div>
+<map name="arigidbody_8h_a9cb7eb0fe8d156736a928c1c50e6be80_cgraph" id="arigidbody_8h_a9cb7eb0fe8d156736a928c1c50e6be80_cgraph">
+<area shape="rect" title="Calculate the acceleration at a given time." alt="" coords="5,5,100,32"/>
+<area shape="rect" href="vector_8h.html#ab8f31feff2d3d897f7c246a33b02ec1c" title="divides a Vector3 by a divide value" alt="" coords="148,5,211,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="rigidbody_8h_a9cb7eb0fe8d156736a928c1c50e6be80_icgraph.png" border="0" usemap="#arigidbody_8h_a9cb7eb0fe8d156736a928c1c50e6be80_icgraph" alt=""/></div>
+<map name="arigidbody_8h_a9cb7eb0fe8d156736a928c1c50e6be80_icgraph" id="arigidbody_8h_a9cb7eb0fe8d156736a928c1c50e6be80_icgraph">
+<area shape="rect" title="Calculate the acceleration at a given time." alt="" coords="164,56,259,83"/>
+<area shape="rect" href="rigidbody_8h.html#a8a91647f4971af971ff7d4121691eaae" title="Calculate the new displacement of a object at a given time." alt="" coords="25,5,97,32"/>
+<area shape="rect" href="rigidbody_8h.html#a54632aba31eeb94f2c490a6bc6248789" title="Calculate a force of a object." alt="" coords="33,56,88,83"/>
+<area shape="rect" href="rigidbody_8h.html#ab0c43059b74977be129a06fb78083b89" title="Calculate the velocity at a given time." alt="" coords="5,107,116,133"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -196,6 +256,16 @@ Functions</h2></td></tr>
 
 <p>Average of two velocities. </p>
 <dl class="section date"><dt>Date</dt><dd>May 2021 </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="rigidbody_8h_a4b4ad059679ac79295d71b4a88ad6c82_cgraph.png" border="0" usemap="#arigidbody_8h_a4b4ad059679ac79295d71b4a88ad6c82_cgraph" alt=""/></div>
+<map name="arigidbody_8h_a4b4ad059679ac79295d71b4a88ad6c82_cgraph" id="arigidbody_8h_a4b4ad059679ac79295d71b4a88ad6c82_cgraph">
+<area shape="rect" title="Average of two velocities." alt="" coords="5,31,120,57"/>
+<area shape="rect" href="vector_8h.html#ad82a913d6512f823b7e7800830125ac1" title="Adds two Vector3&#39;s together." alt="" coords="173,5,225,32"/>
+<area shape="rect" href="vector_8h.html#ab8f31feff2d3d897f7c246a33b02ec1c" title="divides a Vector3 by a divide value" alt="" coords="168,56,231,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -239,6 +309,18 @@ Functions</h2></td></tr>
 
 <p>Calculate the new displacement of a object at a given time. </p>
 <dl class="section date"><dt>Date</dt><dd>May 2021 </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="rigidbody_8h_a8a91647f4971af971ff7d4121691eaae_cgraph.png" border="0" usemap="#arigidbody_8h_a8a91647f4971af971ff7d4121691eaae_cgraph" alt=""/></div>
+<map name="arigidbody_8h_a8a91647f4971af971ff7d4121691eaae_cgraph" id="arigidbody_8h_a8a91647f4971af971ff7d4121691eaae_cgraph">
+<area shape="rect" title="Calculate the new displacement of a object at a given time." alt="" coords="5,56,77,83"/>
+<area shape="rect" href="rigidbody_8h.html#a9cb7eb0fe8d156736a928c1c50e6be80" title="Calculate the acceleration at a given time." alt="" coords="125,5,220,32"/>
+<area shape="rect" href="vector_8h.html#ad82a913d6512f823b7e7800830125ac1" title="Adds two Vector3&#39;s together." alt="" coords="147,56,199,83"/>
+<area shape="rect" href="vector_8h.html#ae420560bae7d5717003ba186193e5383" title="Scales a Vector3 by a scale value." alt="" coords="141,107,204,133"/>
+<area shape="rect" href="vector_8h.html#ab8f31feff2d3d897f7c246a33b02ec1c" title="divides a Vector3 by a divide value" alt="" coords="268,5,331,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -270,6 +352,17 @@ Functions</h2></td></tr>
 
 <p>Calculate a force of a object. </p>
 <dl class="section date"><dt>Date</dt><dd>May 2021 </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="rigidbody_8h_a54632aba31eeb94f2c490a6bc6248789_cgraph.png" border="0" usemap="#arigidbody_8h_a54632aba31eeb94f2c490a6bc6248789_cgraph" alt=""/></div>
+<map name="arigidbody_8h_a54632aba31eeb94f2c490a6bc6248789_cgraph" id="arigidbody_8h_a54632aba31eeb94f2c490a6bc6248789_cgraph">
+<area shape="rect" title="Calculate a force of a object." alt="" coords="5,31,60,57"/>
+<area shape="rect" href="rigidbody_8h.html#a9cb7eb0fe8d156736a928c1c50e6be80" title="Calculate the acceleration at a given time." alt="" coords="108,5,203,32"/>
+<area shape="rect" href="vector_8h.html#ae420560bae7d5717003ba186193e5383" title="Scales a Vector3 by a scale value." alt="" coords="124,56,187,83"/>
+<area shape="rect" href="vector_8h.html#ab8f31feff2d3d897f7c246a33b02ec1c" title="divides a Vector3 by a divide value" alt="" coords="251,5,313,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -322,6 +415,15 @@ Functions</h2></td></tr>
 
 <p>Init a rigidbody with default values. </p>
 <dl class="section date"><dt>Date</dt><dd>May 2021 </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="rigidbody_8h_aec94cc96cc69814097f420caaa1231d5_icgraph.png" border="0" usemap="#arigidbody_8h_aec94cc96cc69814097f420caaa1231d5_icgraph" alt=""/></div>
+<map name="arigidbody_8h_aec94cc96cc69814097f420caaa1231d5_icgraph" id="arigidbody_8h_aec94cc96cc69814097f420caaa1231d5_icgraph">
+<area shape="rect" title="Init a rigidbody with default values." alt="" coords="140,5,236,32"/>
+<area shape="rect" href="model_8h.html#a573e2753dda5550deb261c9e6837b2ab" title="Loads in a given 3D model OFF file and returns true or false for a successful load." alt="" coords="5,5,92,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -359,6 +461,18 @@ Functions</h2></td></tr>
 
 <p>Calculate the velocity at a given time. </p>
 <dl class="section date"><dt>Date</dt><dd>May 2021 </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="rigidbody_8h_ab0c43059b74977be129a06fb78083b89_cgraph.png" border="0" usemap="#arigidbody_8h_ab0c43059b74977be129a06fb78083b89_cgraph" alt=""/></div>
+<map name="arigidbody_8h_ab0c43059b74977be129a06fb78083b89_cgraph" id="arigidbody_8h_ab0c43059b74977be129a06fb78083b89_cgraph">
+<area shape="rect" title="Calculate the velocity at a given time." alt="" coords="5,56,116,83"/>
+<area shape="rect" href="rigidbody_8h.html#a9cb7eb0fe8d156736a928c1c50e6be80" title="Calculate the acceleration at a given time." alt="" coords="164,5,259,32"/>
+<area shape="rect" href="vector_8h.html#ad82a913d6512f823b7e7800830125ac1" title="Adds two Vector3&#39;s together." alt="" coords="185,56,237,83"/>
+<area shape="rect" href="vector_8h.html#ae420560bae7d5717003ba186193e5383" title="Scales a Vector3 by a scale value." alt="" coords="180,107,243,133"/>
+<area shape="rect" href="vector_8h.html#ab8f31feff2d3d897f7c246a33b02ec1c" title="divides a Vector3 by a divide value" alt="" coords="307,5,369,32"/>
+</map>
+</div>
 
 </div>
 </div>

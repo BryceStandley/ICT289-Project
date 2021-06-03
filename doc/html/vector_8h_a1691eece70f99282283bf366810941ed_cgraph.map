@@ -1,0 +1,4 @@
+<map id="Distance3" name="Distance3">
+<area shape="rect" id="node1" title="Finds the distance between two Vector3&#39;s." alt="" coords="5,5,85,32"/>
+<area shape="rect" id="node2" href="$vector_8h.html#a42adb0f260e0999aa7ccdc7ec8524c92" title="Finds a directional vector between two Vector3&#39;s." alt="" coords="133,5,252,32"/>
+</map>

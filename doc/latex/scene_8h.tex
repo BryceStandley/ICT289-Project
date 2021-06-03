@@ -8,26 +8,63 @@ Functions to render objects within the scene.
 {\ttfamily \#include $<$GL/freeglut.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}vector.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}model.\+h\char`\"{}}\newline
+Include dependency graph for scene.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scene_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{scene_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{scene_8h_ac1dfae96551c140268f7bfc71c5aa2ea}\label{scene_8h_ac1dfae96551c140268f7bfc71c5aa2ea}} 
+\#define {\bfseries SCENE\+\_\+H}
+\item 
+\mbox{\Hypertarget{scene_8h_a39413e7a9abc90f9cf7b8c95502fb31e}\label{scene_8h_a39413e7a9abc90f9cf7b8c95502fb31e}} 
+\#define {\bfseries MAX\+\_\+\+SCENE\+\_\+\+OBJECTS}~5
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{scene_8h_a7036699d499cc21ca48f01005a329740}\label{scene_8h_a7036699d499cc21ca48f01005a329740}} 
-void {\bfseries Draw\+Ground\+Plane} (float scaleX, float scaleZ)
-\item 
+void \mbox{\hyperlink{scene_8h_a7036699d499cc21ca48f01005a329740}{Draw\+Ground\+Plane}} (float scaleX, float scaleZ)
+\begin{DoxyCompactList}\small\item\em Draws a flat ground plane. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{scene_8h_aee63d0d9b146eba508d24f76e5ed929f}\label{scene_8h_aee63d0d9b146eba508d24f76e5ed929f}} 
-void {\bfseries Draw\+Cube\+On\+Ground} (float scale)
-\item 
-\mbox{\Hypertarget{scene_8h_a9e1c922f5009fbe8917633b3a8040ba2}\label{scene_8h_a9e1c922f5009fbe8917633b3a8040ba2}} 
-void {\bfseries Draw\+Off\+Models} (\mbox{\hyperlink{struct_object3_d}{Object3D}} $\ast$objects)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{scene_8h_aee63d0d9b146eba508d24f76e5ed929f}{Draw\+Cube\+On\+Ground}} (float scale)
+\begin{DoxyCompactList}\small\item\em Draws a cube fixed on the ground plane. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{scene_8h_a377270349f47943d29845a0410e398a6}{Draw\+Off\+Models}} (\mbox{\hyperlink{struct_game_object}{Game\+Object}} $\ast$objects)
+\begin{DoxyCompactList}\small\item\em Used to draw multiple OFF models to the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Functions to render objects within the scene. 
 
 \begin{DoxyAuthor}{Author}
-Bryce Standley
+Bryce Standley 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
 April 2021 
 \end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{scene_8h_a377270349f47943d29845a0410e398a6}\label{scene_8h_a377270349f47943d29845a0410e398a6}} 
+\index{scene.h@{scene.h}!DrawOffModels@{DrawOffModels}}
+\index{DrawOffModels@{DrawOffModels}!scene.h@{scene.h}}
+\doxysubsubsection{\texorpdfstring{DrawOffModels()}{DrawOffModels()}}
+{\footnotesize\ttfamily void Draw\+Off\+Models (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_object}{Game\+Object}} $\ast$}]{objects }\end{DoxyParamCaption})}
+
+
+
+Used to draw multiple OFF models to the scene. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]Fix memory alloc and param passing for rendering \end{DoxyRefDesc}

@@ -2,13 +2,27 @@
 \label{input_8h}\index{ICT289-\/Project/src/input.h@{ICT289-\/Project/src/input.h}}
 
 
-Main Input function.  
+All input related functions and data structure variables used by the input.  
 
 
 {\ttfamily \#include $<$GL/freeglut.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}camera.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include $<$corecrt\+\_\+math\+\_\+defines.\+h$>$}\newline
+Include dependency graph for input.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{input_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{input_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -16,34 +30,54 @@ Main Input function.
 void {\bfseries Press\+Normal\+Input} (unsigned char key, int x\+Val, int y\+Val)
 \item 
 \mbox{\Hypertarget{input_8h_a8bb6fc24d0c9af4c0442ad9e30cbbb7b}\label{input_8h_a8bb6fc24d0c9af4c0442ad9e30cbbb7b}} 
-void {\bfseries Press\+Normal\+Input\+Up} (unsigned char key, int x\+Val, int y\+Val)
-\item 
+void \mbox{\hyperlink{input_8h_a8bb6fc24d0c9af4c0442ad9e30cbbb7b}{Press\+Normal\+Input\+Up}} (unsigned char key, int x\+Val, int y\+Val)
+\begin{DoxyCompactList}\small\item\em Function to reset any input keys. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{input_8h_a8bca63ba81d44d759bdd63372de7e974}\label{input_8h_a8bca63ba81d44d759bdd63372de7e974}} 
-void {\bfseries Mouse\+Button\+Input} (int button, int state, int x, int y)
-\item 
+void \mbox{\hyperlink{input_8h_a8bca63ba81d44d759bdd63372de7e974}{Mouse\+Button\+Input}} (int button, int state, int x, int y)
+\begin{DoxyCompactList}\small\item\em Mouse button input callback function. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{input_8h_a7f548568bd06fd8f52caadb58a06a597}\label{input_8h_a7f548568bd06fd8f52caadb58a06a597}} 
-void {\bfseries Mouse\+Movement\+Input} (int x, int y)
-\item 
+void \mbox{\hyperlink{input_8h_a7f548568bd06fd8f52caadb58a06a597}{Mouse\+Movement\+Input}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Mouse movement input callback function. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{input_8h_a498703ef5c6eac915a32507862df2160}\label{input_8h_a498703ef5c6eac915a32507862df2160}} 
-void {\bfseries Input\+Timer} (int value)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{input_8h_a498703ef5c6eac915a32507862df2160}{Input\+Timer}} (int value)
+\begin{DoxyCompactList}\small\item\em Timer function used to poll input events for the camera controls. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{input_8h_a2008f4ab70b5e4104c2ca43932536ddf}\label{input_8h_a2008f4ab70b5e4104c2ca43932536ddf}} 
-\mbox{\hyperlink{struct_camera}{Camera}} {\bfseries camera}
-\item 
+\mbox{\hyperlink{struct_camera}{Camera}} \mbox{\hyperlink{input_8h_a2008f4ab70b5e4104c2ca43932536ddf}{camera}}
+\begin{DoxyCompactList}\small\item\em External variables used by the input but also needs to be referenced elsewhere. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{input_8h_a5f2635b83f3a2eaa4a0c076ff7a227c1}\label{input_8h_a5f2635b83f3a2eaa4a0c076ff7a227c1}} 
 int {\bfseries viewport\+Width}
 \item 
 \mbox{\Hypertarget{input_8h_a806f22ad0941db9ca74fbe613ce4a0ad}\label{input_8h_a806f22ad0941db9ca74fbe613ce4a0ad}} 
 int {\bfseries viewport\+Hieght}
+\item 
+\mbox{\Hypertarget{input_8h_a44079ba4856fc6fcef0c7676c10e12fc}\label{input_8h_a44079ba4856fc6fcef0c7676c10e12fc}} 
+bool {\bfseries endscreen\+Display}
+\item 
+\mbox{\Hypertarget{input_8h_ae6ad2ba130ae8e7e48bf144ea89fbdef}\label{input_8h_ae6ad2ba130ae8e7e48bf144ea89fbdef}} 
+bool {\bfseries set\+Arrow}
+\item 
+\mbox{\Hypertarget{input_8h_a195b80101a0b549a4ba8c70b85ffb8c7}\label{input_8h_a195b80101a0b549a4ba8c70b85ffb8c7}} 
+bool {\bfseries fire\+Arrow}
+\item 
+\mbox{\Hypertarget{input_8h_a539a7ad4f347d49ddfd539375d6ba7e4}\label{input_8h_a539a7ad4f347d49ddfd539375d6ba7e4}} 
+bool {\bfseries in\+Air}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Main Input function. 
+All input related functions and data structure variables used by the input. 
 
+Main Input function.
+
+\begin{DoxyAuthor}{Author}
+Bryce Standley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+April 2021
+\end{DoxyDate}
 \begin{DoxyAuthor}{Author}
 Bryce Standley 
 \end{DoxyAuthor}

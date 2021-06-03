@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ICT289 Project: ICT289-Project/src/vector.h File Reference</title>
+<title>BowTime - ICT289 Project: ICT289-Project/src/vector.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ICT289 Project
-   &#160;<span id="projectnumber">2</span>
+   <div id="projectname">BowTime - ICT289 Project
+   &#160;<span id="projectnumber">v3</span>
    </div>
   </td>
  </tr>
@@ -92,9 +92,38 @@ $(document).ready(function(){initNavTree('vector_8h.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 
-<p>Vector Math fucntions file.  
+<p>2D, 3D and 4D Vector Math fucntions  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;corecrt_math_defines.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for vector.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h__incl.png" border="0" usemap="#a_i_c_t289-_project_2src_2vector_8h" alt=""/></div>
+<map name="a_i_c_t289-_project_2src_2vector_8h" id="a_i_c_t289-_project_2src_2vector_8h">
+<area shape="rect" title="2D, 3D and 4D Vector Math fucntions" alt="" coords="39,5,168,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,68,121"/>
+<area shape="rect" title=" " alt="" coords="93,95,250,121"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h__dep__incl.png" border="0" usemap="#a_i_c_t289-_project_2src_2vector_8hdep" alt=""/></div>
+<map name="a_i_c_t289-_project_2src_2vector_8hdep" id="a_i_c_t289-_project_2src_2vector_8hdep">
+<area shape="rect" title="2D, 3D and 4D Vector Math fucntions" alt="" coords="159,5,288,47"/>
+<area shape="rect" href="camera_8h.html" title="Adds the data structure and functions to control a OpenGL camera." alt="" coords="68,363,197,404"/>
+<area shape="rect" href="_matrix_8h.html" title="All functions and structures of a Matrix." alt="" coords="56,95,185,136"/>
+<area shape="rect" href="_quaternion_8h.html" title="Quaternion functionality for openGL." alt="" coords="56,184,185,225"/>
+<area shape="rect" href="_transform_8h.html" title="Basic structure and functions of a transform." alt="" coords="81,273,211,315"/>
+<area shape="rect" href="model_8h.html" title="Used to load and manage models into the program." alt="" coords="221,363,351,404"/>
+<area shape="rect" href="scene_8h.html" title="Functions to render objects within the scene." alt="" coords="324,452,453,493"/>
+<area shape="rect" href="rigidbody_8h.html" title="Physics functions to be used to animate objects." alt="" coords="312,184,441,225"/>
+<area shape="rect" href="input_8h.html" title="All input related functions and data structure variables used by the input." alt="" coords="68,452,197,493"/>
+<area shape="rect" href="window_8h.html" title="Main window file that contains all functions related to the window and the program." alt="" coords="196,541,325,583"/>
+<area shape="rect" href="_i_c_t289-_project_8c.html" title="Main program entry point." alt="" coords="196,631,325,672"/>
+</map>
+</div>
 </div>
 <p><a href="vector_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -109,8 +138,8 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_vector4.html">Vector4</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector data structure with 4 components create a vector4 by using a compund literal ie <a class="el" href="struct_vector4.html" title="Vector data structure with 4 components create a vector4 by using a compund literal ie Vector4 v = (V...">Vector4</a> v = (<a class="el" href="struct_vector4.html" title="Vector data structure with 4 components create a vector4 by using a compund literal ie Vector4 v = (V...">Vector4</a>){.x = 0.0f, .y = 0.0f, .z = 0.0f, .w = 0.0f};.  <a href="struct_vector4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_transform.html">Transform</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_transform.html" title="Transform struct that can hold 3 vector3 data structures A transform can be initialized by using comp...">Transform</a> struct that can hold 3 vector3 data structures A transform can be initialized by using compound literals ie, Transform.Position = (<a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a>){.x = 0.0f, .y = 0.0f, .z = 0.0f};.  <a href="struct_transform.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_vector5.html">Vector5</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector data structure with 5 components create a vector5 by using a compund literal ie <a class="el" href="struct_vector5.html" title="Vector data structure with 5 components create a vector5 by using a compund literal ie Vector5 v = (V...">Vector5</a> v = (<a class="el" href="struct_vector5.html" title="Vector data structure with 5 components create a vector5 by using a compund literal ie Vector5 v = (V...">Vector5</a>){.x = 0.0f, .y = 0.0f, .z = 0.0f, .w = 0.0f, .u = 0.0f};.  <a href="struct_vector5.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -126,6 +155,10 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#aee4a7c347d9b0e2dab0fc809d9100fac">Vector3One</a>&#160;&#160;&#160;(<a class="el" href="struct_vector3.html">Vector3</a>){.x = 1.0f, .y = 1.0f, .z = 1.0f}</td></tr>
 <tr class="memdesc:aee4a7c347d9b0e2dab0fc809d9100fac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eazy define for creating a vector3 with all components at one. <br /></td></tr>
 <tr class="separator:aee4a7c347d9b0e2dab0fc809d9100fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b857faef75d7e3a278bc3f544e0fb07"><td class="memItemLeft" align="right" valign="top"><a id="a8b857faef75d7e3a278bc3f544e0fb07"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a8b857faef75d7e3a278bc3f544e0fb07">Vector3YUp</a>&#160;&#160;&#160;(<a class="el" href="struct_vector3.html">Vector3</a>){.x = 0.0f, .y = 1.0f, .z = 0.0f}</td></tr>
+<tr class="memdesc:a8b857faef75d7e3a278bc3f544e0fb07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eazy define for creating a vector3 y up vector. <br /></td></tr>
+<tr class="separator:a8b857faef75d7e3a278bc3f544e0fb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -141,10 +174,10 @@ typedef struct <a class="el" href="struct_vector3.html">Vector3</a>&#160;</td><t
 typedef struct <a class="el" href="struct_vector4.html">Vector4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#aff3ba508436bec4750e91364badfbc99">Vector4</a></td></tr>
 <tr class="memdesc:aff3ba508436bec4750e91364badfbc99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector data structure with 4 components create a vector4 by using a compund literal ie <a class="el" href="struct_vector4.html" title="Vector data structure with 4 components create a vector4 by using a compund literal ie Vector4 v = (V...">Vector4</a> v = (<a class="el" href="struct_vector4.html" title="Vector data structure with 4 components create a vector4 by using a compund literal ie Vector4 v = (V...">Vector4</a>){.x = 0.0f, .y = 0.0f, .z = 0.0f, .w = 0.0f};. <br /></td></tr>
 <tr class="separator:aff3ba508436bec4750e91364badfbc99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a512254f7ee8948f0323992006331503c"><td class="memItemLeft" align="right" valign="top"><a id="a512254f7ee8948f0323992006331503c"></a>
-typedef struct <a class="el" href="struct_transform.html">Transform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a512254f7ee8948f0323992006331503c">Transform</a></td></tr>
-<tr class="memdesc:a512254f7ee8948f0323992006331503c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_transform.html" title="Transform struct that can hold 3 vector3 data structures A transform can be initialized by using comp...">Transform</a> struct that can hold 3 vector3 data structures A transform can be initialized by using compound literals ie, Transform.Position = (<a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a>){.x = 0.0f, .y = 0.0f, .z = 0.0f};. <br /></td></tr>
-<tr class="separator:a512254f7ee8948f0323992006331503c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a258cb9a555e868c2c2e13eaab89c315f"><td class="memItemLeft" align="right" valign="top"><a id="a258cb9a555e868c2c2e13eaab89c315f"></a>
+typedef struct <a class="el" href="struct_vector5.html">Vector5</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a258cb9a555e868c2c2e13eaab89c315f">Vector5</a></td></tr>
+<tr class="memdesc:a258cb9a555e868c2c2e13eaab89c315f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector data structure with 5 components create a vector5 by using a compund literal ie <a class="el" href="struct_vector5.html" title="Vector data structure with 5 components create a vector5 by using a compund literal ie Vector5 v = (V...">Vector5</a> v = (<a class="el" href="struct_vector5.html" title="Vector data structure with 5 components create a vector5 by using a compund literal ie Vector5 v = (V...">Vector5</a>){.x = 0.0f, .y = 0.0f, .z = 0.0f, .w = 0.0f, .u = 0.0f};. <br /></td></tr>
+<tr class="separator:a258cb9a555e868c2c2e13eaab89c315f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -160,6 +193,9 @@ Functions</h2></td></tr>
 <tr class="memitem:af2cfd198ee49fbb80dc63eec6b69bf5f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#af2cfd198ee49fbb80dc63eec6b69bf5f">Distance2</a> (<a class="el" href="struct_vector2.html">Vector2</a> a, <a class="el" href="struct_vector2.html">Vector2</a> b)</td></tr>
 <tr class="memdesc:af2cfd198ee49fbb80dc63eec6b69bf5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the distance between two <a class="el" href="struct_vector2.html" title="Vector data structure with 2 components create a vector2 by using a compund literal ie Vector2 v = (V...">Vector2</a>'s.  <a href="vector_8h.html#af2cfd198ee49fbb80dc63eec6b69bf5f">More...</a><br /></td></tr>
 <tr class="separator:af2cfd198ee49fbb80dc63eec6b69bf5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1691eece70f99282283bf366810941ed"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a1691eece70f99282283bf366810941ed">Distance3</a> (<a class="el" href="struct_vector3.html">Vector3</a> a, <a class="el" href="struct_vector3.html">Vector3</a> b)</td></tr>
+<tr class="memdesc:a1691eece70f99282283bf366810941ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the distance between two <a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a>'s.  <a href="vector_8h.html#a1691eece70f99282283bf366810941ed">More...</a><br /></td></tr>
+<tr class="separator:a1691eece70f99282283bf366810941ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e1571a80c2d1924926a958ef4f581b2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a0e1571a80c2d1924926a958ef4f581b2">Distance4</a> (<a class="el" href="struct_vector4.html">Vector4</a> a, <a class="el" href="struct_vector4.html">Vector4</a> b)</td></tr>
 <tr class="memdesc:a0e1571a80c2d1924926a958ef4f581b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the distance between two <a class="el" href="struct_vector4.html" title="Vector data structure with 4 components create a vector4 by using a compund literal ie Vector4 v = (V...">Vector4</a>'s.  <a href="vector_8h.html#a0e1571a80c2d1924926a958ef4f581b2">More...</a><br /></td></tr>
 <tr class="separator:a0e1571a80c2d1924926a958ef4f581b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -236,10 +272,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ac355e264ad1182721187dad71802b0e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the cross product between two <a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a>'s.  <a href="vector_8h.html#ac355e264ad1182721187dad71802b0e9">More...</a><br /></td></tr>
 <tr class="separator:ac355e264ad1182721187dad71802b0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bf0708735e66f1e450827840aa751cf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a0bf0708735e66f1e450827840aa751cf">Angle2</a> (<a class="el" href="struct_vector2.html">Vector2</a> a, <a class="el" href="struct_vector2.html">Vector2</a> b)</td></tr>
-<tr class="memdesc:a0bf0708735e66f1e450827840aa751cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the angle between two Direction <a class="el" href="struct_vector2.html" title="Vector data structure with 2 components create a vector2 by using a compund literal ie Vector2 v = (V...">Vector2</a>'s.  <a href="vector_8h.html#a0bf0708735e66f1e450827840aa751cf">More...</a><br /></td></tr>
+<tr class="memdesc:a0bf0708735e66f1e450827840aa751cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the angle between two Direction <a class="el" href="struct_vector2.html" title="Vector data structure with 2 components create a vector2 by using a compund literal ie Vector2 v = (V...">Vector2</a>'s in degrees.  <a href="vector_8h.html#a0bf0708735e66f1e450827840aa751cf">More...</a><br /></td></tr>
 <tr class="separator:a0bf0708735e66f1e450827840aa751cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac16a1b0415290a36433c31309c6a13f6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#ac16a1b0415290a36433c31309c6a13f6">Angle3</a> (<a class="el" href="struct_vector3.html">Vector3</a> a, <a class="el" href="struct_vector3.html">Vector3</a> b)</td></tr>
-<tr class="memdesc:ac16a1b0415290a36433c31309c6a13f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the angle between two Direction <a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a>'s.  <a href="vector_8h.html#ac16a1b0415290a36433c31309c6a13f6">More...</a><br /></td></tr>
+<tr class="memdesc:ac16a1b0415290a36433c31309c6a13f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the angle between two Direction <a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a>'s in Degrees.  <a href="vector_8h.html#ac16a1b0415290a36433c31309c6a13f6">More...</a><br /></td></tr>
 <tr class="separator:ac16a1b0415290a36433c31309c6a13f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac60fcc424b5db4f8de86dcf75c5bd7b7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#ac60fcc424b5db4f8de86dcf75c5bd7b7">Area3</a> (<a class="el" href="struct_vector3.html">Vector3</a> a, <a class="el" href="struct_vector3.html">Vector3</a> b, <a class="el" href="struct_vector3.html">Vector3</a> c)</td></tr>
 <tr class="memdesc:ac60fcc424b5db4f8de86dcf75c5bd7b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the area of a triangle of three <a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a>'s.  <a href="vector_8h.html#ac60fcc424b5db4f8de86dcf75c5bd7b7">More...</a><br /></td></tr>
@@ -265,11 +301,17 @@ Functions</h2></td></tr>
 <tr class="memitem:a19c3dcb0dbef7926343adb33a193190f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vector4.html">Vector4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a19c3dcb0dbef7926343adb33a193190f">Invert4</a> (<a class="el" href="struct_vector4.html">Vector4</a> a)</td></tr>
 <tr class="memdesc:a19c3dcb0dbef7926343adb33a193190f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverts a vector 4.  <a href="vector_8h.html#a19c3dcb0dbef7926343adb33a193190f">More...</a><br /></td></tr>
 <tr class="separator:a19c3dcb0dbef7926343adb33a193190f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0514d16be83ba5415079929a9b9a1032"><td class="memItemLeft" align="right" valign="top"><a id="a0514d16be83ba5415079929a9b9a1032"></a>
+<a class="el" href="struct_vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>NewVector3</b> (float x, float y, float z)</td></tr>
+<tr class="separator:a0514d16be83ba5415079929a9b9a1032"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Vector Math fucntions file. </p>
+<div class="textblock"><p>2D, 3D and 4D Vector Math fucntions </p>
+<p>Creates a new vector3 out of xyz components and returns it.</p>
 <dl class="section author"><dt>Author</dt><dd>Bryce Standley </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>April 2021 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>April 2021</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Bryce Standley </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 2021 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a9293e62a1755b791c50d4b7d4d382e3b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9293e62a1755b791c50d4b7d4d382e3b">&#9670;&nbsp;</a></span>Add2()</h2>
@@ -342,6 +384,17 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_ad82a913d6512f823b7e7800830125ac1_icgraph.png" border="0" usemap="#avector_8h_ad82a913d6512f823b7e7800830125ac1_icgraph" alt=""/></div>
+<map name="avector_8h_ad82a913d6512f823b7e7800830125ac1_icgraph" id="avector_8h_ad82a913d6512f823b7e7800830125ac1_icgraph">
+<area shape="rect" title="Adds two Vector3&#39;s together." alt="" coords="168,56,220,83"/>
+<area shape="rect" href="rigidbody_8h.html#a4b4ad059679ac79295d71b4a88ad6c82" title="Average of two velocities." alt="" coords="5,5,120,32"/>
+<area shape="rect" href="rigidbody_8h.html#a8a91647f4971af971ff7d4121691eaae" title="Calculate the new displacement of a object at a given time." alt="" coords="27,56,99,83"/>
+<area shape="rect" href="rigidbody_8h.html#ab0c43059b74977be129a06fb78083b89" title="Calculate the velocity at a given time." alt="" coords="7,107,118,133"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -408,13 +461,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Finds the angle between two Direction <a class="el" href="struct_vector2.html" title="Vector data structure with 2 components create a vector2 by using a compund literal ie Vector2 v = (V...">Vector2</a>'s. </p>
+<p>Finds the angle between two Direction <a class="el" href="struct_vector2.html" title="Vector data structure with 2 components create a vector2 by using a compund literal ie Vector2 v = (V...">Vector2</a>'s in degrees. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Two</td><td>directional vectors of type <a class="el" href="struct_vector2.html" title="Vector data structure with 2 components create a vector2 by using a compund literal ie Vector2 v = (V...">Vector2</a> </td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_a0bf0708735e66f1e450827840aa751cf_cgraph.png" border="0" usemap="#avector_8h_a0bf0708735e66f1e450827840aa751cf_cgraph" alt=""/></div>
+<map name="avector_8h_a0bf0708735e66f1e450827840aa751cf_cgraph" id="avector_8h_a0bf0708735e66f1e450827840aa751cf_cgraph">
+<area shape="rect" title="Finds the angle between two Direction Vector2&#39;s in degrees." alt="" coords="5,31,68,57"/>
+<area shape="rect" href="vector_8h.html#a7ff6b0205ff6527fde0ada4ab12f3d17" title="Finds the dot product between two Vector2&#39;s." alt="" coords="116,5,211,32"/>
+<area shape="rect" href="vector_8h.html#ad37c4c1e95f98c1f4fb7dd519de45282" title="Find the magnatude of a Vector2." alt="" coords="117,56,210,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -444,13 +507,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Finds the angle between two Direction <a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a>'s. </p>
+<p>Finds the angle between two Direction <a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a>'s in Degrees. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Two</td><td>directional vectors of type <a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a> </td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_ac16a1b0415290a36433c31309c6a13f6_cgraph.png" border="0" usemap="#avector_8h_ac16a1b0415290a36433c31309c6a13f6_cgraph" alt=""/></div>
+<map name="avector_8h_ac16a1b0415290a36433c31309c6a13f6_cgraph" id="avector_8h_ac16a1b0415290a36433c31309c6a13f6_cgraph">
+<area shape="rect" title="Finds the angle between two Direction Vector3&#39;s in Degrees." alt="" coords="5,31,68,57"/>
+<area shape="rect" href="vector_8h.html#a5beb024ec98eba78313543dbfcf5dbdc" title="Finds the dot product between two Vector3&#39;s." alt="" coords="116,5,211,32"/>
+<area shape="rect" href="vector_8h.html#a74e97ba7e0685d142af418969743a4bf" title="Find the magnatude of a Vector3." alt="" coords="117,56,210,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -495,6 +568,17 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_ac60fcc424b5db4f8de86dcf75c5bd7b7_cgraph.png" border="0" usemap="#avector_8h_ac60fcc424b5db4f8de86dcf75c5bd7b7_cgraph" alt=""/></div>
+<map name="avector_8h_ac60fcc424b5db4f8de86dcf75c5bd7b7_cgraph" id="avector_8h_ac60fcc424b5db4f8de86dcf75c5bd7b7_cgraph">
+<area shape="rect" title="Finds the area of a triangle of three Vector3&#39;s." alt="" coords="5,56,61,83"/>
+<area shape="rect" href="vector_8h.html#ac355e264ad1182721187dad71802b0e9" title="Finds the cross product between two Vector3&#39;s." alt="" coords="115,5,223,32"/>
+<area shape="rect" href="vector_8h.html#a42adb0f260e0999aa7ccdc7ec8524c92" title="Finds a directional vector between two Vector3&#39;s." alt="" coords="109,56,228,83"/>
+<area shape="rect" href="vector_8h.html#a74e97ba7e0685d142af418969743a4bf" title="Find the magnatude of a Vector3." alt="" coords="122,107,215,133"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -532,6 +616,24 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_ac355e264ad1182721187dad71802b0e9_icgraph.png" border="0" usemap="#avector_8h_ac355e264ad1182721187dad71802b0e9_icgraph" alt=""/></div>
+<map name="avector_8h_ac355e264ad1182721187dad71802b0e9_icgraph" id="avector_8h_ac355e264ad1182721187dad71802b0e9_icgraph">
+<area shape="rect" title="Finds the cross product between two Vector3&#39;s." alt="" coords="649,81,757,108"/>
+<area shape="rect" href="vector_8h.html#ac60fcc424b5db4f8de86dcf75c5bd7b7" title="Finds the area of a triangle of three Vector3&#39;s." alt="" coords="501,5,557,32"/>
+<area shape="rect" href="model_8h.html#a573e2753dda5550deb261c9e6837b2ab" title="Loads in a given 3D model OFF file and returns true or false for a successful load." alt="" coords="486,56,573,83"/>
+<area shape="rect" href="camera_8h.html#af39bf9665842690d15cf7fe839637fca" title="Updates the camera and the gluLookAt function." alt="" coords="301,132,409,159"/>
+<area shape="rect" href="camera_8h.html#afc313a42ad61c6e444fb8f6a6b6baf39" title="Updates the cameras look at matrix." alt="" coords="457,157,601,184"/>
+<area shape="rect" href="camera_8h.html#ac0ecd597d3765cdeb43efd88c7fb9be5" title="moves the cameras position forwards and back" alt="" coords="147,31,245,57"/>
+<area shape="rect" href="window_8h.html#a43920c017162ec39cb0f0e8f8f56b313" title="Main Render function." alt="" coords="165,81,227,108"/>
+<area shape="rect" href="camera_8h.html#a6c5755301abebe21f062f7207ae9b290" title="Rotates the camera&#39;s yaw/x value." alt="" coords="140,132,252,159"/>
+<area shape="rect" href="camera_8h.html#a5b115f8a37f78833a9275701f4bf862a" title="Rotates the camera&#39;s pitch/y value." alt="" coords="139,183,253,209"/>
+<area shape="rect" href="camera_8h.html#a64808ee919613b3c75b02b7791712096" title="Moves the cameras position left and right." alt="" coords="145,233,247,260"/>
+<area shape="rect" href="window_8h.html#a79030dd806dab6514d62fcd009f1774f" title="Main GLUT init functions." alt="" coords="5,81,91,108"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -569,6 +671,15 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_aa7c9098080c787f05809a65f13093610_icgraph.png" border="0" usemap="#avector_8h_aa7c9098080c787f05809a65f13093610_icgraph" alt=""/></div>
+<map name="avector_8h_aa7c9098080c787f05809a65f13093610_icgraph" id="avector_8h_aa7c9098080c787f05809a65f13093610_icgraph">
+<area shape="rect" title="Finds a directional vector between two Vector2&#39;s." alt="" coords="133,5,252,32"/>
+<area shape="rect" href="vector_8h.html#af2cfd198ee49fbb80dc63eec6b69bf5f" title="Finds the distance between two Vector2&#39;s." alt="" coords="5,5,85,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -606,6 +717,25 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_a42adb0f260e0999aa7ccdc7ec8524c92_icgraph.png" border="0" usemap="#avector_8h_a42adb0f260e0999aa7ccdc7ec8524c92_icgraph" alt=""/></div>
+<map name="avector_8h_a42adb0f260e0999aa7ccdc7ec8524c92_icgraph" id="avector_8h_a42adb0f260e0999aa7ccdc7ec8524c92_icgraph">
+<area shape="rect" title="Finds a directional vector between two Vector3&#39;s." alt="" coords="649,81,768,108"/>
+<area shape="rect" href="vector_8h.html#ac60fcc424b5db4f8de86dcf75c5bd7b7" title="Finds the area of a triangle of three Vector3&#39;s." alt="" coords="501,5,557,32"/>
+<area shape="rect" href="vector_8h.html#a1691eece70f99282283bf366810941ed" title="Finds the distance between two Vector3&#39;s." alt="" coords="489,56,569,83"/>
+<area shape="rect" href="model_8h.html#a573e2753dda5550deb261c9e6837b2ab" title="Loads in a given 3D model OFF file and returns true or false for a successful load." alt="" coords="486,107,573,133"/>
+<area shape="rect" href="camera_8h.html#afc313a42ad61c6e444fb8f6a6b6baf39" title="Updates the cameras look at matrix." alt="" coords="457,157,601,184"/>
+<area shape="rect" href="camera_8h.html#af39bf9665842690d15cf7fe839637fca" title="Updates the camera and the gluLookAt function." alt="" coords="301,157,409,184"/>
+<area shape="rect" href="camera_8h.html#ac0ecd597d3765cdeb43efd88c7fb9be5" title="moves the cameras position forwards and back" alt="" coords="147,56,245,83"/>
+<area shape="rect" href="window_8h.html#a43920c017162ec39cb0f0e8f8f56b313" title="Main Render function." alt="" coords="165,107,227,133"/>
+<area shape="rect" href="camera_8h.html#a6c5755301abebe21f062f7207ae9b290" title="Rotates the camera&#39;s yaw/x value." alt="" coords="140,157,252,184"/>
+<area shape="rect" href="camera_8h.html#a5b115f8a37f78833a9275701f4bf862a" title="Rotates the camera&#39;s pitch/y value." alt="" coords="139,208,253,235"/>
+<area shape="rect" href="camera_8h.html#a64808ee919613b3c75b02b7791712096" title="Moves the cameras position left and right." alt="" coords="145,259,247,285"/>
+<area shape="rect" href="window_8h.html#a79030dd806dab6514d62fcd009f1774f" title="Main GLUT init functions." alt="" coords="5,107,91,133"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -643,6 +773,15 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_af5b3e29635158173c745f45c4cfefb87_icgraph.png" border="0" usemap="#avector_8h_af5b3e29635158173c745f45c4cfefb87_icgraph" alt=""/></div>
+<map name="avector_8h_af5b3e29635158173c745f45c4cfefb87_icgraph" id="avector_8h_af5b3e29635158173c745f45c4cfefb87_icgraph">
+<area shape="rect" title="Finds a directional vector between two Vector4&#39;s." alt="" coords="133,5,252,32"/>
+<area shape="rect" href="vector_8h.html#a0e1571a80c2d1924926a958ef4f581b2" title="Finds the distance between two Vector4&#39;s." alt="" coords="5,5,85,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -680,6 +819,61 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_af2cfd198ee49fbb80dc63eec6b69bf5f_cgraph.png" border="0" usemap="#avector_8h_af2cfd198ee49fbb80dc63eec6b69bf5f_cgraph" alt=""/></div>
+<map name="avector_8h_af2cfd198ee49fbb80dc63eec6b69bf5f_cgraph" id="avector_8h_af2cfd198ee49fbb80dc63eec6b69bf5f_cgraph">
+<area shape="rect" title="Finds the distance between two Vector2&#39;s." alt="" coords="5,5,85,32"/>
+<area shape="rect" href="vector_8h.html#aa7c9098080c787f05809a65f13093610" title="Finds a directional vector between two Vector2&#39;s." alt="" coords="133,5,252,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1691eece70f99282283bf366810941ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1691eece70f99282283bf366810941ed">&#9670;&nbsp;</a></span>Distance3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Distance3 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vector3.html">Vector3</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vector3.html">Vector3</a>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finds the distance between two <a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a>'s. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a></td><td>a </td></tr>
+    <tr><td class="paramname"><a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a></td><td>b </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_a1691eece70f99282283bf366810941ed_cgraph.png" border="0" usemap="#avector_8h_a1691eece70f99282283bf366810941ed_cgraph" alt=""/></div>
+<map name="avector_8h_a1691eece70f99282283bf366810941ed_cgraph" id="avector_8h_a1691eece70f99282283bf366810941ed_cgraph">
+<area shape="rect" title="Finds the distance between two Vector3&#39;s." alt="" coords="5,5,85,32"/>
+<area shape="rect" href="vector_8h.html#a42adb0f260e0999aa7ccdc7ec8524c92" title="Finds a directional vector between two Vector3&#39;s." alt="" coords="133,5,252,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -717,6 +911,15 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_a0e1571a80c2d1924926a958ef4f581b2_cgraph.png" border="0" usemap="#avector_8h_a0e1571a80c2d1924926a958ef4f581b2_cgraph" alt=""/></div>
+<map name="avector_8h_a0e1571a80c2d1924926a958ef4f581b2_cgraph" id="avector_8h_a0e1571a80c2d1924926a958ef4f581b2_cgraph">
+<area shape="rect" title="Finds the distance between two Vector4&#39;s." alt="" coords="5,5,85,32"/>
+<area shape="rect" href="vector_8h.html#af5b3e29635158173c745f45c4cfefb87" title="Finds a directional vector between two Vector4&#39;s." alt="" coords="133,5,252,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -791,6 +994,19 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_ab8f31feff2d3d897f7c246a33b02ec1c_icgraph.png" border="0" usemap="#avector_8h_ab8f31feff2d3d897f7c246a33b02ec1c_icgraph" alt=""/></div>
+<map name="avector_8h_ab8f31feff2d3d897f7c246a33b02ec1c_icgraph" id="avector_8h_ab8f31feff2d3d897f7c246a33b02ec1c_icgraph">
+<area shape="rect" title="divides a Vector3 by a divide value" alt="" coords="327,81,389,108"/>
+<area shape="rect" href="rigidbody_8h.html#a9cb7eb0fe8d156736a928c1c50e6be80" title="Calculate the acceleration at a given time." alt="" coords="174,56,269,83"/>
+<area shape="rect" href="rigidbody_8h.html#a4b4ad059679ac79295d71b4a88ad6c82" title="Average of two velocities." alt="" coords="164,107,279,133"/>
+<area shape="rect" href="rigidbody_8h.html#a8a91647f4971af971ff7d4121691eaae" title="Calculate the new displacement of a object at a given time." alt="" coords="25,5,97,32"/>
+<area shape="rect" href="rigidbody_8h.html#a54632aba31eeb94f2c490a6bc6248789" title="Calculate a force of a object." alt="" coords="33,56,88,83"/>
+<area shape="rect" href="rigidbody_8h.html#ab0c43059b74977be129a06fb78083b89" title="Calculate the velocity at a given time." alt="" coords="5,107,116,133"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -865,6 +1081,15 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_a7ff6b0205ff6527fde0ada4ab12f3d17_icgraph.png" border="0" usemap="#avector_8h_a7ff6b0205ff6527fde0ada4ab12f3d17_icgraph" alt=""/></div>
+<map name="avector_8h_a7ff6b0205ff6527fde0ada4ab12f3d17_icgraph" id="avector_8h_a7ff6b0205ff6527fde0ada4ab12f3d17_icgraph">
+<area shape="rect" title="Finds the dot product between two Vector2&#39;s." alt="" coords="116,5,211,32"/>
+<area shape="rect" href="vector_8h.html#a0bf0708735e66f1e450827840aa751cf" title="Finds the angle between two Direction Vector2&#39;s in degrees." alt="" coords="5,5,68,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -902,6 +1127,15 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_a5beb024ec98eba78313543dbfcf5dbdc_icgraph.png" border="0" usemap="#avector_8h_a5beb024ec98eba78313543dbfcf5dbdc_icgraph" alt=""/></div>
+<map name="avector_8h_a5beb024ec98eba78313543dbfcf5dbdc_icgraph" id="avector_8h_a5beb024ec98eba78313543dbfcf5dbdc_icgraph">
+<area shape="rect" title="Finds the dot product between two Vector3&#39;s." alt="" coords="116,5,211,32"/>
+<area shape="rect" href="vector_8h.html#ac16a1b0415290a36433c31309c6a13f6" title="Finds the angle between two Direction Vector3&#39;s in Degrees." alt="" coords="5,5,68,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1006,6 +1240,16 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_ad37c4c1e95f98c1f4fb7dd519de45282_icgraph.png" border="0" usemap="#avector_8h_ad37c4c1e95f98c1f4fb7dd519de45282_icgraph" alt=""/></div>
+<map name="avector_8h_ad37c4c1e95f98c1f4fb7dd519de45282_icgraph" id="avector_8h_ad37c4c1e95f98c1f4fb7dd519de45282_icgraph">
+<area shape="rect" title="Find the magnatude of a Vector2." alt="" coords="140,31,233,57"/>
+<area shape="rect" href="vector_8h.html#a0bf0708735e66f1e450827840aa751cf" title="Finds the angle between two Direction Vector2&#39;s in degrees." alt="" coords="17,5,80,32"/>
+<area shape="rect" href="vector_8h.html#a4295b2d3346990c12733c66b32853dc9" title="Normalizes a Vector2." alt="" coords="5,56,92,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1032,6 +1276,25 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_a74e97ba7e0685d142af418969743a4bf_icgraph.png" border="0" usemap="#avector_8h_a74e97ba7e0685d142af418969743a4bf_icgraph" alt=""/></div>
+<map name="avector_8h_a74e97ba7e0685d142af418969743a4bf_icgraph" id="avector_8h_a74e97ba7e0685d142af418969743a4bf_icgraph">
+<area shape="rect" title="Find the magnatude of a Vector3." alt="" coords="784,56,877,83"/>
+<area shape="rect" href="vector_8h.html#ac16a1b0415290a36433c31309c6a13f6" title="Finds the angle between two Direction Vector3&#39;s in Degrees." alt="" coords="661,5,724,32"/>
+<area shape="rect" href="vector_8h.html#ac60fcc424b5db4f8de86dcf75c5bd7b7" title="Finds the area of a triangle of three Vector3&#39;s." alt="" coords="665,56,721,83"/>
+<area shape="rect" href="vector_8h.html#a131866ba02fb0c178150001e81113247" title="Normalizes a Vector3." alt="" coords="649,107,736,133"/>
+<area shape="rect" href="camera_8h.html#af39bf9665842690d15cf7fe839637fca" title="Updates the camera and the gluLookAt function." alt="" coords="301,107,409,133"/>
+<area shape="rect" href="camera_8h.html#afc313a42ad61c6e444fb8f6a6b6baf39" title="Updates the cameras look at matrix." alt="" coords="457,132,601,159"/>
+<area shape="rect" href="camera_8h.html#ac0ecd597d3765cdeb43efd88c7fb9be5" title="moves the cameras position forwards and back" alt="" coords="147,5,245,32"/>
+<area shape="rect" href="window_8h.html#a43920c017162ec39cb0f0e8f8f56b313" title="Main Render function." alt="" coords="165,56,227,83"/>
+<area shape="rect" href="camera_8h.html#a6c5755301abebe21f062f7207ae9b290" title="Rotates the camera&#39;s yaw/x value." alt="" coords="140,107,252,133"/>
+<area shape="rect" href="camera_8h.html#a5b115f8a37f78833a9275701f4bf862a" title="Rotates the camera&#39;s pitch/y value." alt="" coords="139,157,253,184"/>
+<area shape="rect" href="camera_8h.html#a64808ee919613b3c75b02b7791712096" title="Moves the cameras position left and right." alt="" coords="145,208,247,235"/>
+<area shape="rect" href="window_8h.html#a79030dd806dab6514d62fcd009f1774f" title="Main GLUT init functions." alt="" coords="5,56,91,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1058,6 +1321,15 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_ad2f9062d2300d535324469bae8c663b4_icgraph.png" border="0" usemap="#avector_8h_ad2f9062d2300d535324469bae8c663b4_icgraph" alt=""/></div>
+<map name="avector_8h_ad2f9062d2300d535324469bae8c663b4_icgraph" id="avector_8h_ad2f9062d2300d535324469bae8c663b4_icgraph">
+<area shape="rect" title="Find the magnatude of a Vector4." alt="" coords="140,5,233,32"/>
+<area shape="rect" href="vector_8h.html#a5d43c9f19490f02a8a8b953a30385b96" title="Normalizes a Vector4." alt="" coords="5,5,92,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1195,6 +1467,15 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_a4295b2d3346990c12733c66b32853dc9_cgraph.png" border="0" usemap="#avector_8h_a4295b2d3346990c12733c66b32853dc9_cgraph" alt=""/></div>
+<map name="avector_8h_a4295b2d3346990c12733c66b32853dc9_cgraph" id="avector_8h_a4295b2d3346990c12733c66b32853dc9_cgraph">
+<area shape="rect" title="Normalizes a Vector2." alt="" coords="5,5,92,32"/>
+<area shape="rect" href="vector_8h.html#ad37c4c1e95f98c1f4fb7dd519de45282" title="Find the magnatude of a Vector2." alt="" coords="140,5,233,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1221,6 +1502,31 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_a131866ba02fb0c178150001e81113247_cgraph.png" border="0" usemap="#avector_8h_a131866ba02fb0c178150001e81113247_cgraph" alt=""/></div>
+<map name="avector_8h_a131866ba02fb0c178150001e81113247_cgraph" id="avector_8h_a131866ba02fb0c178150001e81113247_cgraph">
+<area shape="rect" title="Normalizes a Vector3." alt="" coords="5,5,92,32"/>
+<area shape="rect" href="vector_8h.html#a74e97ba7e0685d142af418969743a4bf" title="Find the magnatude of a Vector3." alt="" coords="140,5,233,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_a131866ba02fb0c178150001e81113247_icgraph.png" border="0" usemap="#avector_8h_a131866ba02fb0c178150001e81113247_icgraph" alt=""/></div>
+<map name="avector_8h_a131866ba02fb0c178150001e81113247_icgraph" id="avector_8h_a131866ba02fb0c178150001e81113247_icgraph">
+<area shape="rect" title="Normalizes a Vector3." alt="" coords="649,107,736,133"/>
+<area shape="rect" href="camera_8h.html#af39bf9665842690d15cf7fe839637fca" title="Updates the camera and the gluLookAt function." alt="" coords="301,107,409,133"/>
+<area shape="rect" href="camera_8h.html#afc313a42ad61c6e444fb8f6a6b6baf39" title="Updates the cameras look at matrix." alt="" coords="457,132,601,159"/>
+<area shape="rect" href="camera_8h.html#ac0ecd597d3765cdeb43efd88c7fb9be5" title="moves the cameras position forwards and back" alt="" coords="147,5,245,32"/>
+<area shape="rect" href="window_8h.html#a43920c017162ec39cb0f0e8f8f56b313" title="Main Render function." alt="" coords="165,56,227,83"/>
+<area shape="rect" href="camera_8h.html#a6c5755301abebe21f062f7207ae9b290" title="Rotates the camera&#39;s yaw/x value." alt="" coords="140,107,252,133"/>
+<area shape="rect" href="camera_8h.html#a5b115f8a37f78833a9275701f4bf862a" title="Rotates the camera&#39;s pitch/y value." alt="" coords="139,157,253,184"/>
+<area shape="rect" href="camera_8h.html#a64808ee919613b3c75b02b7791712096" title="Moves the cameras position left and right." alt="" coords="145,208,247,235"/>
+<area shape="rect" href="window_8h.html#a79030dd806dab6514d62fcd009f1774f" title="Main GLUT init functions." alt="" coords="5,56,91,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1247,6 +1553,15 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_a5d43c9f19490f02a8a8b953a30385b96_cgraph.png" border="0" usemap="#avector_8h_a5d43c9f19490f02a8a8b953a30385b96_cgraph" alt=""/></div>
+<map name="avector_8h_a5d43c9f19490f02a8a8b953a30385b96_cgraph" id="avector_8h_a5d43c9f19490f02a8a8b953a30385b96_cgraph">
+<area shape="rect" title="Normalizes a Vector4." alt="" coords="5,5,92,32"/>
+<area shape="rect" href="vector_8h.html#ad2f9062d2300d535324469bae8c663b4" title="Find the magnatude of a Vector4." alt="" coords="140,5,233,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1432,6 +1747,17 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8h_ae420560bae7d5717003ba186193e5383_icgraph.png" border="0" usemap="#avector_8h_ae420560bae7d5717003ba186193e5383_icgraph" alt=""/></div>
+<map name="avector_8h_ae420560bae7d5717003ba186193e5383_icgraph" id="avector_8h_ae420560bae7d5717003ba186193e5383_icgraph">
+<area shape="rect" title="Scales a Vector3 by a scale value." alt="" coords="164,56,227,83"/>
+<area shape="rect" href="rigidbody_8h.html#a8a91647f4971af971ff7d4121691eaae" title="Calculate the new displacement of a object at a given time." alt="" coords="25,5,97,32"/>
+<area shape="rect" href="rigidbody_8h.html#a54632aba31eeb94f2c490a6bc6248789" title="Calculate a force of a object." alt="" coords="33,56,88,83"/>
+<area shape="rect" href="rigidbody_8h.html#ab0c43059b74977be129a06fb78083b89" title="Calculate the velocity at a given time." alt="" coords="5,107,116,133"/>
+</map>
+</div>
 
 </div>
 </div>

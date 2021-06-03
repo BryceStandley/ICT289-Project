@@ -10,7 +10,7 @@
 
 int main(int argc, char** argv)
 {
-	WindowInit(argc, argv, 800, 600, "ICT289-Project");
+	WindowInit(argc, argv, 800, 600, "BowTime - ICT289-Project");
 
 	glutMainLoop();
 }

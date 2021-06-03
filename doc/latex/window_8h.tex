@@ -11,6 +11,29 @@ Main window file that contains all functions related to the window and the progr
 {\ttfamily \#include \char`\"{}camera.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}colours.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}model.\+h\char`\"{}}\newline
+Include dependency graph for window.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{window_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{window_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{window_8h_ac99e9b1c151b601470732c2c9ff9866f}\label{window_8h_ac99e9b1c151b601470732c2c9ff9866f}} 
+\#define {\bfseries WINDOW\+\_\+H}
+\item 
+\mbox{\Hypertarget{window_8h_acef24ae9a88131f27f1554acfd6ad976}\label{window_8h_acef24ae9a88131f27f1554acfd6ad976}} 
+\#define {\bfseries TARGET\+\_\+\+FPS}~1000.\+0f/60.\+0f
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,19 +50,74 @@ void \mbox{\hyperlink{window_8h_a0a15734558848490b030ebe913306d53}{Set\+Lighting
 void \mbox{\hyperlink{window_8h_a79030dd806dab6514d62fcd009f1774f}{Window\+Init}} (int argc, char $\ast$$\ast$argv, int window\+Width, int window\+Height, char $\ast$title)
 \begin{DoxyCompactList}\small\item\em Main GLUT init functions. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{window_8h_a903a06a05bb144767147397df338cf7f}\label{window_8h_a903a06a05bb144767147397df338cf7f}} 
-void {\bfseries Window\+Re\+Size} (int w, int h)
-\item 
+void \mbox{\hyperlink{window_8h_a903a06a05bb144767147397df338cf7f}{Window\+Re\+Size}} (int w, int h)
+\begin{DoxyCompactList}\small\item\em Resize function for glut. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{window_8h_a5853bf3749d69ddd5e65956a472f3cd1}\label{window_8h_a5853bf3749d69ddd5e65956a472f3cd1}} 
-void {\bfseries Load\+Models} ()
+void \mbox{\hyperlink{window_8h_a5853bf3749d69ddd5e65956a472f3cd1}{Load\+Models}} ()
+\begin{DoxyCompactList}\small\item\em Init function to load all models into the program. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{window_8h_afbccb445eda4392e4bfd169b1fce8425}{Load\+End\+Screen}} (const char $\ast$filename, int width, int height)
+\begin{DoxyCompactList}\small\item\em Loads the endscreen image into opengl and creates a texture ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{window_8h_ace80650e13b1a3a47459479789e6d589}\label{window_8h_ace80650e13b1a3a47459479789e6d589}} 
+void {\bfseries Draw\+End\+Screen} ()
+\item 
+\mbox{\Hypertarget{window_8h_a45c220b405fdbbfe254eab3750fa49f5}\label{window_8h_a45c220b405fdbbfe254eab3750fa49f5}} 
+void {\bfseries Update\+Physics} (int k)
+\item 
+\mbox{\Hypertarget{window_8h_a0dc43638b2acc4bd5aea7d0353c9440d}\label{window_8h_a0dc43638b2acc4bd5aea7d0353c9440d}} 
+void {\bfseries Draw\+Bow} ()
+\item 
+\mbox{\Hypertarget{window_8h_a9a3893b58170def5f7d9768d1b73e49d}\label{window_8h_a9a3893b58170def5f7d9768d1b73e49d}} 
+void {\bfseries Draw\+Arrow} ()
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Main window file that contains all functions related to the window and the program. 
 
+Draws the arrow to the scene.
+
+Draws the bow to the scene.
+
+Updates all objects with physics.
+
+Draws the end screen image to a quad on the screen.
+
+Target FPS define.
+
 \begin{DoxyAuthor}{Author}
 Bryce Standley 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
-April 2021 
+April 2021
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Bryce Standley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2021
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Bryce Standley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{window_8h_afbccb445eda4392e4bfd169b1fce8425}\label{window_8h_afbccb445eda4392e4bfd169b1fce8425}} 
+\index{window.h@{window.h}!LoadEndScreen@{LoadEndScreen}}
+\index{LoadEndScreen@{LoadEndScreen}!window.h@{window.h}}
+\doxysubsubsection{\texorpdfstring{LoadEndScreen()}{LoadEndScreen()}}
+{\footnotesize\ttfamily GLuint Load\+End\+Screen (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Loads the endscreen image into opengl and creates a texture ID. 
+
+\begin{DoxyAuthor}{Author}
+Bryce Standley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2021 
 \end{DoxyDate}

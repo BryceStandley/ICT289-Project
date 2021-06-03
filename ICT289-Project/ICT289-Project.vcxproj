@@ -34,7 +34,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\camera.h" />
-    <ClInclude Include="src\collision.h" />
     <ClInclude Include="src\colours.h" />
     <ClInclude Include="src\input.h" />
     <ClInclude Include="src\material.h" />

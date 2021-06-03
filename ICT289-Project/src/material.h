@@ -10,10 +10,7 @@
 #include <GL/freeglut.h>
 
 /**
- * \file material.h
- * \author Bryce Standley
  * \brief Material structure for holding all component data
- * \date  May 2021
  */
 typedef struct Material
 {

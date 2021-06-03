@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ICT289 Project: ICT289-Project/src/input.h File Reference</title>
+<title>BowTime - ICT289 Project: ICT289-Project/src/input.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ICT289 Project
-   &#160;<span id="projectnumber">2</span>
+   <div id="projectname">BowTime - ICT289 Project
+   &#160;<span id="projectnumber">v3</span>
    </div>
   </td>
  </tr>
@@ -91,12 +91,39 @@ $(document).ready(function(){initNavTree('input_8h.html',''); initResizable(); }
 </div><!--header-->
 <div class="contents">
 
-<p>Main Input function.  
+<p>All input related functions and data structure variables used by the input.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;GL/freeglut.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="camera_8h_source.html">camera.h</a>&quot;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;corecrt_math_defines.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for input.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="input_8h__incl.png" border="0" usemap="#a_i_c_t289-_project_2src_2input_8h" alt=""/></div>
+<map name="a_i_c_t289-_project_2src_2input_8h" id="a_i_c_t289-_project_2src_2input_8h">
+<area shape="rect" title="All input related functions and data structure variables used by the input." alt="" coords="389,5,518,47"/>
+<area shape="rect" title=" " alt="" coords="8,393,104,420"/>
+<area shape="rect" href="camera_8h.html" title="Adds the data structure and functions to control a OpenGL camera." alt="" coords="365,95,441,121"/>
+<area shape="rect" title=" " alt="" coords="296,468,453,495"/>
+<area shape="rect" title=" " alt="" coords="541,95,616,121"/>
+<area shape="rect" href="vector_8h.html" title="2D, 3D and 4D Vector Math fucntions" alt="" coords="237,393,304,420"/>
+<area shape="rect" href="_transform_8h.html" title="Basic structure and functions of a transform." alt="" coords="275,169,365,196"/>
+<area shape="rect" title=" " alt="" coords="206,468,269,495"/>
+<area shape="rect" href="_quaternion_8h.html" title="Quaternion functionality for openGL." alt="" coords="203,244,299,271"/>
+<area shape="rect" href="_matrix_8h.html" title="All functions and structures of a Matrix." alt="" coords="93,319,163,345"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="input_8h__dep__incl.png" border="0" usemap="#a_i_c_t289-_project_2src_2input_8hdep" alt=""/></div>
+<map name="a_i_c_t289-_project_2src_2input_8hdep" id="a_i_c_t289-_project_2src_2input_8hdep">
+<area shape="rect" title="All input related functions and data structure variables used by the input." alt="" coords="5,5,135,47"/>
+<area shape="rect" href="window_8h.html" title="Main window file that contains all functions related to the window and the program." alt="" coords="5,95,135,136"/>
+<area shape="rect" href="_i_c_t289-_project_8c.html" title="Main program entry point." alt="" coords="5,184,135,225"/>
+</map>
+</div>
 </div>
 <p><a href="input_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -106,22 +133,27 @@ Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>PressNormalInput</b> (unsigned char key, int xVal, int yVal)</td></tr>
 <tr class="separator:a90727ef95effc52baf44406e872ee368"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bb6fc24d0c9af4c0442ad9e30cbbb7b"><td class="memItemLeft" align="right" valign="top"><a id="a8bb6fc24d0c9af4c0442ad9e30cbbb7b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>PressNormalInputUp</b> (unsigned char key, int xVal, int yVal)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8h.html#a8bb6fc24d0c9af4c0442ad9e30cbbb7b">PressNormalInputUp</a> (unsigned char key, int xVal, int yVal)</td></tr>
+<tr class="memdesc:a8bb6fc24d0c9af4c0442ad9e30cbbb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to reset any input keys. <br /></td></tr>
 <tr class="separator:a8bb6fc24d0c9af4c0442ad9e30cbbb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bca63ba81d44d759bdd63372de7e974"><td class="memItemLeft" align="right" valign="top"><a id="a8bca63ba81d44d759bdd63372de7e974"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>MouseButtonInput</b> (int button, int state, int x, int y)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8h.html#a8bca63ba81d44d759bdd63372de7e974">MouseButtonInput</a> (int button, int state, int x, int y)</td></tr>
+<tr class="memdesc:a8bca63ba81d44d759bdd63372de7e974"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mouse button input callback function. <br /></td></tr>
 <tr class="separator:a8bca63ba81d44d759bdd63372de7e974"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f548568bd06fd8f52caadb58a06a597"><td class="memItemLeft" align="right" valign="top"><a id="a7f548568bd06fd8f52caadb58a06a597"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>MouseMovementInput</b> (int x, int y)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8h.html#a7f548568bd06fd8f52caadb58a06a597">MouseMovementInput</a> (int x, int y)</td></tr>
+<tr class="memdesc:a7f548568bd06fd8f52caadb58a06a597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mouse movement input callback function. <br /></td></tr>
 <tr class="separator:a7f548568bd06fd8f52caadb58a06a597"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a498703ef5c6eac915a32507862df2160"><td class="memItemLeft" align="right" valign="top"><a id="a498703ef5c6eac915a32507862df2160"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>InputTimer</b> (int value)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8h.html#a498703ef5c6eac915a32507862df2160">InputTimer</a> (int value)</td></tr>
+<tr class="memdesc:a498703ef5c6eac915a32507862df2160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timer function used to poll input events for the camera controls. <br /></td></tr>
 <tr class="separator:a498703ef5c6eac915a32507862df2160"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a2008f4ab70b5e4104c2ca43932536ddf"><td class="memItemLeft" align="right" valign="top"><a id="a2008f4ab70b5e4104c2ca43932536ddf"></a>
-<a class="el" href="struct_camera.html">Camera</a>&#160;</td><td class="memItemRight" valign="bottom"><b>camera</b></td></tr>
+<a class="el" href="struct_camera.html">Camera</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8h.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a></td></tr>
+<tr class="memdesc:a2008f4ab70b5e4104c2ca43932536ddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">External variables used by the input but also needs to be referenced elsewhere. <br /></td></tr>
 <tr class="separator:a2008f4ab70b5e4104c2ca43932536ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f2635b83f3a2eaa4a0c076ff7a227c1"><td class="memItemLeft" align="right" valign="top"><a id="a5f2635b83f3a2eaa4a0c076ff7a227c1"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>viewportWidth</b></td></tr>
@@ -129,9 +161,24 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>viewportWidth</b></td>
 <tr class="memitem:a806f22ad0941db9ca74fbe613ce4a0ad"><td class="memItemLeft" align="right" valign="top"><a id="a806f22ad0941db9ca74fbe613ce4a0ad"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>viewportHieght</b></td></tr>
 <tr class="separator:a806f22ad0941db9ca74fbe613ce4a0ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44079ba4856fc6fcef0c7676c10e12fc"><td class="memItemLeft" align="right" valign="top"><a id="a44079ba4856fc6fcef0c7676c10e12fc"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>endscreenDisplay</b></td></tr>
+<tr class="separator:a44079ba4856fc6fcef0c7676c10e12fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6ad2ba130ae8e7e48bf144ea89fbdef"><td class="memItemLeft" align="right" valign="top"><a id="ae6ad2ba130ae8e7e48bf144ea89fbdef"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setArrow</b></td></tr>
+<tr class="separator:ae6ad2ba130ae8e7e48bf144ea89fbdef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a195b80101a0b549a4ba8c70b85ffb8c7"><td class="memItemLeft" align="right" valign="top"><a id="a195b80101a0b549a4ba8c70b85ffb8c7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>fireArrow</b></td></tr>
+<tr class="separator:a195b80101a0b549a4ba8c70b85ffb8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a539a7ad4f347d49ddfd539375d6ba7e4"><td class="memItemLeft" align="right" valign="top"><a id="a539a7ad4f347d49ddfd539375d6ba7e4"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>inAir</b></td></tr>
+<tr class="separator:a539a7ad4f347d49ddfd539375d6ba7e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Main Input function. </p>
+<div class="textblock"><p>All input related functions and data structure variables used by the input. </p>
+<p>Main Input function.</p>
+<dl class="section author"><dt>Author</dt><dd>Bryce Standley </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>April 2021</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Bryce Standley </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>April 2021 </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>

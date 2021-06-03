@@ -1,21 +1,28 @@
+/*****************************************************************//**
+ * \file   rigidbody.h
+ * \brief  Physics functions to be used to animate objects
+ * 
+ * \author Bryce Standley
+ * \date   May 2021
+ *********************************************************************/
 #pragma once
 #include "vector.h"
 #include <stdbool.h>
 
 
 #define RIGIDBODY_H
+
 /**
  * \file rigidbody.h
- * \author Bryce Standley
- * \brief Physics functions to be used to animate objects
- * \date  May 2021
+ * \author Maea Havea
+ * \brief enum of the different body types of a physics object
+ * \date  June 2021
  */
-
 typedef enum {DYNAMIC,KINEMATIC,STATIC} BODYTYPE;
 
-/*
-* \brief Data structure of a rigidbody
-*/
+/**
+ * \brief Data structure of a physics rigidbody
+ */
 typedef struct Rigidbody
 {
 	float mass;

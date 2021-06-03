@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ICT289 Project: ICT289-Project/src/camera.h File Reference</title>
+<title>BowTime - ICT289 Project: ICT289-Project/src/camera.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ICT289 Project
-   &#160;<span id="projectnumber">2</span>
+   <div id="projectname">BowTime - ICT289 Project
+   &#160;<span id="projectnumber">v3</span>
    </div>
   </td>
  </tr>
@@ -97,45 +97,88 @@ $(document).ready(function(){initNavTree('camera_8h.html',''); initResizable(); 
 <div class="textblock"><code>#include &lt;GL/freeglut.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="vector_8h_source.html">vector.h</a>&quot;</code><br />
 <code>#include &lt;corecrt_math_defines.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_transform_8h_source.html">Transform.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for camera.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="camera_8h__incl.png" border="0" usemap="#a_i_c_t289-_project_2src_2camera_8h" alt=""/></div>
+<map name="a_i_c_t289-_project_2src_2camera_8h" id="a_i_c_t289-_project_2src_2camera_8h">
+<area shape="rect" title="Adds the data structure and functions to control a OpenGL camera." alt="" coords="37,5,166,47"/>
+<area shape="rect" title=" " alt="" coords="5,319,101,345"/>
+<area shape="rect" href="vector_8h.html" title="2D, 3D and 4D Vector Math fucntions" alt="" coords="159,319,225,345"/>
+<area shape="rect" title=" " alt="" coords="277,393,435,420"/>
+<area shape="rect" href="_transform_8h.html" title="Basic structure and functions of a transform." alt="" coords="97,95,188,121"/>
+<area shape="rect" title=" " alt="" coords="171,393,234,420"/>
+<area shape="rect" href="_quaternion_8h.html" title="Quaternion functionality for openGL." alt="" coords="207,169,303,196"/>
+<area shape="rect" href="_matrix_8h.html" title="All functions and structures of a Matrix." alt="" coords="148,244,217,271"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="camera_8h__dep__incl.png" border="0" usemap="#a_i_c_t289-_project_2src_2camera_8hdep" alt=""/></div>
+<map name="a_i_c_t289-_project_2src_2camera_8hdep" id="a_i_c_t289-_project_2src_2camera_8hdep">
+<area shape="rect" title="Adds the data structure and functions to control a OpenGL camera." alt="" coords="56,5,185,47"/>
+<area shape="rect" href="input_8h.html" title="All input related functions and data structure variables used by the input." alt="" coords="5,95,135,136"/>
+<area shape="rect" href="window_8h.html" title="Main window file that contains all functions related to the window and the program." alt="" coords="56,184,185,225"/>
+<area shape="rect" href="_i_c_t289-_project_8c.html" title="Main program entry point." alt="" coords="56,273,185,315"/>
+</map>
+</div>
 </div>
 <p><a href="camera_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_camera.html">Camera</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structure of the camera.  <a href="struct_camera.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a78750a39b09d6562fd9b910c7743cfca"><td class="memItemLeft" align="right" valign="top"><a id="a78750a39b09d6562fd9b910c7743cfca"></a>
-typedef struct <a class="el" href="struct_camera.html">Camera</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Camera</b></td></tr>
+typedef struct <a class="el" href="struct_camera.html">Camera</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8h.html#a78750a39b09d6562fd9b910c7743cfca">Camera</a></td></tr>
+<tr class="memdesc:a78750a39b09d6562fd9b910c7743cfca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structure of the camera. <br /></td></tr>
 <tr class="separator:a78750a39b09d6562fd9b910c7743cfca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a0cfc8a7fe9eb50a32356228e525b9707"><td class="memItemLeft" align="right" valign="top"><a id="a0cfc8a7fe9eb50a32356228e525b9707"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateCameraLookAt</b> (<a class="el" href="struct_camera.html">Camera</a> *c)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8h.html#a0cfc8a7fe9eb50a32356228e525b9707">UpdateCameraLookAt</a> (<a class="el" href="struct_camera.html">Camera</a> *c)</td></tr>
+<tr class="memdesc:a0cfc8a7fe9eb50a32356228e525b9707"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the direction the cameras looking towards. <br /></td></tr>
 <tr class="separator:a0cfc8a7fe9eb50a32356228e525b9707"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af39bf9665842690d15cf7fe839637fca"><td class="memItemLeft" align="right" valign="top"><a id="af39bf9665842690d15cf7fe839637fca"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateCamera</b> (<a class="el" href="struct_camera.html">Camera</a> *c)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8h.html#af39bf9665842690d15cf7fe839637fca">UpdateCamera</a> (<a class="el" href="struct_camera.html">Camera</a> *c)</td></tr>
+<tr class="memdesc:af39bf9665842690d15cf7fe839637fca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the camera and the gluLookAt function. <br /></td></tr>
 <tr class="separator:af39bf9665842690d15cf7fe839637fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc313a42ad61c6e444fb8f6a6b6baf39"><td class="memItemLeft" align="right" valign="top"><a id="afc313a42ad61c6e444fb8f6a6b6baf39"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8h.html#afc313a42ad61c6e444fb8f6a6b6baf39">UpdateCameraMatrix</a> (<a class="el" href="struct_camera.html">Camera</a> *c)</td></tr>
+<tr class="memdesc:afc313a42ad61c6e444fb8f6a6b6baf39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the cameras look at matrix. <br /></td></tr>
+<tr class="separator:afc313a42ad61c6e444fb8f6a6b6baf39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0ecd597d3765cdeb43efd88c7fb9be5"><td class="memItemLeft" align="right" valign="top"><a id="ac0ecd597d3765cdeb43efd88c7fb9be5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>MoveCamera</b> (<a class="el" href="struct_camera.html">Camera</a> *c, float incr)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8h.html#ac0ecd597d3765cdeb43efd88c7fb9be5">MoveCamera</a> (<a class="el" href="struct_camera.html">Camera</a> *c, float incr)</td></tr>
+<tr class="memdesc:ac0ecd597d3765cdeb43efd88c7fb9be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">moves the cameras position forwards and back <br /></td></tr>
 <tr class="separator:ac0ecd597d3765cdeb43efd88c7fb9be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64808ee919613b3c75b02b7791712096"><td class="memItemLeft" align="right" valign="top"><a id="a64808ee919613b3c75b02b7791712096"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>StrafeCamera</b> (<a class="el" href="struct_camera.html">Camera</a> *c, float incr)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8h.html#a64808ee919613b3c75b02b7791712096">StrafeCamera</a> (<a class="el" href="struct_camera.html">Camera</a> *c, float incr)</td></tr>
+<tr class="memdesc:a64808ee919613b3c75b02b7791712096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the cameras position left and right. <br /></td></tr>
 <tr class="separator:a64808ee919613b3c75b02b7791712096"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c5755301abebe21f062f7207ae9b290"><td class="memItemLeft" align="right" valign="top"><a id="a6c5755301abebe21f062f7207ae9b290"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RotateCameraX</b> (<a class="el" href="struct_camera.html">Camera</a> *c, float incr)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8h.html#a6c5755301abebe21f062f7207ae9b290">RotateCameraX</a> (<a class="el" href="struct_camera.html">Camera</a> *c, float incr)</td></tr>
+<tr class="memdesc:a6c5755301abebe21f062f7207ae9b290"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates the camera's yaw/x value. <br /></td></tr>
 <tr class="separator:a6c5755301abebe21f062f7207ae9b290"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b115f8a37f78833a9275701f4bf862a"><td class="memItemLeft" align="right" valign="top"><a id="a5b115f8a37f78833a9275701f4bf862a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RotateCameraY</b> (<a class="el" href="struct_camera.html">Camera</a> *c, float incr)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8h.html#a5b115f8a37f78833a9275701f4bf862a">RotateCameraY</a> (<a class="el" href="struct_camera.html">Camera</a> *c, float incr)</td></tr>
+<tr class="memdesc:a5b115f8a37f78833a9275701f4bf862a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates the camera's pitch/y value. <br /></td></tr>
 <tr class="separator:a5b115f8a37f78833a9275701f4bf862a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b7f1f51151f03a4927eefb238c08a9b"><td class="memItemLeft" align="right" valign="top"><a id="a1b7f1f51151f03a4927eefb238c08a9b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8h.html#a1b7f1f51151f03a4927eefb238c08a9b">DisplayEndScreen</a> (<a class="el" href="struct_camera.html">Camera</a> *c)</td></tr>
+<tr class="memdesc:a1b7f1f51151f03a4927eefb238c08a9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the cameras look at settings to correctly display the endscreen image. <br /></td></tr>
+<tr class="separator:a1b7f1f51151f03a4927eefb238c08a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Adds the data structure and functions to control a OpenGL camera. </p>
 <dl class="section author"><dt>Author</dt><dd>Bryce Standley </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>April 2021 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 2021 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

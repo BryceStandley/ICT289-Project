@@ -1,0 +1,83 @@
+\hypertarget{_matrix_8h}{}\doxysection{ICT289-\/\+Project/src/\+Matrix.h File Reference}
+\label{_matrix_8h}\index{ICT289-\/Project/src/Matrix.h@{ICT289-\/Project/src/Matrix.h}}
+
+
+All functions and structures of a Matrix.  
+
+
+{\ttfamily \#include $<$GL/freeglut.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}vector.\+h\char`\"{}}\newline
+Include dependency graph for Matrix.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{_matrix_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_matrix_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_mat4}{Mat4}}
+\begin{DoxyCompactList}\small\item\em Structure of a 4 x 4 matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_mat4}{Mat4}} \mbox{\hyperlink{_matrix_8h_af7bd03ace5e25914db6b30a3a5d6e283}{Mat4}}
+\begin{DoxyCompactList}\small\item\em Structure of a 4 x 4 matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_matrix_8h_afb5f3347cbc41b136eb5a5f5ef612a4b}\label{_matrix_8h_afb5f3347cbc41b136eb5a5f5ef612a4b}} 
+GLfloat $\ast$ {\bfseries Mat4\+To\+GLMatrix} (\mbox{\hyperlink{struct_mat4}{Mat4}} m)
+\item 
+\mbox{\Hypertarget{_matrix_8h_a6b31eb0c21e1acb1e5d442657b82f007}\label{_matrix_8h_a6b31eb0c21e1acb1e5d442657b82f007}} 
+\mbox{\hyperlink{struct_mat4}{Mat4}} {\bfseries GLMatrix\+To\+Mat4} (GLfloat $\ast$m)
+\item 
+\mbox{\Hypertarget{_matrix_8h_a82adbda717f673fa1177896de124bf81}\label{_matrix_8h_a82adbda717f673fa1177896de124bf81}} 
+\mbox{\hyperlink{struct_mat4}{Mat4}} {\bfseries Look\+At} (\mbox{\hyperlink{struct_vector3}{Vector3}} pos, \mbox{\hyperlink{struct_vector3}{Vector3}} target)
+\item 
+\mbox{\Hypertarget{_matrix_8h_a1b2006225b9449b38da209d718a52589}\label{_matrix_8h_a1b2006225b9449b38da209d718a52589}} 
+\mbox{\hyperlink{struct_mat4}{Mat4}} {\bfseries Identity} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+All functions and structures of a Matrix. 
+
+returns a mat4 with a identity matrix
+
+creates a rotation mat4 from the position to the target
+
+Converts a Glfloat matrix into a mat4.
+
+Converts a mat4 into a GLfloat array for opengl to process.
+
+\begin{DoxyAuthor}{Author}
+Bryce Standley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_matrix_8h_af7bd03ace5e25914db6b30a3a5d6e283}\label{_matrix_8h_af7bd03ace5e25914db6b30a3a5d6e283}} 
+\index{Matrix.h@{Matrix.h}!Mat4@{Mat4}}
+\index{Mat4@{Mat4}!Matrix.h@{Matrix.h}}
+\doxysubsubsection{\texorpdfstring{Mat4}{Mat4}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_mat4}{Mat4}} \mbox{\hyperlink{struct_mat4}{Mat4}}}
+
+
+
+Structure of a 4 x 4 matrix. 
+
+\begin{DoxyAuthor}{Author}
+Bryce Standley 
+\end{DoxyAuthor}

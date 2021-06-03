@@ -1,0 +1,5 @@
+<map id="AverageVelocity" name="AverageVelocity">
+<area shape="rect" id="node1" title="Average of two velocities." alt="" coords="5,31,120,57"/>
+<area shape="rect" id="node2" href="$vector_8h.html#ad82a913d6512f823b7e7800830125ac1" title="Adds two Vector3&#39;s together." alt="" coords="173,5,225,32"/>
+<area shape="rect" id="node3" href="$vector_8h.html#ab8f31feff2d3d897f7c246a33b02ec1c" title="divides a Vector3 by a divide value" alt="" coords="168,56,231,83"/>
+</map>

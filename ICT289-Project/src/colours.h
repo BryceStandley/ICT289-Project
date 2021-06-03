@@ -1,14 +1,15 @@
+/*****************************************************************//**
+ * \file   colours.h
+ * \brief  Large lookup table for colours to be used within the program
+ * 
+ * \author Bryce Standley
+ * \date   April 2021
+ *********************************************************************/
 #pragma once
 
 #ifndef COLOURS_H
 #define COLOURS_H
-/**
- * \file colours.h
- * \author Bryce Standley
- * \brief Large lookup table for colours to be used within the program
- * 
- * \date  April 2021
- */
+
 
 #define BLACK 0.0f, 0.0f, 0.0f
 #define WHITE 1.0f, 1.0f, 1.0f

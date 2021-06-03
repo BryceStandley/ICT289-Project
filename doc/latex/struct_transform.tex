@@ -2,13 +2,22 @@
 \label{struct_transform}\index{Transform@{Transform}}
 
 
-\mbox{\hyperlink{struct_transform}{Transform}} struct that can hold 3 vector3 data structures A transform can be initialized by using compound literals ie, Transform.\+Position = (\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f\};.  
+\mbox{\hyperlink{struct_transform}{Transform}} struct that can hold 3 vector3 data structures and a quaternion for rotation A transform can be initialized by using compound literals ie, Transform.\+Position = (\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f\}; \mbox{\hyperlink{struct_quaternion}{Quaternion}} rotation is calculated by Euler angles on the \mbox{\hyperlink{struct_vector3}{Vector3}} rotation data.  
 
 
 
 
-{\ttfamily \#include $<$vector.\+h$>$}
+{\ttfamily \#include $<$Transform.\+h$>$}
 
+
+
+Collaboration diagram for Transform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{struct_transform__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,12 +29,15 @@
 \item 
 \mbox{\Hypertarget{struct_transform_a29aaddec68693a40b954812bd1dfe37b}\label{struct_transform_a29aaddec68693a40b954812bd1dfe37b}} 
 \mbox{\hyperlink{struct_vector3}{Vector3}} {\bfseries Scale}
+\item 
+\mbox{\Hypertarget{struct_transform_a3776df573392e8051536fd1f4117ec20}\label{struct_transform_a3776df573392e8051536fd1f4117ec20}} 
+\mbox{\hyperlink{struct_quaternion}{Quaternion}} {\bfseries Quat\+Rotation}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\mbox{\hyperlink{struct_transform}{Transform}} struct that can hold 3 vector3 data structures A transform can be initialized by using compound literals ie, Transform.\+Position = (\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f\};. 
+\mbox{\hyperlink{struct_transform}{Transform}} struct that can hold 3 vector3 data structures and a quaternion for rotation A transform can be initialized by using compound literals ie, Transform.\+Position = (\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f\}; \mbox{\hyperlink{struct_quaternion}{Quaternion}} rotation is calculated by Euler angles on the \mbox{\hyperlink{struct_vector3}{Vector3}} rotation data. 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-ICT289-\/\+Project/src/\mbox{\hyperlink{vector_8h}{vector.\+h}}\end{DoxyCompactItemize}
+ICT289-\/\+Project/src/\mbox{\hyperlink{_transform_8h}{Transform.\+h}}\end{DoxyCompactItemize}

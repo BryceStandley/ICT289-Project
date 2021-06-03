@@ -1,14 +1,16 @@
+/*****************************************************************//**
+ * \file   vector.h
+ * \brief  2D, 3D and 4D Vector Math fucntions
+ * 
+ * \author Bryce Standley
+ * \date   April 2021
+ *********************************************************************/
 #pragma once
 #ifndef VECTOR_H
 #define VECTOR_H
 #include <math.h>
 #include <corecrt_math_defines.h>
-/**
- * \file vector.h
- * \author Bryce Standley
- * \brief Vector Math fucntions file
- * \date  April 2021
- */
+
 
 /**
  * \brief Vector data structure with 2 components

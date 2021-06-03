@@ -2,10 +2,25 @@
 \label{vector_8h}\index{ICT289-\/Project/src/vector.h@{ICT289-\/Project/src/vector.h}}
 
 
-Vector Math fucntions file.  
+2D, 3D and 4D Vector Math fucntions  
 
 
 {\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$corecrt\+\_\+math\+\_\+defines.\+h$>$}\newline
+Include dependency graph for vector.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{vector_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vector_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -15,8 +30,8 @@ struct \mbox{\hyperlink{struct_vector3}{Vector3}}
 \begin{DoxyCompactList}\small\item\em Vector data structure with 3 components create a vector3 by using a compund literal ie \mbox{\hyperlink{struct_vector3}{Vector3}} v = (\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f\};. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_vector4}{Vector4}}
 \begin{DoxyCompactList}\small\item\em Vector data structure with 4 components create a vector4 by using a compund literal ie \mbox{\hyperlink{struct_vector4}{Vector4}} v = (\mbox{\hyperlink{struct_vector4}{Vector4}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f, .w = 0.\+0f\};. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{struct_transform}{Transform}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_transform}{Transform}} struct that can hold 3 vector3 data structures A transform can be initialized by using compound literals ie, Transform.\+Position = (\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f\};. \end{DoxyCompactList}\end{DoxyCompactItemize}
+struct \mbox{\hyperlink{struct_vector5}{Vector5}}
+\begin{DoxyCompactList}\small\item\em Vector data structure with 5 components create a vector5 by using a compund literal ie \mbox{\hyperlink{struct_vector5}{Vector5}} v = (\mbox{\hyperlink{struct_vector5}{Vector5}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f, .w = 0.\+0f, .u = 0.\+0f\};. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,7 +43,10 @@ struct \mbox{\hyperlink{struct_transform}{Transform}}
 \begin{DoxyCompactList}\small\item\em Eazy define for creating a vector3 with all components at zero. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{vector_8h_aee4a7c347d9b0e2dab0fc809d9100fac}\label{vector_8h_aee4a7c347d9b0e2dab0fc809d9100fac}} 
 \#define \mbox{\hyperlink{vector_8h_aee4a7c347d9b0e2dab0fc809d9100fac}{Vector3\+One}}~(\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 1.\+0f, .y = 1.\+0f, .z = 1.\+0f\}
-\begin{DoxyCompactList}\small\item\em Eazy define for creating a vector3 with all components at one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Eazy define for creating a vector3 with all components at one. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a8b857faef75d7e3a278bc3f544e0fb07}\label{vector_8h_a8b857faef75d7e3a278bc3f544e0fb07}} 
+\#define \mbox{\hyperlink{vector_8h_a8b857faef75d7e3a278bc3f544e0fb07}{Vector3\+YUp}}~(\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 0.\+0f, .y = 1.\+0f, .z = 0.\+0f\}
+\begin{DoxyCompactList}\small\item\em Eazy define for creating a vector3 y up vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,9 +59,9 @@ typedef struct \mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{vecto
 \mbox{\Hypertarget{vector_8h_aff3ba508436bec4750e91364badfbc99}\label{vector_8h_aff3ba508436bec4750e91364badfbc99}} 
 typedef struct \mbox{\hyperlink{struct_vector4}{Vector4}} \mbox{\hyperlink{vector_8h_aff3ba508436bec4750e91364badfbc99}{Vector4}}
 \begin{DoxyCompactList}\small\item\em Vector data structure with 4 components create a vector4 by using a compund literal ie \mbox{\hyperlink{struct_vector4}{Vector4}} v = (\mbox{\hyperlink{struct_vector4}{Vector4}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f, .w = 0.\+0f\};. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{vector_8h_a512254f7ee8948f0323992006331503c}\label{vector_8h_a512254f7ee8948f0323992006331503c}} 
-typedef struct \mbox{\hyperlink{struct_transform}{Transform}} \mbox{\hyperlink{vector_8h_a512254f7ee8948f0323992006331503c}{Transform}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_transform}{Transform}} struct that can hold 3 vector3 data structures A transform can be initialized by using compound literals ie, Transform.\+Position = (\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f\};. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{vector_8h_a258cb9a555e868c2c2e13eaab89c315f}\label{vector_8h_a258cb9a555e868c2c2e13eaab89c315f}} 
+typedef struct \mbox{\hyperlink{struct_vector5}{Vector5}} \mbox{\hyperlink{vector_8h_a258cb9a555e868c2c2e13eaab89c315f}{Vector5}}
+\begin{DoxyCompactList}\small\item\em Vector data structure with 5 components create a vector5 by using a compund literal ie \mbox{\hyperlink{struct_vector5}{Vector5}} v = (\mbox{\hyperlink{struct_vector5}{Vector5}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f, .w = 0.\+0f, .u = 0.\+0f\};. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -55,6 +73,8 @@ float \mbox{\hyperlink{vector_8h_ad2f9062d2300d535324469bae8c663b4}{Magnatude4}}
 \begin{DoxyCompactList}\small\item\em Find the magnatude of a \mbox{\hyperlink{struct_vector4}{Vector4}}. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{vector_8h_af2cfd198ee49fbb80dc63eec6b69bf5f}{Distance2}} (\mbox{\hyperlink{struct_vector2}{Vector2}} a, \mbox{\hyperlink{struct_vector2}{Vector2}} b)
 \begin{DoxyCompactList}\small\item\em Finds the distance between two \mbox{\hyperlink{struct_vector2}{Vector2}}\textquotesingle{}s. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{vector_8h_a1691eece70f99282283bf366810941ed}{Distance3}} (\mbox{\hyperlink{struct_vector3}{Vector3}} a, \mbox{\hyperlink{struct_vector3}{Vector3}} b)
+\begin{DoxyCompactList}\small\item\em Finds the distance between two \mbox{\hyperlink{struct_vector3}{Vector3}}\textquotesingle{}s. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{vector_8h_a0e1571a80c2d1924926a958ef4f581b2}{Distance4}} (\mbox{\hyperlink{struct_vector4}{Vector4}} a, \mbox{\hyperlink{struct_vector4}{Vector4}} b)
 \begin{DoxyCompactList}\small\item\em Finds the distance between two \mbox{\hyperlink{struct_vector4}{Vector4}}\textquotesingle{}s. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_vector2}{Vector2}} \mbox{\hyperlink{vector_8h_aa7c9098080c787f05809a65f13093610}{Direction\+Vector2}} (\mbox{\hyperlink{struct_vector2}{Vector2}} a, \mbox{\hyperlink{struct_vector2}{Vector2}} b)
@@ -106,9 +126,9 @@ float \mbox{\hyperlink{vector_8h_a5beb024ec98eba78313543dbfcf5dbdc}{Dot\+Product
 \mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{vector_8h_ac355e264ad1182721187dad71802b0e9}{Cross\+Product3}} (\mbox{\hyperlink{struct_vector3}{Vector3}} a, \mbox{\hyperlink{struct_vector3}{Vector3}} b)
 \begin{DoxyCompactList}\small\item\em Finds the cross product between two \mbox{\hyperlink{struct_vector3}{Vector3}}\textquotesingle{}s. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{vector_8h_a0bf0708735e66f1e450827840aa751cf}{Angle2}} (\mbox{\hyperlink{struct_vector2}{Vector2}} a, \mbox{\hyperlink{struct_vector2}{Vector2}} b)
-\begin{DoxyCompactList}\small\item\em Finds the angle between two Direction \mbox{\hyperlink{struct_vector2}{Vector2}}\textquotesingle{}s. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Finds the angle between two Direction \mbox{\hyperlink{struct_vector2}{Vector2}}\textquotesingle{}s in degrees. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{vector_8h_ac16a1b0415290a36433c31309c6a13f6}{Angle3}} (\mbox{\hyperlink{struct_vector3}{Vector3}} a, \mbox{\hyperlink{struct_vector3}{Vector3}} b)
-\begin{DoxyCompactList}\small\item\em Finds the angle between two Direction \mbox{\hyperlink{struct_vector3}{Vector3}}\textquotesingle{}s. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Finds the angle between two Direction \mbox{\hyperlink{struct_vector3}{Vector3}}\textquotesingle{}s in Degrees. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{vector_8h_ac60fcc424b5db4f8de86dcf75c5bd7b7}{Area3}} (\mbox{\hyperlink{struct_vector3}{Vector3}} a, \mbox{\hyperlink{struct_vector3}{Vector3}} b, \mbox{\hyperlink{struct_vector3}{Vector3}} c)
 \begin{DoxyCompactList}\small\item\em Finds the area of a triangle of three \mbox{\hyperlink{struct_vector3}{Vector3}}\textquotesingle{}s. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{vector_8h_a9be15cfaef503d3d1ef2515b5e3032d9}{Triangle\+Area}} (float base, float height)
@@ -124,17 +144,28 @@ float \mbox{\hyperlink{vector_8h_a9be15cfaef503d3d1ef2515b5e3032d9}{Triangle\+Ar
 \mbox{\hyperlink{struct_vector3}{Vector3}} \mbox{\hyperlink{vector_8h_a9f971702ada2198626b803c409e5e179}{Invert3}} (\mbox{\hyperlink{struct_vector3}{Vector3}} a)
 \begin{DoxyCompactList}\small\item\em Inverts a vector 3. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_vector4}{Vector4}} \mbox{\hyperlink{vector_8h_a19c3dcb0dbef7926343adb33a193190f}{Invert4}} (\mbox{\hyperlink{struct_vector4}{Vector4}} a)
-\begin{DoxyCompactList}\small\item\em Inverts a vector 4. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Inverts a vector 4. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vector_8h_a0514d16be83ba5415079929a9b9a1032}\label{vector_8h_a0514d16be83ba5415079929a9b9a1032}} 
+\mbox{\hyperlink{struct_vector3}{Vector3}} {\bfseries New\+Vector3} (float x, float y, float z)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Vector Math fucntions file. 
+2D, 3D and 4D Vector Math fucntions 
+
+Creates a new vector3 out of xyz components and returns it.
 
 \begin{DoxyAuthor}{Author}
 Bryce Standley 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
-April 2021 
+April 2021
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Bryce Standley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2021 
 \end{DoxyDate}
 
 
@@ -173,6 +204,13 @@ Adds two \mbox{\hyperlink{struct_vector3}{Vector3}}\textquotesingle{}s together.
 {\em \mbox{\hyperlink{struct_vector3}{Vector3}}} & b \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{vector_8h_ad82a913d6512f823b7e7800830125ac1_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_a4c17ce39afe172e9da9d4df638cd9a2b}\label{vector_8h_a4c17ce39afe172e9da9d4df638cd9a2b}} 
 \index{vector.h@{vector.h}!Add4@{Add4}}
 \index{Add4@{Add4}!vector.h@{vector.h}}
@@ -198,13 +236,20 @@ Adds two \mbox{\hyperlink{struct_vector4}{Vector4}}\textquotesingle{}s together.
 
 
 
-Finds the angle between two Direction \mbox{\hyperlink{struct_vector2}{Vector2}}\textquotesingle{}s. 
+Finds the angle between two Direction \mbox{\hyperlink{struct_vector2}{Vector2}}\textquotesingle{}s in degrees. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em Two} & directional vectors of type \mbox{\hyperlink{struct_vector2}{Vector2}} \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{vector_8h_a0bf0708735e66f1e450827840aa751cf_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_ac16a1b0415290a36433c31309c6a13f6}\label{vector_8h_ac16a1b0415290a36433c31309c6a13f6}} 
 \index{vector.h@{vector.h}!Angle3@{Angle3}}
 \index{Angle3@{Angle3}!vector.h@{vector.h}}
@@ -213,13 +258,20 @@ Finds the angle between two Direction \mbox{\hyperlink{struct_vector2}{Vector2}}
 
 
 
-Finds the angle between two Direction \mbox{\hyperlink{struct_vector3}{Vector3}}\textquotesingle{}s. 
+Finds the angle between two Direction \mbox{\hyperlink{struct_vector3}{Vector3}}\textquotesingle{}s in Degrees. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em Two} & directional vectors of type \mbox{\hyperlink{struct_vector3}{Vector3}} \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{vector_8h_ac16a1b0415290a36433c31309c6a13f6_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_ac60fcc424b5db4f8de86dcf75c5bd7b7}\label{vector_8h_ac60fcc424b5db4f8de86dcf75c5bd7b7}} 
 \index{vector.h@{vector.h}!Area3@{Area3}}
 \index{Area3@{Area3}!vector.h@{vector.h}}
@@ -239,6 +291,13 @@ Finds the area of a triangle of three \mbox{\hyperlink{struct_vector3}{Vector3}}
 {\em \mbox{\hyperlink{struct_vector3}{Vector3}}} & c \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{vector_8h_ac60fcc424b5db4f8de86dcf75c5bd7b7_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_ac355e264ad1182721187dad71802b0e9}\label{vector_8h_ac355e264ad1182721187dad71802b0e9}} 
 \index{vector.h@{vector.h}!CrossProduct3@{CrossProduct3}}
 \index{CrossProduct3@{CrossProduct3}!vector.h@{vector.h}}
@@ -256,6 +315,14 @@ Finds the cross product between two \mbox{\hyperlink{struct_vector3}{Vector3}}\t
 {\em \mbox{\hyperlink{struct_vector3}{Vector3}}} & b \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vector_8h_ac355e264ad1182721187dad71802b0e9_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_aa7c9098080c787f05809a65f13093610}\label{vector_8h_aa7c9098080c787f05809a65f13093610}} 
 \index{vector.h@{vector.h}!DirectionVector2@{DirectionVector2}}
 \index{DirectionVector2@{DirectionVector2}!vector.h@{vector.h}}
@@ -273,6 +340,13 @@ Finds a directional vector between two \mbox{\hyperlink{struct_vector2}{Vector2}
 {\em \mbox{\hyperlink{struct_vector2}{Vector2}}} & b \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{vector_8h_aa7c9098080c787f05809a65f13093610_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_a42adb0f260e0999aa7ccdc7ec8524c92}\label{vector_8h_a42adb0f260e0999aa7ccdc7ec8524c92}} 
 \index{vector.h@{vector.h}!DirectionVector3@{DirectionVector3}}
 \index{DirectionVector3@{DirectionVector3}!vector.h@{vector.h}}
@@ -290,6 +364,14 @@ Finds a directional vector between two \mbox{\hyperlink{struct_vector3}{Vector3}
 {\em \mbox{\hyperlink{struct_vector3}{Vector3}}} & b \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vector_8h_a42adb0f260e0999aa7ccdc7ec8524c92_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_af5b3e29635158173c745f45c4cfefb87}\label{vector_8h_af5b3e29635158173c745f45c4cfefb87}} 
 \index{vector.h@{vector.h}!DirectionVector4@{DirectionVector4}}
 \index{DirectionVector4@{DirectionVector4}!vector.h@{vector.h}}
@@ -307,6 +389,13 @@ Finds a directional vector between two \mbox{\hyperlink{struct_vector4}{Vector4}
 {\em \mbox{\hyperlink{struct_vector4}{Vector4}}} & b \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{vector_8h_af5b3e29635158173c745f45c4cfefb87_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_af2cfd198ee49fbb80dc63eec6b69bf5f}\label{vector_8h_af2cfd198ee49fbb80dc63eec6b69bf5f}} 
 \index{vector.h@{vector.h}!Distance2@{Distance2}}
 \index{Distance2@{Distance2}!vector.h@{vector.h}}
@@ -324,6 +413,37 @@ Finds the distance between two \mbox{\hyperlink{struct_vector2}{Vector2}}\textqu
 {\em \mbox{\hyperlink{struct_vector2}{Vector2}}} & b \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{vector_8h_af2cfd198ee49fbb80dc63eec6b69bf5f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{vector_8h_a1691eece70f99282283bf366810941ed}\label{vector_8h_a1691eece70f99282283bf366810941ed}} 
+\index{vector.h@{vector.h}!Distance3@{Distance3}}
+\index{Distance3@{Distance3}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{Distance3()}{Distance3()}}
+{\footnotesize\ttfamily float Distance3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vector3}{Vector3}}}]{a,  }\item[{\mbox{\hyperlink{struct_vector3}{Vector3}}}]{b }\end{DoxyParamCaption})}
+
+
+
+Finds the distance between two \mbox{\hyperlink{struct_vector3}{Vector3}}\textquotesingle{}s. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{struct_vector3}{Vector3}}} & a \\
+\hline
+{\em \mbox{\hyperlink{struct_vector3}{Vector3}}} & b \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{vector_8h_a1691eece70f99282283bf366810941ed_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_a0e1571a80c2d1924926a958ef4f581b2}\label{vector_8h_a0e1571a80c2d1924926a958ef4f581b2}} 
 \index{vector.h@{vector.h}!Distance4@{Distance4}}
 \index{Distance4@{Distance4}!vector.h@{vector.h}}
@@ -341,6 +461,13 @@ Finds the distance between two \mbox{\hyperlink{struct_vector4}{Vector4}}\textqu
 {\em \mbox{\hyperlink{struct_vector4}{Vector4}}} & b \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{vector_8h_a0e1571a80c2d1924926a958ef4f581b2_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_a688f9f54dd1db4381f3c444bbca90795}\label{vector_8h_a688f9f54dd1db4381f3c444bbca90795}} 
 \index{vector.h@{vector.h}!Divide2@{Divide2}}
 \index{Divide2@{Divide2}!vector.h@{vector.h}}
@@ -375,6 +502,13 @@ divides a \mbox{\hyperlink{struct_vector3}{Vector3}} by a divide value
 {\em float} & divide \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vector_8h_ab8f31feff2d3d897f7c246a33b02ec1c_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_abfece14d7c6db98bc94e7e19ba0c9b49}\label{vector_8h_abfece14d7c6db98bc94e7e19ba0c9b49}} 
 \index{vector.h@{vector.h}!Divide4@{Divide4}}
 \index{Divide4@{Divide4}!vector.h@{vector.h}}
@@ -409,6 +543,13 @@ Finds the dot product between two \mbox{\hyperlink{struct_vector2}{Vector2}}\tex
 {\em \mbox{\hyperlink{struct_vector2}{Vector2}}} & b \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{vector_8h_a7ff6b0205ff6527fde0ada4ab12f3d17_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_a5beb024ec98eba78313543dbfcf5dbdc}\label{vector_8h_a5beb024ec98eba78313543dbfcf5dbdc}} 
 \index{vector.h@{vector.h}!DotProduct3@{DotProduct3}}
 \index{DotProduct3@{DotProduct3}!vector.h@{vector.h}}
@@ -426,6 +567,13 @@ Finds the dot product between two \mbox{\hyperlink{struct_vector3}{Vector3}}\tex
 {\em \mbox{\hyperlink{struct_vector3}{Vector3}}} & b \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{vector_8h_a5beb024ec98eba78313543dbfcf5dbdc_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_a8f5aaa165bf0c223c56a402d041668c3}\label{vector_8h_a8f5aaa165bf0c223c56a402d041668c3}} 
 \index{vector.h@{vector.h}!Invert2@{Invert2}}
 \index{Invert2@{Invert2}!vector.h@{vector.h}}
@@ -486,6 +634,13 @@ Find the magnatude of a \mbox{\hyperlink{struct_vector2}{Vector2}}.
 {\em \mbox{\hyperlink{struct_vector2}{Vector2}}} & a \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{vector_8h_ad37c4c1e95f98c1f4fb7dd519de45282_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_a74e97ba7e0685d142af418969743a4bf}\label{vector_8h_a74e97ba7e0685d142af418969743a4bf}} 
 \index{vector.h@{vector.h}!Magnatude3@{Magnatude3}}
 \index{Magnatude3@{Magnatude3}!vector.h@{vector.h}}
@@ -501,6 +656,14 @@ Find the magnatude of a \mbox{\hyperlink{struct_vector3}{Vector3}}.
 {\em \mbox{\hyperlink{struct_vector3}{Vector3}}} & a \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vector_8h_a74e97ba7e0685d142af418969743a4bf_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_ad2f9062d2300d535324469bae8c663b4}\label{vector_8h_ad2f9062d2300d535324469bae8c663b4}} 
 \index{vector.h@{vector.h}!Magnatude4@{Magnatude4}}
 \index{Magnatude4@{Magnatude4}!vector.h@{vector.h}}
@@ -516,6 +679,13 @@ Find the magnatude of a \mbox{\hyperlink{struct_vector4}{Vector4}}.
 {\em \mbox{\hyperlink{struct_vector4}{Vector4}}} & a \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{vector_8h_ad2f9062d2300d535324469bae8c663b4_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_ae94b9987f23e5389f561057c0ac80315}\label{vector_8h_ae94b9987f23e5389f561057c0ac80315}} 
 \index{vector.h@{vector.h}!Multiply2@{Multiply2}}
 \index{Multiply2@{Multiply2}!vector.h@{vector.h}}
@@ -582,6 +752,13 @@ Normalizes a \mbox{\hyperlink{struct_vector2}{Vector2}}.
 {\em \mbox{\hyperlink{struct_vector2}{Vector2}}} & a \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{vector_8h_a4295b2d3346990c12733c66b32853dc9_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_a131866ba02fb0c178150001e81113247}\label{vector_8h_a131866ba02fb0c178150001e81113247}} 
 \index{vector.h@{vector.h}!Normalize3@{Normalize3}}
 \index{Normalize3@{Normalize3}!vector.h@{vector.h}}
@@ -597,6 +774,21 @@ Normalizes a \mbox{\hyperlink{struct_vector3}{Vector3}}.
 {\em \mbox{\hyperlink{struct_vector3}{Vector3}}} & a \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{vector_8h_a131866ba02fb0c178150001e81113247_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vector_8h_a131866ba02fb0c178150001e81113247_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_a5d43c9f19490f02a8a8b953a30385b96}\label{vector_8h_a5d43c9f19490f02a8a8b953a30385b96}} 
 \index{vector.h@{vector.h}!Normalize4@{Normalize4}}
 \index{Normalize4@{Normalize4}!vector.h@{vector.h}}
@@ -612,6 +804,13 @@ Normalizes a \mbox{\hyperlink{struct_vector4}{Vector4}}.
 {\em \mbox{\hyperlink{struct_vector4}{Vector4}}} & a \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{vector_8h_a5d43c9f19490f02a8a8b953a30385b96_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_a023e19dc839dec9370bfe8e63f6eed47}\label{vector_8h_a023e19dc839dec9370bfe8e63f6eed47}} 
 \index{vector.h@{vector.h}!Pow2@{Pow2}}
 \index{Pow2@{Pow2}!vector.h@{vector.h}}
@@ -697,6 +896,13 @@ Scales a \mbox{\hyperlink{struct_vector3}{Vector3}} by a scale value.
 {\em float} & scale \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{vector_8h_ae420560bae7d5717003ba186193e5383_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{vector_8h_aacb8f0e2bb10968c9ad5c48072b1456f}\label{vector_8h_aacb8f0e2bb10968c9ad5c48072b1456f}} 
 \index{vector.h@{vector.h}!Scale4@{Scale4}}
 \index{Scale4@{Scale4}!vector.h@{vector.h}}

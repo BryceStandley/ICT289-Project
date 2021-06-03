@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ICT289 Project: Camera Struct Reference</title>
+<title>BowTime - ICT289 Project: Camera Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ICT289 Project
-   &#160;<span id="projectnumber">2</span>
+   <div id="projectname">BowTime - ICT289 Project
+   &#160;<span id="projectnumber">v3</span>
    </div>
   </td>
  </tr>
@@ -88,6 +88,23 @@ $(document).ready(function(){initNavTree('struct_camera.html',''); initResizable
 <div class="title">Camera Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Data structure of the camera.  
+ <a href="struct_camera.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="camera_8h_source.html">camera.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Camera:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_camera__coll__graph.png" border="0" usemap="#a_camera_coll__map" alt="Collaboration graph"/></div>
+<map name="a_camera_coll__map" id="a_camera_coll__map">
+<area shape="rect" title="Data structure of the camera." alt="" coords="144,260,211,287"/>
+<area shape="rect" href="struct_mat4.html" title="Structure of a 4 x 4 matrix." alt="" coords="5,147,56,174"/>
+<area shape="rect" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V..." alt="" coords="157,5,224,32"/>
+<area shape="rect" href="struct_transform.html" title="Transform struct that can hold 3 vector3 data structures and a quaternion for rotation A transform ca..." alt="" coords="253,147,331,174"/>
+<area shape="rect" href="struct_quaternion.html" title="Structure of a quaternion." alt="" coords="261,5,347,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -97,14 +114,25 @@ Data Fields</h2></td></tr>
 <tr class="memitem:ae197df9fdb4f87009d1145e1feddf63d"><td class="memItemLeft" align="right" valign="top"><a id="ae197df9fdb4f87009d1145e1feddf63d"></a>
 <a class="el" href="struct_vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>LookAt</b></td></tr>
 <tr class="separator:ae197df9fdb4f87009d1145e1feddf63d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0a5b36870d5f0180840e4c7d3ecae4f"><td class="memItemLeft" align="right" valign="top"><a id="ae0a5b36870d5f0180840e4c7d3ecae4f"></a>
-<a class="el" href="struct_vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Up</b></td></tr>
-<tr class="separator:ae0a5b36870d5f0180840e4c7d3ecae4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a8b717bd4a086c6204c516b3a650486"><td class="memItemLeft" align="right" valign="top"><a id="a4a8b717bd4a086c6204c516b3a650486"></a>
+<a class="el" href="struct_vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>WorldUp</b></td></tr>
+<tr class="separator:a4a8b717bd4a086c6204c516b3a650486"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b9a18f88c0d64aaf7002a7b461971dc"><td class="memItemLeft" align="right" valign="top"><a id="a2b9a18f88c0d64aaf7002a7b461971dc"></a>
 <a class="el" href="struct_vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Forward</b></td></tr>
 <tr class="separator:a2b9a18f88c0d64aaf7002a7b461971dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0a5b36870d5f0180840e4c7d3ecae4f"><td class="memItemLeft" align="right" valign="top"><a id="ae0a5b36870d5f0180840e4c7d3ecae4f"></a>
+<a class="el" href="struct_vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Up</b></td></tr>
+<tr class="separator:ae0a5b36870d5f0180840e4c7d3ecae4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96ad80e28262f5d76d51d044608a9713"><td class="memItemLeft" align="right" valign="top"><a id="a96ad80e28262f5d76d51d044608a9713"></a>
+<a class="el" href="struct_vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Left</b></td></tr>
+<tr class="separator:a96ad80e28262f5d76d51d044608a9713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30250f236e321c704b5eefd85b830554"><td class="memItemLeft" align="right" valign="top"><a id="a30250f236e321c704b5eefd85b830554"></a>
+<a class="el" href="struct_mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CameraLookAtMatrix</b></td></tr>
+<tr class="separator:a30250f236e321c704b5eefd85b830554"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Data structure of the camera. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>ICT289-Project/src/<a class="el" href="camera_8h_source.html">camera.h</a></li>
 </ul>
 </div><!-- contents -->

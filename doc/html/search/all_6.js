@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['normalize2_39',['Normalize2',['../vector_8h.html#a4295b2d3346990c12733c66b32853dc9',1,'vector.c']]],
-  ['normalize3_40',['Normalize3',['../vector_8h.html#a131866ba02fb0c178150001e81113247',1,'vector.c']]],
-  ['normalize4_41',['Normalize4',['../vector_8h.html#a5d43c9f19490f02a8a8b953a30385b96',1,'vector.c']]]
+  ['loadendscreen_43',['LoadEndScreen',['../window_8h.html#afbccb445eda4392e4bfd169b1fce8425',1,'window.c']]],
+  ['loadmodels_44',['LoadModels',['../window_8h.html#a5853bf3749d69ddd5e65956a472f3cd1',1,'window.c']]],
+  ['loadofffile_45',['LoadOffFile',['../model_8h.html#a573e2753dda5550deb261c9e6837b2ab',1,'model.c']]]
 ];

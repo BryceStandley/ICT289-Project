@@ -1,0 +1,11 @@
+<map id="Normalize3" name="Normalize3">
+<area shape="rect" id="node1" title="Normalizes a Vector3." alt="" coords="649,107,736,133"/>
+<area shape="rect" id="node2" href="$camera_8h.html#af39bf9665842690d15cf7fe839637fca" title="Updates the camera and the gluLookAt function." alt="" coords="301,107,409,133"/>
+<area shape="rect" id="node9" href="$camera_8h.html#afc313a42ad61c6e444fb8f6a6b6baf39" title="Updates the cameras look at matrix." alt="" coords="457,132,601,159"/>
+<area shape="rect" id="node3" href="$camera_8h.html#ac0ecd597d3765cdeb43efd88c7fb9be5" title="moves the cameras position forwards and back" alt="" coords="147,5,245,32"/>
+<area shape="rect" id="node4" href="$window_8h.html#a43920c017162ec39cb0f0e8f8f56b313" title="Main Render function." alt="" coords="165,56,227,83"/>
+<area shape="rect" id="node6" href="$camera_8h.html#a6c5755301abebe21f062f7207ae9b290" title="Rotates the camera&#39;s yaw/x value." alt="" coords="140,107,252,133"/>
+<area shape="rect" id="node7" href="$camera_8h.html#a5b115f8a37f78833a9275701f4bf862a" title="Rotates the camera&#39;s pitch/y value." alt="" coords="139,157,253,184"/>
+<area shape="rect" id="node8" href="$camera_8h.html#a64808ee919613b3c75b02b7791712096" title="Moves the cameras position left and right." alt="" coords="145,208,247,235"/>
+<area shape="rect" id="node5" href="$window_8h.html#a79030dd806dab6514d62fcd009f1774f" title="Main GLUT init functions." alt="" coords="5,56,91,83"/>
+</map>

@@ -6,16 +6,40 @@ Physics functions to be used to animate objects.
 
 
 {\ttfamily \#include \char`\"{}vector.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for rigidbody.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{rigidbody_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{rigidbody_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{struct_rigidbody}{Rigidbody}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Data structure of a physics rigidbody. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{rigidbody_8h_a427ce6aa99e787700fdd6c78b2633d84}\label{rigidbody_8h_a427ce6aa99e787700fdd6c78b2633d84}} 
-typedef struct \mbox{\hyperlink{struct_rigidbody}{Rigidbody}} {\bfseries Rigidbody}
+typedef struct \mbox{\hyperlink{struct_rigidbody}{Rigidbody}} \mbox{\hyperlink{rigidbody_8h_a427ce6aa99e787700fdd6c78b2633d84}{Rigidbody}}
+\begin{DoxyCompactList}\small\item\em Data structure of a physics rigidbody. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{rigidbody_8h_ad8e494b684b21648d02d8481d165d159}\label{rigidbody_8h_ad8e494b684b21648d02d8481d165d159}} 
+enum {\bfseries BODYTYPE} \{ {\bfseries DYNAMIC}
+, {\bfseries KINEMATIC}
+, {\bfseries STATIC}
+ \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -39,11 +63,19 @@ void \mbox{\hyperlink{rigidbody_8h_aec94cc96cc69814097f420caaa1231d5}{Init\+Rigi
 \doxysubsection{Detailed Description}
 Physics functions to be used to animate objects. 
 
+enum of the different body types of a physics object
+
 \begin{DoxyAuthor}{Author}
 Bryce Standley 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
-May 2021 
+May 2021
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Maea Havea 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2021 
 \end{DoxyDate}
 
 
@@ -61,6 +93,20 @@ Calculate the acceleration at a given time.
 \begin{DoxyDate}{Date}
 May 2021 
 \end{DoxyDate}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{rigidbody_8h_a9cb7eb0fe8d156736a928c1c50e6be80_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{rigidbody_8h_a9cb7eb0fe8d156736a928c1c50e6be80_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{rigidbody_8h_a4b4ad059679ac79295d71b4a88ad6c82}\label{rigidbody_8h_a4b4ad059679ac79295d71b4a88ad6c82}} 
 \index{rigidbody.h@{rigidbody.h}!AverageVelocity@{AverageVelocity}}
 \index{AverageVelocity@{AverageVelocity}!rigidbody.h@{rigidbody.h}}
@@ -74,6 +120,13 @@ Average of two velocities.
 \begin{DoxyDate}{Date}
 May 2021 
 \end{DoxyDate}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{rigidbody_8h_a4b4ad059679ac79295d71b4a88ad6c82_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{rigidbody_8h_a8a91647f4971af971ff7d4121691eaae}\label{rigidbody_8h_a8a91647f4971af971ff7d4121691eaae}} 
 \index{rigidbody.h@{rigidbody.h}!Displace@{Displace}}
 \index{Displace@{Displace}!rigidbody.h@{rigidbody.h}}
@@ -87,6 +140,13 @@ Calculate the new displacement of a object at a given time.
 \begin{DoxyDate}{Date}
 May 2021 
 \end{DoxyDate}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{rigidbody_8h_a8a91647f4971af971ff7d4121691eaae_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{rigidbody_8h_a54632aba31eeb94f2c490a6bc6248789}\label{rigidbody_8h_a54632aba31eeb94f2c490a6bc6248789}} 
 \index{rigidbody.h@{rigidbody.h}!Force@{Force}}
 \index{Force@{Force}!rigidbody.h@{rigidbody.h}}
@@ -100,6 +160,13 @@ Calculate a force of a object.
 \begin{DoxyDate}{Date}
 May 2021 
 \end{DoxyDate}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{rigidbody_8h_a54632aba31eeb94f2c490a6bc6248789_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{rigidbody_8h_a315e3b50fa148f491bc71f45ea9c2d09}\label{rigidbody_8h_a315e3b50fa148f491bc71f45ea9c2d09}} 
 \index{rigidbody.h@{rigidbody.h}!ForceDueToGravity@{ForceDueToGravity}}
 \index{ForceDueToGravity@{ForceDueToGravity}!rigidbody.h@{rigidbody.h}}
@@ -126,6 +193,13 @@ Init a rigidbody with default values.
 \begin{DoxyDate}{Date}
 May 2021 
 \end{DoxyDate}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{rigidbody_8h_aec94cc96cc69814097f420caaa1231d5_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{rigidbody_8h_ab0c43059b74977be129a06fb78083b89}\label{rigidbody_8h_ab0c43059b74977be129a06fb78083b89}} 
 \index{rigidbody.h@{rigidbody.h}!VelocityAtTime@{VelocityAtTime}}
 \index{VelocityAtTime@{VelocityAtTime}!rigidbody.h@{rigidbody.h}}
@@ -139,3 +213,10 @@ Calculate the velocity at a given time.
 \begin{DoxyDate}{Date}
 May 2021 
 \end{DoxyDate}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rigidbody_8h_ab0c43059b74977be129a06fb78083b89_cgraph}
+\end{center}
+\end{figure}

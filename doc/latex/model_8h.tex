@@ -11,37 +11,103 @@ Used to load and manage models into the program.
 {\ttfamily \#include \char`\"{}vector.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}colours.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$GL/freeglut.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}material.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rigidbody.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$corecrt\+\_\+math\+\_\+defines.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Transform.\+h\char`\"{}}\newline
+Include dependency graph for model.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{model_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{struct_object3_d}{Object3D}}
-\end{DoxyCompactItemize}
+struct \mbox{\hyperlink{struct_game_object}{Game\+Object}}
+\begin{DoxyCompactList}\small\item\em Structure of a 3D Model based arounf the OFF file type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{model_8h_a8d7d5f3bc4782fed51a9d4dd8e25c116}\label{model_8h_a8d7d5f3bc4782fed51a9d4dd8e25c116}} 
-typedef struct \mbox{\hyperlink{struct_object3_d}{Object3D}} {\bfseries Object3D}
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{model_8h_ab0fb707a835e2853e4ab457d743d9640}\label{model_8h_ab0fb707a835e2853e4ab457d743d9640}} 
+typedef struct \mbox{\hyperlink{struct_game_object}{Game\+Object}} \mbox{\hyperlink{model_8h_ab0fb707a835e2853e4ab457d743d9640}{Game\+Object}}
+\begin{DoxyCompactList}\small\item\em Structure of a 3D Model based arounf the OFF file type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{model_8h_ad9483dd5ea4ef8c61a06008b02a05a72}\label{model_8h_ad9483dd5ea4ef8c61a06008b02a05a72}} 
-void {\bfseries Init\+Empty\+Object} (\mbox{\hyperlink{struct_object3_d}{Object3D}} $\ast$object)
+\mbox{\Hypertarget{model_8h_a87ea81c2369d712d01bcdaf6e6834730}\label{model_8h_a87ea81c2369d712d01bcdaf6e6834730}} 
+void \mbox{\hyperlink{model_8h_a87ea81c2369d712d01bcdaf6e6834730}{Init\+Empty\+Object}} (\mbox{\hyperlink{struct_game_object}{Game\+Object}} $\ast$object)
+\begin{DoxyCompactList}\small\item\em Init\textquotesingle{}s values in the object before loading in the file. Similar to a default constructor for the object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{model_8h_a573e2753dda5550deb261c9e6837b2ab}\label{model_8h_a573e2753dda5550deb261c9e6837b2ab}} 
+int \mbox{\hyperlink{model_8h_a573e2753dda5550deb261c9e6837b2ab}{Load\+Off\+File}} (char $\ast$file\+Path, \mbox{\hyperlink{struct_game_object}{Game\+Object}} $\ast$object)
+\begin{DoxyCompactList}\small\item\em Loads in a given 3D model OFF file and returns true or false for a successful load. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{model_8h_a3f3e2681f2c5332286d0b02a94857591}\label{model_8h_a3f3e2681f2c5332286d0b02a94857591}} 
+void \mbox{\hyperlink{model_8h_a3f3e2681f2c5332286d0b02a94857591}{Draw\+Off\+File}} (\mbox{\hyperlink{struct_game_object}{Game\+Object}} $\ast$object)
+\begin{DoxyCompactList}\small\item\em Used to render a OFF file. Use this function within the glut render call. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{model_8h_a9742f411dff3f9b3dcaa24f7607f57a9}\label{model_8h_a9742f411dff3f9b3dcaa24f7607f57a9}} 
+void {\bfseries Translate\+To\+Object\+Position} (\mbox{\hyperlink{struct_game_object}{Game\+Object}} $\ast$object)
 \item 
-\mbox{\Hypertarget{model_8h_a597ded1bda8399a0ce576f8909c85e55}\label{model_8h_a597ded1bda8399a0ce576f8909c85e55}} 
-int {\bfseries Load\+Off\+File} (char $\ast$file\+Path, \mbox{\hyperlink{struct_object3_d}{Object3D}} $\ast$object)
+\mbox{\Hypertarget{model_8h_ace45bc7a3ccd821a12449807bba22483}\label{model_8h_ace45bc7a3ccd821a12449807bba22483}} 
+void {\bfseries Translate\+To\+Vec3\+Position} (\mbox{\hyperlink{struct_vector3}{Vector3}} a)
 \item 
-\mbox{\Hypertarget{model_8h_a7f33b016079a82e342b4a257785a0257}\label{model_8h_a7f33b016079a82e342b4a257785a0257}} 
-void {\bfseries Draw\+Off\+File} (\mbox{\hyperlink{struct_object3_d}{Object3D}} $\ast$object)
+\mbox{\Hypertarget{model_8h_acdfbb53fe25eccea3e6c0af5a8505620}\label{model_8h_acdfbb53fe25eccea3e6c0af5a8505620}} 
+void {\bfseries Rotate\+Around\+Rad} (\mbox{\hyperlink{struct_vector3}{Vector3}} a)
+\item 
+\mbox{\Hypertarget{model_8h_a5e14ad5fea6c2f0b9e82decba36b69df}\label{model_8h_a5e14ad5fea6c2f0b9e82decba36b69df}} 
+void {\bfseries Rotate\+Around\+Deg} (\mbox{\hyperlink{struct_vector3}{Vector3}} a)
+\item 
+\mbox{\Hypertarget{model_8h_ac19354e099b0ae5cfcd429e066d1147c}\label{model_8h_ac19354e099b0ae5cfcd429e066d1147c}} 
+void {\bfseries Update\+Game\+Object} (\mbox{\hyperlink{struct_game_object}{Game\+Object}} $\ast$game\+Object\+To\+Update, \mbox{\hyperlink{struct_game_object}{Game\+Object}} temp\+Game\+Object)
+\item 
+\mbox{\Hypertarget{model_8h_a1cad7b1e39acbc2d24d7099039368ca7}\label{model_8h_a1cad7b1e39acbc2d24d7099039368ca7}} 
+void {\bfseries Set\+Name} (\mbox{\hyperlink{struct_game_object}{Game\+Object}} $\ast$gameobject, char $\ast$name)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Used to load and manage models into the program. 
 
+Sets the name of a object.
+
+Updates a game object\textquotesingle{}s information with a temp game object.
+
+Uses open\+GL rotatef to rotate a given axis in degrees.
+
+Uses open\+Gl rotatef to rotate around a give axis in radians.
+
+Translates the scene to a given vec3.
+
+Translates the scene to a gameobjects position.
+
 \begin{DoxyAuthor}{Author}
-Bryce Standley
+Bryce Standley 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
-April 2021 
+April 2021
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Bryce Standley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2021
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Bryce Standley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2021
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Maea Havea 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2021 
 \end{DoxyDate}

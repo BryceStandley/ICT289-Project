@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ICT289 Project: ICT289-Project/src/model.h Source File</title>
+<title>BowTime - ICT289 Project: ICT289-Project/src/model.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ICT289 Project
-   &#160;<span id="projectnumber">2</span>
+   <div id="projectname">BowTime - ICT289 Project
+   &#160;<span id="projectnumber">v3</span>
    </div>
   </td>
  </tr>
@@ -86,56 +86,78 @@ $(document).ready(function(){initNavTree('model_8h_source.html',''); initResizab
 <div class="title">model.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="model_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#ifndef MODEL_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#define MODEL_H</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma warning(disable:4996)</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;errno.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vector_8h.html">vector.h</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="colours_8h.html">colours.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;GL/freeglut.h&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">* \brief Structure of a 3D Model based arounf the OFF file type</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">*/</span></div>
+<a href="model_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*****************************************************************/</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef MODEL_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define MODEL_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#pragma warning(disable:4996)</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;errno.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vector_8h.html">vector.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="colours_8h.html">colours.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;GL/freeglut.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="material_8h.html">material.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rigidbody_8h.html">rigidbody.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;corecrt_math_defines.h&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_transform_8h.html">Transform.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="struct_object3_d.html">   24</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_object3_d.html">Object3D</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">int</span> numFaces;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> numPoints;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> numEdges;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="struct_vector3.html">Vector3</a>* vertexPoints;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="struct_vector4.html">Vector4</a>* faceIndices;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="struct_transform.html">Transform</a> transform;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;} <a class="code" href="struct_object3_d.html">Object3D</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">* \brief Init&#39;s values in the object before loading in the file. Similar to a default constructor for the object</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> InitEmptyObject(<a class="code" href="struct_object3_d.html">Object3D</a>* <span class="keywordtype">object</span>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">* \brief Loads in a given 3D model OFF file and returns true or false for a successful load</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">int</span> LoadOffFile(<span class="keywordtype">char</span>* filePath, <a class="code" href="struct_object3_d.html">Object3D</a>* <span class="keywordtype">object</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="struct_game_object.html">   27</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_game_object.html">GameObject</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">char</span>* name;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> numFaces;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> numPoints;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> numEdges;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="struct_vector3.html">Vector3</a>* vertexPoints;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="struct_vector5.html">Vector5</a>* faceIndices;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="struct_transform.html">Transform</a> transform;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="struct_rigidbody.html">Rigidbody</a> rigidbody;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="struct_vector3.html">Vector3</a>* normals;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> TextureID;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="struct_material.html">Material</a> material;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">float</span> collisionSphereRadius;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    GLfloat rotationMatrix[16];</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="model_8h.html#ab0fb707a835e2853e4ab457d743d9640">   42</a></span>&#160;} <a class="code" href="model_8h.html#ab0fb707a835e2853e4ab457d743d9640">GameObject</a>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">* \brief Used to render a OFF file. Use this function within the glut render call</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> DrawOffFile(<a class="code" href="struct_object3_d.html">Object3D</a>* <span class="keywordtype">object</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> <a class="code" href="model_8h.html#a87ea81c2369d712d01bcdaf6e6834730">InitEmptyObject</a>(<a class="code" href="struct_game_object.html">GameObject</a>* <span class="keywordtype">object</span>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// !MODEL_H</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">int</span> <a class="code" href="model_8h.html#a573e2753dda5550deb261c9e6837b2ab">LoadOffFile</a>(<span class="keywordtype">char</span>* filePath, <a class="code" href="struct_game_object.html">GameObject</a>* <span class="keywordtype">object</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> <a class="code" href="model_8h.html#a3f3e2681f2c5332286d0b02a94857591">DrawOffFile</a>(<a class="code" href="struct_game_object.html">GameObject</a>* <span class="keywordtype">object</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">void</span> TranslateToObjectPosition(<a class="code" href="struct_game_object.html">GameObject</a>* <span class="keywordtype">object</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordtype">void</span> TranslateToVec3Position(<a class="code" href="struct_vector3.html">Vector3</a> a);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> RotateAroundRad(<a class="code" href="struct_vector3.html">Vector3</a> a);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keywordtype">void</span> RotateAroundDeg(<a class="code" href="struct_vector3.html">Vector3</a> a);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keywordtype">void</span> UpdateGameObject(<a class="code" href="struct_game_object.html">GameObject</a>* gameObjectToUpdate, <a class="code" href="struct_game_object.html">GameObject</a> tempGameObject);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keywordtype">void</span> SetName(<a class="code" href="struct_game_object.html">GameObject</a>* gameobject, <span class="keywordtype">char</span>* name);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// !MODEL_H</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="ttc" id="a_transform_8h_html"><div class="ttname"><a href="_transform_8h.html">Transform.h</a></div><div class="ttdoc">Basic structure and functions of a transform.</div></div>
 <div class="ttc" id="acolours_8h_html"><div class="ttname"><a href="colours_8h.html">colours.h</a></div><div class="ttdoc">Large lookup table for colours to be used within the program.</div></div>
-<div class="ttc" id="astruct_object3_d_html"><div class="ttname"><a href="struct_object3_d.html">Object3D</a></div><div class="ttdef"><b>Definition:</b> model.h:25</div></div>
-<div class="ttc" id="astruct_transform_html"><div class="ttname"><a href="struct_transform.html">Transform</a></div><div class="ttdoc">Transform struct that can hold 3 vector3 data structures A transform can be initialized by using comp...</div><div class="ttdef"><b>Definition:</b> vector.h:39</div></div>
-<div class="ttc" id="astruct_vector3_html"><div class="ttname"><a href="struct_vector3.html">Vector3</a></div><div class="ttdoc">Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...</div><div class="ttdef"><b>Definition:</b> vector.h:24</div></div>
-<div class="ttc" id="astruct_vector4_html"><div class="ttname"><a href="struct_vector4.html">Vector4</a></div><div class="ttdoc">Vector data structure with 4 components create a vector4 by using a compund literal ie Vector4 v = (V...</div><div class="ttdef"><b>Definition:</b> vector.h:31</div></div>
-<div class="ttc" id="avector_8h_html"><div class="ttname"><a href="vector_8h.html">vector.h</a></div><div class="ttdoc">Vector Math fucntions file.</div></div>
+<div class="ttc" id="amaterial_8h_html"><div class="ttname"><a href="material_8h.html">material.h</a></div><div class="ttdoc">Data structures of all materials within the application.</div></div>
+<div class="ttc" id="amodel_8h_html_a3f3e2681f2c5332286d0b02a94857591"><div class="ttname"><a href="model_8h.html#a3f3e2681f2c5332286d0b02a94857591">DrawOffFile</a></div><div class="ttdeci">void DrawOffFile(GameObject *object)</div><div class="ttdoc">Used to render a OFF file. Use this function within the glut render call.</div><div class="ttdef"><b>Definition:</b> model.c:144</div></div>
+<div class="ttc" id="amodel_8h_html_a573e2753dda5550deb261c9e6837b2ab"><div class="ttname"><a href="model_8h.html#a573e2753dda5550deb261c9e6837b2ab">LoadOffFile</a></div><div class="ttdeci">int LoadOffFile(char *filePath, GameObject *object)</div><div class="ttdoc">Loads in a given 3D model OFF file and returns true or false for a successful load.</div><div class="ttdef"><b>Definition:</b> model.c:3</div></div>
+<div class="ttc" id="amodel_8h_html_a87ea81c2369d712d01bcdaf6e6834730"><div class="ttname"><a href="model_8h.html#a87ea81c2369d712d01bcdaf6e6834730">InitEmptyObject</a></div><div class="ttdeci">void InitEmptyObject(GameObject *object)</div><div class="ttdoc">Init's values in the object before loading in the file. Similar to a default constructor for the obje...</div><div class="ttdef"><b>Definition:</b> model.c:132</div></div>
+<div class="ttc" id="amodel_8h_html_ab0fb707a835e2853e4ab457d743d9640"><div class="ttname"><a href="model_8h.html#ab0fb707a835e2853e4ab457d743d9640">GameObject</a></div><div class="ttdeci">struct GameObject GameObject</div><div class="ttdoc">Structure of a 3D Model based arounf the OFF file type.</div></div>
+<div class="ttc" id="arigidbody_8h_html"><div class="ttname"><a href="rigidbody_8h.html">rigidbody.h</a></div><div class="ttdoc">Physics functions to be used to animate objects.</div></div>
+<div class="ttc" id="astruct_game_object_html"><div class="ttname"><a href="struct_game_object.html">GameObject</a></div><div class="ttdoc">Structure of a 3D Model based arounf the OFF file type.</div><div class="ttdef"><b>Definition:</b> model.h:28</div></div>
+<div class="ttc" id="astruct_material_html"><div class="ttname"><a href="struct_material.html">Material</a></div><div class="ttdoc">Material structure for holding all component data.</div><div class="ttdef"><b>Definition:</b> material.h:16</div></div>
+<div class="ttc" id="astruct_rigidbody_html"><div class="ttname"><a href="struct_rigidbody.html">Rigidbody</a></div><div class="ttdoc">Data structure of a physics rigidbody.</div><div class="ttdef"><b>Definition:</b> rigidbody.h:27</div></div>
+<div class="ttc" id="astruct_transform_html"><div class="ttname"><a href="struct_transform.html">Transform</a></div><div class="ttdoc">Transform struct that can hold 3 vector3 data structures and a quaternion for rotation A transform ca...</div><div class="ttdef"><b>Definition:</b> Transform.h:19</div></div>
+<div class="ttc" id="astruct_vector3_html"><div class="ttname"><a href="struct_vector3.html">Vector3</a></div><div class="ttdoc">Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...</div><div class="ttdef"><b>Definition:</b> vector.h:27</div></div>
+<div class="ttc" id="astruct_vector5_html"><div class="ttname"><a href="struct_vector5.html">Vector5</a></div><div class="ttdoc">Vector data structure with 5 components create a vector5 by using a compund literal ie Vector5 v = (V...</div><div class="ttdef"><b>Definition:</b> vector.h:41</div></div>
+<div class="ttc" id="avector_8h_html"><div class="ttname"><a href="vector_8h.html">vector.h</a></div><div class="ttdoc">2D, 3D and 4D Vector Math fucntions</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

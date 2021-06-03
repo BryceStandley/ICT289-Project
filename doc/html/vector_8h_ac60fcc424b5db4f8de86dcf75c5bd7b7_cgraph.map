@@ -1,0 +1,6 @@
+<map id="Area3" name="Area3">
+<area shape="rect" id="node1" title="Finds the area of a triangle of three Vector3&#39;s." alt="" coords="5,56,61,83"/>
+<area shape="rect" id="node2" href="$vector_8h.html#ac355e264ad1182721187dad71802b0e9" title="Finds the cross product between two Vector3&#39;s." alt="" coords="115,5,223,32"/>
+<area shape="rect" id="node3" href="$vector_8h.html#a42adb0f260e0999aa7ccdc7ec8524c92" title="Finds a directional vector between two Vector3&#39;s." alt="" coords="109,56,228,83"/>
+<area shape="rect" id="node4" href="$vector_8h.html#a74e97ba7e0685d142af418969743a4bf" title="Find the magnatude of a Vector3." alt="" coords="122,107,215,133"/>
+</map>

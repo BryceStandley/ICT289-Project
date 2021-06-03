@@ -1,0 +1,18 @@
+<map id="ICT289&#45;Project/src/scene.h" name="ICT289&#45;Project/src/scene.h">
+<area shape="rect" id="node1" title="Functions to render objects within the scene." alt="" coords="331,5,461,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="47,393,143,420"/>
+<area shape="rect" id="node3" href="$vector_8h.html" title="2D, 3D and 4D Vector Math fucntions" alt="" coords="508,393,575,420"/>
+<area shape="rect" id="node6" href="$model_8h.html" title="Used to load and manage models into the program." alt="" coords="362,95,430,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="427,468,490,495"/>
+<area shape="rect" id="node5" title=" " alt="" coords="533,468,691,495"/>
+<area shape="rect" id="node7" title=" " alt="" coords="144,169,205,196"/>
+<area shape="rect" id="node8" title=" " alt="" coords="229,169,293,196"/>
+<area shape="rect" id="node9" title=" " alt="" coords="318,169,381,196"/>
+<area shape="rect" id="node10" href="$colours_8h.html" title="Large lookup table for colours to be used within the program." alt="" coords="405,169,480,196"/>
+<area shape="rect" id="node11" href="$material_8h.html" title="Data structures of all materials within the application." alt="" coords="94,319,173,345"/>
+<area shape="rect" id="node12" href="$rigidbody_8h.html" title="Physics functions to be used to animate objects." alt="" coords="619,169,704,196"/>
+<area shape="rect" id="node14" href="$_transform_8h.html" title="Basic structure and functions of a transform." alt="" coords="504,169,595,196"/>
+<area shape="rect" id="node13" title=" " alt="" coords="579,244,653,271"/>
+<area shape="rect" id="node15" href="$_quaternion_8h.html" title="Quaternion functionality for openGL." alt="" coords="408,244,504,271"/>
+<area shape="rect" id="node16" href="$_matrix_8h.html" title="All functions and structures of a Matrix." alt="" coords="333,319,403,345"/>
+</map>

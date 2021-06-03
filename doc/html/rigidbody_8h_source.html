@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ICT289 Project: ICT289-Project/src/rigidbody.h Source File</title>
+<title>BowTime - ICT289 Project: ICT289-Project/src/rigidbody.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ICT289 Project
-   &#160;<span id="projectnumber">2</span>
+   <div id="projectname">BowTime - ICT289 Project
+   &#160;<span id="projectnumber">v3</span>
    </div>
   </td>
  </tr>
@@ -86,47 +86,53 @@ $(document).ready(function(){initNavTree('rigidbody_8h_source.html',''); initRes
 <div class="title">rigidbody.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="rigidbody_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vector_8h.html">vector.h</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">* \brief Data structure of a rigidbody</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct_rigidbody.html">   15</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_rigidbody.html">Rigidbody</a></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">float</span> mass;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">float</span> gravity;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="struct_vector3.html">Vector3</a> velocity;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">float</span> speed;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="struct_vector3.html">Vector3</a> Acceleration;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="struct_vector3.html">Vector3</a> Force;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}<a class="code" href="struct_rigidbody.html">Rigidbody</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="rigidbody_8h.html#aec94cc96cc69814097f420caaa1231d5">InitRigidbody</a>(<a class="code" href="struct_rigidbody.html">Rigidbody</a>* rb);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#ab0c43059b74977be129a06fb78083b89">VelocityAtTime</a>(<a class="code" href="struct_vector3.html">Vector3</a> InitVelocity, <a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#a9cb7eb0fe8d156736a928c1c50e6be80">Acceleration</a>, <span class="keywordtype">float</span> deltaTime);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#a9cb7eb0fe8d156736a928c1c50e6be80">Acceleration</a>(<a class="code" href="struct_vector3.html">Vector3</a> force, <span class="keywordtype">float</span> mass);</div>
+<a href="rigidbody_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*****************************************************************/</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vector_8h.html">vector.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define RIGIDBODY_H</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {DYNAMIC,KINEMATIC,STATIC} BODYTYPE;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="struct_rigidbody.html">   26</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_rigidbody.html">Rigidbody</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">float</span> mass;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">float</span> gravity;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="struct_vector3.html">Vector3</a> velocity;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">float</span> speed;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="struct_vector3.html">Vector3</a> Acceleration;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="struct_vector3.html">Vector3</a> Force;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    BODYTYPE type;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="rigidbody_8h.html#a427ce6aa99e787700fdd6c78b2633d84">   35</a></span>&#160;}<a class="code" href="rigidbody_8h.html#a427ce6aa99e787700fdd6c78b2633d84">Rigidbody</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> <a class="code" href="rigidbody_8h.html#aec94cc96cc69814097f420caaa1231d5">InitRigidbody</a>(<a class="code" href="struct_rigidbody.html">Rigidbody</a>* rb);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#a4b4ad059679ac79295d71b4a88ad6c82">AverageVelocity</a>(<a class="code" href="struct_vector3.html">Vector3</a> initVelocity, <a class="code" href="struct_vector3.html">Vector3</a> finalVelocity);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#ab0c43059b74977be129a06fb78083b89">VelocityAtTime</a>(<a class="code" href="struct_vector3.html">Vector3</a> InitVelocity, <a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#a9cb7eb0fe8d156736a928c1c50e6be80">Acceleration</a>, <span class="keywordtype">float</span> deltaTime);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#a8a91647f4971af971ff7d4121691eaae">Displace</a>(<a class="code" href="struct_vector3.html">Vector3</a> position, <a class="code" href="struct_vector3.html">Vector3</a> velocity, <a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#a9cb7eb0fe8d156736a928c1c50e6be80">Acceleration</a>, <span class="keywordtype">float</span> deltaTime);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#a9cb7eb0fe8d156736a928c1c50e6be80">Acceleration</a>(<a class="code" href="struct_vector3.html">Vector3</a> force, <span class="keywordtype">float</span> mass);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#a54632aba31eeb94f2c490a6bc6248789">Force</a>(<span class="keywordtype">float</span> mass, <a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#a9cb7eb0fe8d156736a928c1c50e6be80">Acceleration</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#a4b4ad059679ac79295d71b4a88ad6c82">AverageVelocity</a>(<a class="code" href="struct_vector3.html">Vector3</a> initVelocity, <a class="code" href="struct_vector3.html">Vector3</a> finalVelocity);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#a315e3b50fa148f491bc71f45ea9c2d09">ForceDueToGravity</a>(<span class="keywordtype">float</span> mass, <span class="keywordtype">float</span> gravity);</div>
-<div class="ttc" id="arigidbody_8h_html_a315e3b50fa148f491bc71f45ea9c2d09"><div class="ttname"><a href="rigidbody_8h.html#a315e3b50fa148f491bc71f45ea9c2d09">ForceDueToGravity</a></div><div class="ttdeci">Vector3 ForceDueToGravity(float mass, float gravity)</div><div class="ttdoc">Calculate the force due to gravity.</div><div class="ttdef"><b>Definition:</b> rigidbody.c:50</div></div>
-<div class="ttc" id="arigidbody_8h_html_a4b4ad059679ac79295d71b4a88ad6c82"><div class="ttname"><a href="rigidbody_8h.html#a4b4ad059679ac79295d71b4a88ad6c82">AverageVelocity</a></div><div class="ttdeci">Vector3 AverageVelocity(Vector3 initVelocity, Vector3 finalVelocity)</div><div class="ttdoc">Average of two velocities.</div><div class="ttdef"><b>Definition:</b> rigidbody.c:25</div></div>
-<div class="ttc" id="arigidbody_8h_html_a54632aba31eeb94f2c490a6bc6248789"><div class="ttname"><a href="rigidbody_8h.html#a54632aba31eeb94f2c490a6bc6248789">Force</a></div><div class="ttdeci">Vector3 Force(float mass, Vector3 Acceleration)</div><div class="ttdoc">Calculate a force of a object.</div><div class="ttdef"><b>Definition:</b> rigidbody.c:41</div></div>
-<div class="ttc" id="arigidbody_8h_html_a8a91647f4971af971ff7d4121691eaae"><div class="ttname"><a href="rigidbody_8h.html#a8a91647f4971af971ff7d4121691eaae">Displace</a></div><div class="ttdeci">Vector3 Displace(Vector3 position, Vector3 velocity, Vector3 Acceleration, float deltaTime)</div><div class="ttdoc">Calculate the new displacement of a object at a given time.</div><div class="ttdef"><b>Definition:</b> rigidbody.c:30</div></div>
-<div class="ttc" id="arigidbody_8h_html_a9cb7eb0fe8d156736a928c1c50e6be80"><div class="ttname"><a href="rigidbody_8h.html#a9cb7eb0fe8d156736a928c1c50e6be80">Acceleration</a></div><div class="ttdeci">Vector3 Acceleration(Vector3 force, float mass)</div><div class="ttdoc">Calculate the acceleration at a given time.</div><div class="ttdef"><b>Definition:</b> rigidbody.c:20</div></div>
-<div class="ttc" id="arigidbody_8h_html_ab0c43059b74977be129a06fb78083b89"><div class="ttname"><a href="rigidbody_8h.html#ab0c43059b74977be129a06fb78083b89">VelocityAtTime</a></div><div class="ttdeci">Vector3 VelocityAtTime(Vector3 InitVelocity, Vector3 Acceleration, float deltaTime)</div><div class="ttdoc">Calculate the velocity at a given time.</div><div class="ttdef"><b>Definition:</b> rigidbody.c:13</div></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#a8a91647f4971af971ff7d4121691eaae">Displace</a>(<a class="code" href="struct_vector3.html">Vector3</a> position, <a class="code" href="struct_vector3.html">Vector3</a> velocity, <a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#a9cb7eb0fe8d156736a928c1c50e6be80">Acceleration</a>, <span class="keywordtype">float</span> deltaTime);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#a54632aba31eeb94f2c490a6bc6248789">Force</a>(<span class="keywordtype">float</span> mass, <a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#a9cb7eb0fe8d156736a928c1c50e6be80">Acceleration</a>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<a class="code" href="struct_vector3.html">Vector3</a> <a class="code" href="rigidbody_8h.html#a315e3b50fa148f491bc71f45ea9c2d09">ForceDueToGravity</a>(<span class="keywordtype">float</span> mass, <span class="keywordtype">float</span> gravity);</div>
+<div class="ttc" id="arigidbody_8h_html_a315e3b50fa148f491bc71f45ea9c2d09"><div class="ttname"><a href="rigidbody_8h.html#a315e3b50fa148f491bc71f45ea9c2d09">ForceDueToGravity</a></div><div class="ttdeci">Vector3 ForceDueToGravity(float mass, float gravity)</div><div class="ttdoc">Calculate the force due to gravity.</div><div class="ttdef"><b>Definition:</b> rigidbody.c:52</div></div>
+<div class="ttc" id="arigidbody_8h_html_a427ce6aa99e787700fdd6c78b2633d84"><div class="ttname"><a href="rigidbody_8h.html#a427ce6aa99e787700fdd6c78b2633d84">Rigidbody</a></div><div class="ttdeci">struct Rigidbody Rigidbody</div><div class="ttdoc">Data structure of a physics rigidbody.</div></div>
+<div class="ttc" id="arigidbody_8h_html_a4b4ad059679ac79295d71b4a88ad6c82"><div class="ttname"><a href="rigidbody_8h.html#a4b4ad059679ac79295d71b4a88ad6c82">AverageVelocity</a></div><div class="ttdeci">Vector3 AverageVelocity(Vector3 initVelocity, Vector3 finalVelocity)</div><div class="ttdoc">Average of two velocities.</div><div class="ttdef"><b>Definition:</b> rigidbody.c:26</div></div>
+<div class="ttc" id="arigidbody_8h_html_a54632aba31eeb94f2c490a6bc6248789"><div class="ttname"><a href="rigidbody_8h.html#a54632aba31eeb94f2c490a6bc6248789">Force</a></div><div class="ttdeci">Vector3 Force(float mass, Vector3 Acceleration)</div><div class="ttdoc">Calculate a force of a object.</div><div class="ttdef"><b>Definition:</b> rigidbody.c:43</div></div>
+<div class="ttc" id="arigidbody_8h_html_a8a91647f4971af971ff7d4121691eaae"><div class="ttname"><a href="rigidbody_8h.html#a8a91647f4971af971ff7d4121691eaae">Displace</a></div><div class="ttdeci">Vector3 Displace(Vector3 position, Vector3 velocity, Vector3 Acceleration, float deltaTime)</div><div class="ttdoc">Calculate the new displacement of a object at a given time.</div><div class="ttdef"><b>Definition:</b> rigidbody.c:31</div></div>
+<div class="ttc" id="arigidbody_8h_html_a9cb7eb0fe8d156736a928c1c50e6be80"><div class="ttname"><a href="rigidbody_8h.html#a9cb7eb0fe8d156736a928c1c50e6be80">Acceleration</a></div><div class="ttdeci">Vector3 Acceleration(Vector3 force, float mass)</div><div class="ttdoc">Calculate the acceleration at a given time.</div><div class="ttdef"><b>Definition:</b> rigidbody.c:21</div></div>
+<div class="ttc" id="arigidbody_8h_html_ab0c43059b74977be129a06fb78083b89"><div class="ttname"><a href="rigidbody_8h.html#ab0c43059b74977be129a06fb78083b89">VelocityAtTime</a></div><div class="ttdeci">Vector3 VelocityAtTime(Vector3 InitVelocity, Vector3 Acceleration, float deltaTime)</div><div class="ttdoc">Calculate the velocity at a given time.</div><div class="ttdef"><b>Definition:</b> rigidbody.c:14</div></div>
 <div class="ttc" id="arigidbody_8h_html_aec94cc96cc69814097f420caaa1231d5"><div class="ttname"><a href="rigidbody_8h.html#aec94cc96cc69814097f420caaa1231d5">InitRigidbody</a></div><div class="ttdeci">void InitRigidbody(Rigidbody *rb)</div><div class="ttdoc">Init a rigidbody with default values.</div><div class="ttdef"><b>Definition:</b> rigidbody.c:3</div></div>
-<div class="ttc" id="astruct_rigidbody_html"><div class="ttname"><a href="struct_rigidbody.html">Rigidbody</a></div><div class="ttdef"><b>Definition:</b> rigidbody.h:16</div></div>
-<div class="ttc" id="astruct_vector3_html"><div class="ttname"><a href="struct_vector3.html">Vector3</a></div><div class="ttdoc">Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...</div><div class="ttdef"><b>Definition:</b> vector.h:24</div></div>
-<div class="ttc" id="avector_8h_html"><div class="ttname"><a href="vector_8h.html">vector.h</a></div><div class="ttdoc">Vector Math fucntions file.</div></div>
+<div class="ttc" id="astruct_rigidbody_html"><div class="ttname"><a href="struct_rigidbody.html">Rigidbody</a></div><div class="ttdoc">Data structure of a physics rigidbody.</div><div class="ttdef"><b>Definition:</b> rigidbody.h:27</div></div>
+<div class="ttc" id="astruct_vector3_html"><div class="ttname"><a href="struct_vector3.html">Vector3</a></div><div class="ttdoc">Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...</div><div class="ttdef"><b>Definition:</b> vector.h:27</div></div>
+<div class="ttc" id="avector_8h_html"><div class="ttname"><a href="vector_8h.html">vector.h</a></div><div class="ttdoc">2D, 3D and 4D Vector Math fucntions</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

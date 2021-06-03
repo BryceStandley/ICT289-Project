@@ -1,0 +1,4 @@
+<map id="InitRigidbody" name="InitRigidbody">
+<area shape="rect" id="node1" title="Init a rigidbody with default values." alt="" coords="140,5,236,32"/>
+<area shape="rect" id="node2" href="$model_8h.html#a573e2753dda5550deb261c9e6837b2ab" title="Loads in a given 3D model OFF file and returns true or false for a successful load." alt="" coords="5,5,92,32"/>
+</map>

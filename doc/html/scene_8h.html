@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ICT289 Project: ICT289-Project/src/scene.h File Reference</title>
+<title>BowTime - ICT289 Project: ICT289-Project/src/scene.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ICT289 Project
-   &#160;<span id="projectnumber">2</span>
+   <div id="projectname">BowTime - ICT289 Project
+   &#160;<span id="projectnumber">v3</span>
    </div>
   </td>
  </tr>
@@ -95,26 +95,92 @@ $(document).ready(function(){initNavTree('scene_8h.html',''); initResizable(); }
 <div class="textblock"><code>#include &lt;GL/freeglut.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="vector_8h_source.html">vector.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="model_8h_source.html">model.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for scene.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="scene_8h__incl.png" border="0" usemap="#a_i_c_t289-_project_2src_2scene_8h" alt=""/></div>
+<map name="a_i_c_t289-_project_2src_2scene_8h" id="a_i_c_t289-_project_2src_2scene_8h">
+<area shape="rect" title="Functions to render objects within the scene." alt="" coords="331,5,461,47"/>
+<area shape="rect" title=" " alt="" coords="47,393,143,420"/>
+<area shape="rect" href="vector_8h.html" title="2D, 3D and 4D Vector Math fucntions" alt="" coords="508,393,575,420"/>
+<area shape="rect" href="model_8h.html" title="Used to load and manage models into the program." alt="" coords="362,95,430,121"/>
+<area shape="rect" title=" " alt="" coords="427,468,490,495"/>
+<area shape="rect" title=" " alt="" coords="533,468,691,495"/>
+<area shape="rect" title=" " alt="" coords="144,169,205,196"/>
+<area shape="rect" title=" " alt="" coords="229,169,293,196"/>
+<area shape="rect" title=" " alt="" coords="318,169,381,196"/>
+<area shape="rect" href="colours_8h.html" title="Large lookup table for colours to be used within the program." alt="" coords="405,169,480,196"/>
+<area shape="rect" href="material_8h.html" title="Data structures of all materials within the application." alt="" coords="94,319,173,345"/>
+<area shape="rect" href="rigidbody_8h.html" title="Physics functions to be used to animate objects." alt="" coords="619,169,704,196"/>
+<area shape="rect" href="_transform_8h.html" title="Basic structure and functions of a transform." alt="" coords="504,169,595,196"/>
+<area shape="rect" title=" " alt="" coords="579,244,653,271"/>
+<area shape="rect" href="_quaternion_8h.html" title="Quaternion functionality for openGL." alt="" coords="408,244,504,271"/>
+<area shape="rect" href="_matrix_8h.html" title="All functions and structures of a Matrix." alt="" coords="333,319,403,345"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="scene_8h__dep__incl.png" border="0" usemap="#a_i_c_t289-_project_2src_2scene_8hdep" alt=""/></div>
+<map name="a_i_c_t289-_project_2src_2scene_8hdep" id="a_i_c_t289-_project_2src_2scene_8hdep">
+<area shape="rect" title="Functions to render objects within the scene." alt="" coords="5,5,135,47"/>
+<area shape="rect" href="window_8h.html" title="Main window file that contains all functions related to the window and the program." alt="" coords="5,95,135,136"/>
+<area shape="rect" href="_i_c_t289-_project_8c.html" title="Main program entry point." alt="" coords="5,184,135,225"/>
+</map>
+</div>
 </div>
 <p><a href="scene_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ac1dfae96551c140268f7bfc71c5aa2ea"><td class="memItemLeft" align="right" valign="top"><a id="ac1dfae96551c140268f7bfc71c5aa2ea"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCENE_H</b></td></tr>
+<tr class="separator:ac1dfae96551c140268f7bfc71c5aa2ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39413e7a9abc90f9cf7b8c95502fb31e"><td class="memItemLeft" align="right" valign="top"><a id="a39413e7a9abc90f9cf7b8c95502fb31e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_SCENE_OBJECTS</b>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a39413e7a9abc90f9cf7b8c95502fb31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a7036699d499cc21ca48f01005a329740"><td class="memItemLeft" align="right" valign="top"><a id="a7036699d499cc21ca48f01005a329740"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawGroundPlane</b> (float scaleX, float scaleZ)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scene_8h.html#a7036699d499cc21ca48f01005a329740">DrawGroundPlane</a> (float scaleX, float scaleZ)</td></tr>
+<tr class="memdesc:a7036699d499cc21ca48f01005a329740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a flat ground plane. <br /></td></tr>
 <tr class="separator:a7036699d499cc21ca48f01005a329740"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee63d0d9b146eba508d24f76e5ed929f"><td class="memItemLeft" align="right" valign="top"><a id="aee63d0d9b146eba508d24f76e5ed929f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawCubeOnGround</b> (float scale)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scene_8h.html#aee63d0d9b146eba508d24f76e5ed929f">DrawCubeOnGround</a> (float scale)</td></tr>
+<tr class="memdesc:aee63d0d9b146eba508d24f76e5ed929f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a cube fixed on the ground plane. <br /></td></tr>
 <tr class="separator:aee63d0d9b146eba508d24f76e5ed929f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e1c922f5009fbe8917633b3a8040ba2"><td class="memItemLeft" align="right" valign="top"><a id="a9e1c922f5009fbe8917633b3a8040ba2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawOffModels</b> (<a class="el" href="struct_object3_d.html">Object3D</a> *objects)</td></tr>
-<tr class="separator:a9e1c922f5009fbe8917633b3a8040ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a377270349f47943d29845a0410e398a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scene_8h.html#a377270349f47943d29845a0410e398a6">DrawOffModels</a> (<a class="el" href="struct_game_object.html">GameObject</a> *objects)</td></tr>
+<tr class="memdesc:a377270349f47943d29845a0410e398a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to draw multiple OFF models to the scene.  <a href="scene_8h.html#a377270349f47943d29845a0410e398a6">More...</a><br /></td></tr>
+<tr class="separator:a377270349f47943d29845a0410e398a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Functions to render objects within the scene. </p>
-<dl class="section author"><dt>Author</dt><dd>Bryce Standley</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Bryce Standley </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>April 2021 </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a377270349f47943d29845a0410e398a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a377270349f47943d29845a0410e398a6">&#9670;&nbsp;</a></span>DrawOffModels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DrawOffModels </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_game_object.html">GameObject</a> *&#160;</td>
+          <td class="paramname"><em>objects</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Used to draw multiple OFF models to the scene. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Fix memory alloc and param passing for rendering </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

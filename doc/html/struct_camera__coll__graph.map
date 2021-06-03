@@ -1,0 +1,7 @@
+<map id="Camera" name="Camera">
+<area shape="rect" id="node1" title="Data structure of the camera." alt="" coords="144,260,211,287"/>
+<area shape="rect" id="node2" href="$struct_mat4.html" title="Structure of a 4 x 4 matrix." alt="" coords="5,147,56,174"/>
+<area shape="rect" id="node3" href="$struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V..." alt="" coords="157,5,224,32"/>
+<area shape="rect" id="node4" href="$struct_transform.html" title="Transform struct that can hold 3 vector3 data structures and a quaternion for rotation A transform ca..." alt="" coords="253,147,331,174"/>
+<area shape="rect" id="node5" href="$struct_quaternion.html" title="Structure of a quaternion." alt="" coords="261,5,347,32"/>
+</map>

@@ -10,11 +10,9 @@
 #include "Matrix.h"
 #include <math.h>
 #include <corecrt_math_defines.h>
+
 /**
- * \file Quaternion.h
- * \author Bryce Standley
  * \brief Structure of a quaternion
- * \date  June 2021
  */
 typedef struct Quaternion
 {

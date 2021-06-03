@@ -1,0 +1,6 @@
+<map id="Scale3" name="Scale3">
+<area shape="rect" id="node1" title="Scales a Vector3 by a scale value." alt="" coords="164,56,227,83"/>
+<area shape="rect" id="node2" href="$rigidbody_8h.html#a8a91647f4971af971ff7d4121691eaae" title="Calculate the new displacement of a object at a given time." alt="" coords="25,5,97,32"/>
+<area shape="rect" id="node3" href="$rigidbody_8h.html#a54632aba31eeb94f2c490a6bc6248789" title="Calculate a force of a object." alt="" coords="33,56,88,83"/>
+<area shape="rect" id="node4" href="$rigidbody_8h.html#ab0c43059b74977be129a06fb78083b89" title="Calculate the velocity at a given time." alt="" coords="5,107,116,133"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Angle2" name="Angle2">
+<area shape="rect" id="node1" title="Finds the angle between two Direction Vector2&#39;s in degrees." alt="" coords="5,31,68,57"/>
+<area shape="rect" id="node2" href="$vector_8h.html#a7ff6b0205ff6527fde0ada4ab12f3d17" title="Finds the dot product between two Vector2&#39;s." alt="" coords="116,5,211,32"/>
+<area shape="rect" id="node3" href="$vector_8h.html#ad37c4c1e95f98c1f4fb7dd519de45282" title="Find the magnatude of a Vector2." alt="" coords="117,56,210,83"/>
+</map>

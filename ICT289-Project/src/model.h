@@ -1,3 +1,10 @@
+/*****************************************************************//**
+ * \file   model.h
+ * \brief  Used to load and manage models into the program
+ * 
+ * \author Bryce Standley
+ * \date   April 2021
+ *********************************************************************/
 #pragma once
 #ifndef MODEL_H
 #define MODEL_H
@@ -13,18 +20,10 @@
 #include <corecrt_math_defines.h>
 #include "Transform.h"
 
-/**
- * \file model.h
- * \author Bryce Standley
- * \brief Used to load and manage models into the program
- * 
- * \date  April 2021
- */
 
-/*
-* \brief Structure of a 3D Model based arounf the OFF file type
-*/
- 
+/**
+ * \brief Structure of a 3D Model based arounf the OFF file type
+ */
 typedef struct GameObject
 {
 	char* name;
@@ -42,17 +41,17 @@ typedef struct GameObject
 	GLfloat rotationMatrix[16];
 } GameObject;
 
-/*
+/**
 * \brief Init's values in the object before loading in the file. Similar to a default constructor for the object
 */
 void InitEmptyObject(GameObject* object);
 
-/*
+/**
 * \brief Loads in a given 3D model OFF file and returns true or false for a successful load
 */
 int LoadOffFile(char* filePath, GameObject* object);
 
-/*
+/**
 * \brief Used to render a OFF file. Use this function within the glut render call
 */
 void DrawOffFile(GameObject* object);
@@ -98,7 +97,12 @@ void RotateAroundDeg(Vector3 a);
 void UpdateGameObject(GameObject* gameObjectToUpdate, GameObject tempGameObject);
 
 
-
+/**
+ * \file model.h
+ * \author Maea Havea
+ * \brief Sets the name of a object 
+ * \date  June 2021
+ */
 void SetName(GameObject* gameobject, char* name);
 
 

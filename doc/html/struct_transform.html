@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ICT289 Project: Transform Struct Reference</title>
+<title>BowTime - ICT289 Project: Transform Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ICT289 Project
-   &#160;<span id="projectnumber">2</span>
+   <div id="projectname">BowTime - ICT289 Project
+   &#160;<span id="projectnumber">v3</span>
    </div>
   </td>
  </tr>
@@ -89,10 +89,20 @@ $(document).ready(function(){initNavTree('struct_transform.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="struct_transform.html" title="Transform struct that can hold 3 vector3 data structures A transform can be initialized by using comp...">Transform</a> struct that can hold 3 vector3 data structures A transform can be initialized by using compound literals ie, Transform.Position = (<a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a>){.x = 0.0f, .y = 0.0f, .z = 0.0f};.  
+<p><a class="el" href="struct_transform.html" title="Transform struct that can hold 3 vector3 data structures and a quaternion for rotation A transform ca...">Transform</a> struct that can hold 3 vector3 data structures and a quaternion for rotation A transform can be initialized by using compound literals ie, Transform.Position = (<a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a>){.x = 0.0f, .y = 0.0f, .z = 0.0f}; <a class="el" href="struct_quaternion.html" title="Structure of a quaternion.">Quaternion</a> rotation is calculated by Euler angles on the <a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a> rotation data.  
  <a href="struct_transform.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="vector_8h_source.html">vector.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_transform_8h_source.html">Transform.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Transform:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_transform__coll__graph.png" border="0" usemap="#a_transform_coll__map" alt="Collaboration graph"/></div>
+<map name="a_transform_coll__map" id="a_transform_coll__map">
+<area shape="rect" title="Transform struct that can hold 3 vector3 data structures and a quaternion for rotation A transform ca..." alt="" coords="65,124,143,151"/>
+<area shape="rect" href="struct_quaternion.html" title="Structure of a quaternion." alt="" coords="5,5,91,32"/>
+<area shape="rect" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V..." alt="" coords="127,5,193,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -105,11 +115,14 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a29aaddec68693a40b954812bd1dfe37b"><td class="memItemLeft" align="right" valign="top"><a id="a29aaddec68693a40b954812bd1dfe37b"></a>
 <a class="el" href="struct_vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Scale</b></td></tr>
 <tr class="separator:a29aaddec68693a40b954812bd1dfe37b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3776df573392e8051536fd1f4117ec20"><td class="memItemLeft" align="right" valign="top"><a id="a3776df573392e8051536fd1f4117ec20"></a>
+<a class="el" href="struct_quaternion.html">Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><b>QuatRotation</b></td></tr>
+<tr class="separator:a3776df573392e8051536fd1f4117ec20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="struct_transform.html" title="Transform struct that can hold 3 vector3 data structures A transform can be initialized by using comp...">Transform</a> struct that can hold 3 vector3 data structures A transform can be initialized by using compound literals ie, Transform.Position = (<a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a>){.x = 0.0f, .y = 0.0f, .z = 0.0f};. </p>
+<div class="textblock"><p><a class="el" href="struct_transform.html" title="Transform struct that can hold 3 vector3 data structures and a quaternion for rotation A transform ca...">Transform</a> struct that can hold 3 vector3 data structures and a quaternion for rotation A transform can be initialized by using compound literals ie, Transform.Position = (<a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a>){.x = 0.0f, .y = 0.0f, .z = 0.0f}; <a class="el" href="struct_quaternion.html" title="Structure of a quaternion.">Quaternion</a> rotation is calculated by Euler angles on the <a class="el" href="struct_vector3.html" title="Vector data structure with 3 components create a vector3 by using a compund literal ie Vector3 v = (V...">Vector3</a> rotation data. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>ICT289-Project/src/<a class="el" href="vector_8h_source.html">vector.h</a></li>
+<li>ICT289-Project/src/<a class="el" href="_transform_8h_source.html">Transform.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

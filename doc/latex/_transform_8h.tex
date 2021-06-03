@@ -1,0 +1,45 @@
+\hypertarget{_transform_8h}{}\doxysection{ICT289-\/\+Project/src/\+Transform.h File Reference}
+\label{_transform_8h}\index{ICT289-\/Project/src/Transform.h@{ICT289-\/Project/src/Transform.h}}
+
+
+Basic structure and functions of a transform.  
+
+
+{\ttfamily \#include \char`\"{}vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Quaternion.\+h\char`\"{}}\newline
+Include dependency graph for Transform.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{_transform_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_transform_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_transform}{Transform}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_transform}{Transform}} struct that can hold 3 vector3 data structures and a quaternion for rotation A transform can be initialized by using compound literals ie, Transform.\+Position = (\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f\}; \mbox{\hyperlink{struct_quaternion}{Quaternion}} rotation is calculated by Euler angles on the \mbox{\hyperlink{struct_vector3}{Vector3}} rotation data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_transform_8h_a512254f7ee8948f0323992006331503c}\label{_transform_8h_a512254f7ee8948f0323992006331503c}} 
+typedef struct \mbox{\hyperlink{struct_transform}{Transform}} \mbox{\hyperlink{_transform_8h_a512254f7ee8948f0323992006331503c}{Transform}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_transform}{Transform}} struct that can hold 3 vector3 data structures and a quaternion for rotation A transform can be initialized by using compound literals ie, Transform.\+Position = (\mbox{\hyperlink{struct_vector3}{Vector3}})\{.x = 0.\+0f, .y = 0.\+0f, .z = 0.\+0f\}; \mbox{\hyperlink{struct_quaternion}{Quaternion}} rotation is calculated by Euler angles on the \mbox{\hyperlink{struct_vector3}{Vector3}} rotation data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic structure and functions of a transform. 
+
+\begin{DoxyAuthor}{Author}
+Bryce Standley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2021 
+\end{DoxyDate}

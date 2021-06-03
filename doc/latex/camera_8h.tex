@@ -8,38 +8,59 @@ Adds the data structure and functions to control a Open\+GL camera.
 {\ttfamily \#include $<$GL/freeglut.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}vector.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$corecrt\+\_\+math\+\_\+defines.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Transform.\+h\char`\"{}}\newline
+Include dependency graph for camera.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{camera_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{camera_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{struct_camera}{Camera}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Data structure of the camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{camera_8h_a78750a39b09d6562fd9b910c7743cfca}\label{camera_8h_a78750a39b09d6562fd9b910c7743cfca}} 
-typedef struct \mbox{\hyperlink{struct_camera}{Camera}} {\bfseries Camera}
-\end{DoxyCompactItemize}
+typedef struct \mbox{\hyperlink{struct_camera}{Camera}} \mbox{\hyperlink{camera_8h_a78750a39b09d6562fd9b910c7743cfca}{Camera}}
+\begin{DoxyCompactList}\small\item\em Data structure of the camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{camera_8h_a0cfc8a7fe9eb50a32356228e525b9707}\label{camera_8h_a0cfc8a7fe9eb50a32356228e525b9707}} 
-void {\bfseries Update\+Camera\+Look\+At} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c)
-\item 
+void \mbox{\hyperlink{camera_8h_a0cfc8a7fe9eb50a32356228e525b9707}{Update\+Camera\+Look\+At}} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Updates the direction the cameras looking towards. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{camera_8h_af39bf9665842690d15cf7fe839637fca}\label{camera_8h_af39bf9665842690d15cf7fe839637fca}} 
-void {\bfseries Update\+Camera} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c)
-\item 
+void \mbox{\hyperlink{camera_8h_af39bf9665842690d15cf7fe839637fca}{Update\+Camera}} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Updates the camera and the glu\+Look\+At function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{camera_8h_afc313a42ad61c6e444fb8f6a6b6baf39}\label{camera_8h_afc313a42ad61c6e444fb8f6a6b6baf39}} 
+void \mbox{\hyperlink{camera_8h_afc313a42ad61c6e444fb8f6a6b6baf39}{Update\+Camera\+Matrix}} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Updates the cameras look at matrix. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{camera_8h_ac0ecd597d3765cdeb43efd88c7fb9be5}\label{camera_8h_ac0ecd597d3765cdeb43efd88c7fb9be5}} 
-void {\bfseries Move\+Camera} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c, float incr)
-\item 
+void \mbox{\hyperlink{camera_8h_ac0ecd597d3765cdeb43efd88c7fb9be5}{Move\+Camera}} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c, float incr)
+\begin{DoxyCompactList}\small\item\em moves the cameras position forwards and back \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{camera_8h_a64808ee919613b3c75b02b7791712096}\label{camera_8h_a64808ee919613b3c75b02b7791712096}} 
-void {\bfseries Strafe\+Camera} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c, float incr)
-\item 
+void \mbox{\hyperlink{camera_8h_a64808ee919613b3c75b02b7791712096}{Strafe\+Camera}} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c, float incr)
+\begin{DoxyCompactList}\small\item\em Moves the cameras position left and right. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{camera_8h_a6c5755301abebe21f062f7207ae9b290}\label{camera_8h_a6c5755301abebe21f062f7207ae9b290}} 
-void {\bfseries Rotate\+CameraX} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c, float incr)
-\item 
+void \mbox{\hyperlink{camera_8h_a6c5755301abebe21f062f7207ae9b290}{Rotate\+CameraX}} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c, float incr)
+\begin{DoxyCompactList}\small\item\em Rotates the camera\textquotesingle{}s yaw/x value. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{camera_8h_a5b115f8a37f78833a9275701f4bf862a}\label{camera_8h_a5b115f8a37f78833a9275701f4bf862a}} 
-void {\bfseries Rotate\+CameraY} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c, float incr)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{camera_8h_a5b115f8a37f78833a9275701f4bf862a}{Rotate\+CameraY}} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c, float incr)
+\begin{DoxyCompactList}\small\item\em Rotates the camera\textquotesingle{}s pitch/y value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{camera_8h_a1b7f1f51151f03a4927eefb238c08a9b}\label{camera_8h_a1b7f1f51151f03a4927eefb238c08a9b}} 
+void \mbox{\hyperlink{camera_8h_a1b7f1f51151f03a4927eefb238c08a9b}{Display\+End\+Screen}} (\mbox{\hyperlink{struct_camera}{Camera}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Updates the cameras look at settings to correctly display the endscreen image. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -49,5 +70,5 @@ Adds the data structure and functions to control a Open\+GL camera.
 Bryce Standley 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
-April 2021 
+June 2021 
 \end{DoxyDate}
